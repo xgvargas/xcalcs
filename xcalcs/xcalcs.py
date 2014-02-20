@@ -14,6 +14,16 @@ class MyApplication(QtGui.QMainWindow, Ui_MainWindow, SmartSide):
         super(MyApplication, self).__init__(parent)
         self.setupUi(self)
         self.auto_connect()
+        self.cfg = QSettings('oi', 'carcamano')
+        self.restoreGeometry(self.cfg.value('geometry'))
+        #self.restoreState(self.cfg.value('state'))
+        #print 'lendo bunda:',self.cfg.value('bunda', type=int)
+
+    def closeEvent(self, event):
+        self.cfg.setValue('geometry', self.saveGeometry())
+        #self.cfg.setValue('state', self.saveState())
+        self.cfg.setValue('bunda', 12)
+        event.accept()
 
     def keyPressEvent(self, event):
         print event.key(), event.nativeModifiers(), event.nativeScanCode(), event.nativeVirtualKey()
@@ -28,18 +38,17 @@ class MyApplication(QtGui.QMainWindow, Ui_MainWindow, SmartSide):
         print '_on_btn_format__clicked'
 
     def _on_btn_coord__clicked(self):
-        print '_on_btn_coord__clicked'
+        print '_on_btn_coord__clicked', self.sender().isDown(), self.sender().isChecked()
 
-    def _on_btn_conv__clicked(self):
-        print '_on_btn_conv__clicked'
+    def _on_btn_conv__toggled(self):
+        print '_on_btn_conv__toggle', self.sender().isDown(), self.sender().isChecked()
 
-    def _on_btn_base__clicked(self):
-        print '_on_btn_base__clicked'
+    def _on_btn_base__toggled(self):
+        print '_on_btn_base__toggled', self.sender().isDown(), self.sender().isChecked()
 
     _funcoes = '`btn_f_.+`'
     def _when_funcoes__clicked(self):
-        print 'balacubacu'
-        print self.sender()
+        print self.sender().objectName()
 
 
 if __name__ == "__main__":
