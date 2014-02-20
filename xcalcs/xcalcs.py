@@ -1,12 +1,26 @@
 #!/usr/bin/python
-
 # -*- coding: utf-8 -*-
+
+"""
+ver isso para colocar o icone correto na taskbar do windows
+http://stackoverflow.com/questions/1551605/how-to-set-applications-taskbar-icon-in-windows-7
+"""
 
 from PySide.QtGui import *
 from PySide.QtCore import *
 import sys
 from xcalcs_ui import *
 from smartside import *
+
+
+__author__ = 'Gustavo Vargas <xgvargas@gmail.com>'
+__version_info__ = ('0', '1', '0')
+__version__ = '.'.join(__version_info__)
+
+
+import ctypes
+myappid = 'mycompany.myproduct.subproduct.version' # arbitrary string
+ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
 
 class MyApplication(QtGui.QMainWindow, Ui_MainWindow, SmartSide):

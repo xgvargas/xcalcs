@@ -31,6 +31,13 @@
   <property name="windowTitle">
    <string>xCalcs</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="xcalcs.qrc">
+    <normaloff>:/func/imgs/conj.bmp</normaloff>:/func/imgs/conj.bmp</iconset>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
   <property name="locale">
    <locale language="Portuguese" country="Brazil"/>
   </property>
