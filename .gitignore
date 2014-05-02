@@ -2,3 +2,5 @@ dist
 build
 *.py[co]
 *.egg-info
+*_rc.py
+*_ui.py
