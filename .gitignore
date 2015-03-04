@@ -2,3 +2,6 @@ dist
 build
 *.py[co]
 *.egg-info
+xcalcs/ui/*.png
+*_ui.py
+*_rc.py

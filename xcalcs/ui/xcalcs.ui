@@ -32,7 +32,7 @@
    <string>xCalcs</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="xcalcs.qrc">
+   <iconset>
     <normaloff>:/func/imgs/conj.bmp</normaloff>:/func/imgs/conj.bmp</iconset>
   </property>
   <property name="windowOpacity">
@@ -664,7 +664,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/raizn.bmp</normaloff>:/func/imgs/raizn.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -699,7 +699,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/vezes.bmp</normaloff>:/func/imgs/vezes.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -734,7 +734,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/tg.bmp</normaloff>:/func/imgs/tg.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -769,7 +769,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/sign.bmp</normaloff>:/func/imgs/sign.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -804,7 +804,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/power10.bmp</normaloff>:/func/imgs/power10.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -839,7 +839,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/arcseno.bmp</normaloff>:/func/imgs/arcseno.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -874,7 +874,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/ln.bmp</normaloff>:/func/imgs/ln.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -909,7 +909,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/arctg.bmp</normaloff>:/func/imgs/arctg.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -947,7 +947,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/soma.bmp</normaloff>:/func/imgs/soma.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -982,7 +982,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/cos.bmp</normaloff>:/func/imgs/cos.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1017,7 +1017,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/conj.bmp</normaloff>:/func/imgs/conj.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1052,7 +1052,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/sqrt.bmp</normaloff>:/func/imgs/sqrt.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1087,7 +1087,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/log2.bmp</normaloff>:/func/imgs/log2.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1122,7 +1122,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/invert.bmp</normaloff>:/func/imgs/invert.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1157,7 +1157,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/decomplex.bmp</normaloff>:/func/imgs/decomplex.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1192,7 +1192,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/power2.bmp</normaloff>:/func/imgs/power2.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1227,7 +1227,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/div.bmp</normaloff>:/func/imgs/div.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1262,7 +1262,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/toimag.png</normaloff>:/func/imgs/toimag.png</iconset>
           </property>
           <property name="iconSize">
@@ -1297,7 +1297,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/minus.bmp</normaloff>:/func/imgs/minus.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1332,7 +1332,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/swap.bmp</normaloff>:/func/imgs/swap.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1367,7 +1367,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/powery.bmp</normaloff>:/func/imgs/powery.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1402,7 +1402,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/seno.bmp</normaloff>:/func/imgs/seno.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1437,7 +1437,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/log10.bmp</normaloff>:/func/imgs/log10.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1472,7 +1472,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/powere.bmp</normaloff>:/func/imgs/powere.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1507,7 +1507,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/arccos.bmp</normaloff>:/func/imgs/arccos.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1710,7 +1710,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/int.bmp</normaloff>:/func/imgs/int.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1745,7 +1745,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/YD.bmp</normaloff>:/func/imgs/YD.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1780,7 +1780,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/DY.bmp</normaloff>:/func/imgs/DY.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1815,7 +1815,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/ddd.bmp</normaloff>:/func/imgs/ddd.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -1850,7 +1850,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/dms.bmp</normaloff>:/func/imgs/dms.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -2040,7 +2040,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/pi.bmp</normaloff>:/func/imgs/pi.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -2075,7 +2075,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/e.bmp</normaloff>:/func/imgs/e.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -2110,7 +2110,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/efe.bmp</normaloff>:/func/imgs/efe.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -2145,7 +2145,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/gamma.bmp</normaloff>:/func/imgs/gamma.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -2180,7 +2180,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/fi.bmp</normaloff>:/func/imgs/fi.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -2215,7 +2215,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/ce.bmp</normaloff>:/func/imgs/ce.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -2250,7 +2250,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/avogrado.bmp</normaloff>:/func/imgs/avogrado.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -2285,7 +2285,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/erre.bmp</normaloff>:/func/imgs/erre.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -2320,7 +2320,7 @@ color:rgb(23, 52, 244);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="xcalcs.qrc">
+           <iconset>
             <normaloff>:/func/imgs/ec.bmp</normaloff>:/func/imgs/ec.bmp</iconset>
           </property>
           <property name="iconSize">
@@ -2378,7 +2378,7 @@ color:rgb(23, 52, 244);
            <enum>Qt::PlainText</enum>
           </property>
           <property name="pixmap">
-           <pixmap resource="xcalcs.qrc">:/func/imgs/YD.bmp</pixmap>
+           <pixmap>:/func/imgs/YD.bmp</pixmap>
           </property>
           <property name="scaledContents">
            <bool>false</bool>
