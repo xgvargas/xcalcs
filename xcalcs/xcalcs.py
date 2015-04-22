@@ -2,16 +2,14 @@
 # -*- coding: utf-8 -*-
 
 """
-ver isso para colocar o icone correto na taskbar do windows
-http://stackoverflow.com/questions/1551605/how-to-set-applications-taskbar-icon-in-windows-7
 """
 
-from PySide.QtGui import *
-from PySide.QtCore import *
+# from PySide.QtGui import *
+# from PySide.QtCore import *
 import sys
-import os
 from xcalcs_ui import *
-from smartside import *
+import smartside.signal as smartsignal
+from smartside import setAsApplication
 
 
 __author__ = 'Gustavo Vargas <xgvargas@gmail.com>'
@@ -19,44 +17,91 @@ __version_info__ = ('0', '1', '0')
 __version__ = '.'.join(__version_info__)
 
 
-if os.name == 'nt':
-    import ctypes
-    myappid = 'xgvv.xcalcs.'+__version__ # arbitrary string
-    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
-
-
-class MyApplication(QtGui.QMainWindow, Ui_MainWindow, SmartSide):
-    def __init__(self, bunda=None):
-        super(MyApplication, self).__init__(bunda)
+class MyApplication(QtGui.QWidget, Ui_Form, smartsignal.SmartSignal):
+    def __init__(self, parent=None):
+        super(MyApplication, self).__init__(parent)
         self.setupUi(self)
         self.auto_connect()
-        self.cfg = QSettings('oi', 'carcamano')
-        self.restoreGeometry(self.cfg.value('geometry'))
+        # self.cfg = QSettings('oi', 'carcamano')
+        # self.restoreGeometry(self.cfg.value('geometry'))
         #self.restoreState(self.cfg.value('state'))
         #print 'lendo bunda:',self.cfg.value('bunda', type=int)
 
-        m = QMenu('nome', self)
-        self.zzact1 = m.addAction('Stay on top', self.temp)
-        self.zzact2 = m.addAction('Close to tray', self.temp)
-        self.tbtn_tools.setMenu(m)
-        self.zzmenu = m
+        self.editing = None
+        self.nuns = [0]*32
 
-    def temp(self):
-        print 'vim do menu!'
-    def _on_tbtn_tools__clicked(self):
-        print 'sou o padrao '
-
-    def closeEvent(self, event):
-        self.cfg.setValue('geometry', self.saveGeometry())
-        # self.cfg.setValue('state', self.saveState())
+    def closeEvent(self, e):
+        # self.cfg.setValue('geometry', self.saveGeometry())
+        #self.cfg.setValue('state', self.saveState())
         # self.cfg.setValue('bunda', 12)
-        event.accept()
+        e.accept()
 
-    def keyPressEvent(self, event):
-        print event.key(), event.nativeModifiers(), event.nativeScanCode(), event.nativeVirtualKey()
-        if event.key() == QtCore.Qt.Key_Escape:
-            print 'foi ESC!'
-            print dir(event)
+    def keyPressEvent(self, e):
+        # print e.key(), e.nativeModifiers(), e.nativeScanCode(), e.nativeVirtualKey()
+        c = chr(e.key()) if e.key() < 255 else ''
+        shorts = (
+                    ('+', self.btn_f_add),
+                    ('-', self.btn_f_sub),
+                    ('*', self.btn_f_mul),
+                    ('/', self.btn_f_div),
+                    ('S', self.btn_f_swap),
+                    # ('P', self.btn_f_pi),
+                    ('Q', self.btn_f_power2),
+                    ('R', self.btn_f_sqrt2),
+                    ('C', self.btn_f_tocomplex),
+                    ('V', self.btn_f_breakcomplex),
+                    ('I', self.btn_f_inv),
+                    ('G', self.btn_f_minus),
+                    ('L', self.btn_f_powerx),
+                    )
+
+        for k, f in shorts:
+            if c == k:
+                if self.editing:
+                    #TODO confirma edicao
+                    pass
+                f.click()
+
+        if not self.editing:
+            if e.key() == QtCore.Qt.Key_Escape:
+                print 'limpa tudo'
+            elif e.key() == QtCore.Qt.Key_Backspace:
+                print 'apaga uma linha'
+            elif e.key() == QtCore.Qt.Key_Enter or e.key() == QtCore.Qt.Key_Return:
+                print 'duplica'
+        else:
+            if e.key() == QtCore.Qt.Key_Escape:
+                print 'para edit'
+            elif e.key() == QtCore.Qt.Key_Backspace:
+                print 'volta edit'
+            elif e.key() == QtCore.Qt.Key_Enter or e.key() == QtCore.Qt.Key_Return:
+                print 'confirma'
+            elif c == 'E':
+                pass
+            elif c == 'G':
+                pass
+
+        if c >= '0' and c <= '9' or c == '.' or c == ',':
+            if self.editing:
+                #continua edicao
+                pass
+            else:
+                #entra modo edicao
+                self.editing = True
+                self.edt_num.setHtml('oi')
+            print 'numero'
+            self._showNuns()
+
+    def _showNuns(self):
+        txt = '''<html><head><style type="text/css">
+p {margin: 0px 0px; -qt-block-indent:0; text-indent:0px; white-space: pre-wrap; text-align: right;}
+body {font-family:'MS Shell Dlg 2'; font-size:9pt; font-weight:400; font-style:normal;}
+</style></head><body>'''
+
+        for n in self.nuns:
+            txt += '<p align="right">{}</p>'.format('nhaaa')   #<span style=" color:#ff0000;">asdqweqweasd</span>
+
+            self.edt_num.setHtml(txt+'</body></html>')
 
     def _on_btn_angle__clicked(self):
         print '_on_btn_angle__clicked'
@@ -77,12 +122,11 @@ class MyApplication(QtGui.QMainWindow, Ui_MainWindow, SmartSide):
     def _when_funcoes__clicked(self):
         print self.sender().objectName()
 
-    def _on_actionTeste__triggered(self):
-        print 'foi'
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     window = MyApplication()
+    setAsApplication('techin.xcalcs.'+__version__)
     window.show()
-    window.print_all_signals()
+    #window.print_all_signals()
     sys.exit(app.exec_())
