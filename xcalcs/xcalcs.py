@@ -99,7 +99,7 @@ body {font-family:'MS Shell Dlg 2'; font-size:9pt; font-weight:400; font-style:n
 </style></head><body>'''
 
         for n in self.nuns:
-            txt += '<p align="right">{}</p>'.format('nhaaa')
+            txt += '<p align="right">{}</p>'.format('nhaaa')   #<span style=" color:#ff0000;">asdqweqweasd</span>
 
             self.edt_num.setHtml(txt+'</body></html>')
 
