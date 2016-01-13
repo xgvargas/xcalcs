@@ -27,6 +27,8 @@ class MyApplication(QtGui.QWidget, Ui_Form, smartsignal.SmartSignal):
         #self.restoreState(self.cfg.value('state'))
         #print 'lendo bunda:',self.cfg.value('bunda', type=int)
 
+        self._display_bottom()
+
         self.editing = None
         self.nuns = [0]*32
 
@@ -88,7 +90,6 @@ class MyApplication(QtGui.QWidget, Ui_Form, smartsignal.SmartSignal):
             else:
                 #entra modo edicao
                 self.editing = True
-                self.edt_num.setHtml('oi')
             print 'numero'
             self._showNuns()
 
@@ -103,6 +104,12 @@ body {font-family:'MS Shell Dlg 2'; font-size:9pt; font-weight:400; font-style:n
 
             self.edt_num.setHtml(txt+'</body></html>')
 
+            self._display_bottom()
+
+    def _display_bottom(self):
+            b = self.scr_display.verticalScrollBar()
+            b.setValue(b.maximum())
+
     def _on_btn_angle__clicked(self):
         print '_on_btn_angle__clicked'
 
@@ -110,10 +117,13 @@ body {font-family:'MS Shell Dlg 2'; font-size:9pt; font-weight:400; font-style:n
         print '_on_btn_format__clicked'
 
     def _on_btn_coord__clicked(self):
-        print '_on_btn_coord__clicked', self.sender().isDown(), self.sender().isChecked()
+        print '_on_btn_coord__clicked'
+
+    def _on_btn_solver__toggled(self):
+        print '_on_btn_solver__toggled', self.sender().isDown(), self.sender().isChecked()
 
     def _on_btn_conv__toggled(self):
-        print '_on_btn_conv__toggle', self.sender().isDown(), self.sender().isChecked()
+        print '_on_btn_conv__toggled', self.sender().isDown(), self.sender().isChecked()
 
     def _on_btn_base__toggled(self):
         print '_on_btn_base__toggled', self.sender().isDown(), self.sender().isChecked()
