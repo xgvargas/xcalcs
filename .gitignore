@@ -5,3 +5,4 @@ build
 xcalcs/ui/*.png
 *_ui.py
 *_rc.py
+/venv

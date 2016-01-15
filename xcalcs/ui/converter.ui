@@ -40,6 +40,9 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="maxVisibleItems">
+        <number>15</number>
+       </property>
        <item>
         <property name="text">
          <string>Ângulo</string>
@@ -109,7 +112,7 @@
      <item>
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>TextLabel</string>
+        <string notr="true">TextLabel</string>
        </property>
       </widget>
      </item>
@@ -129,7 +132,7 @@
         <string notr="true">background-color: rgb(255, 85, 255);</string>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string notr="true">TextLabel</string>
        </property>
       </widget>
      </item>
