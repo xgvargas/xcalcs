@@ -14,27 +14,28 @@ variables = {}
 #     | |___|  __/>  <  __/ |
 #     \_____/\___/_/\_\___|_|
 #
-# multiplier = {'T': 1e12, 'G': 1e9, 'M': 1e6, 'k': 1e3, 'm': 1e-3, 'u': 1e-6, 'n': 1e-9, 'p': 1e-12}
+multiplier = {'T': 1e12, 'G': 1e9, 'M': 1e6, 'k': 1e3, 'm': 1e-3, 'u': 1e-6, 'n': 1e-9, 'p': 1e-12, 'f': 1e-15}
+constants = {'PI': math.pi, 'E': math.e, 'C': 300e8}
 
-# literals = ['\n']
+class VariableError(Exception): pass
+class LexError(Exception): pass
+class ConstantError(Exception): pass
+class GrammarError(Exception): pass
 
 reserved = {
-    'sin': 'SIN',
-    'cos': 'COS',
-    'tan': 'TAN',
-    'asin': 'ASIN',
-    'acos': 'ACOS',
-    'atan': 'ATAN',
+    'sin': 'SIN', 'cos': 'COS', 'tan': 'TAN',
+    'asin': 'ASIN', 'acos': 'ACOS', 'atan': 'ATAN',
     'sqr': 'SQR',
-    'rad': 'RAD',
-    'deg': 'DEG',
+    'rad': 'RAD', 'deg': 'DEG',
+    'log': 'LOG', 'ln': 'LN',
     }
-tokens = ['ASSIGN', 'NUMBER', #'MULTIPLIER',
+tokens = ['ASSIGN', 'NUMBER',
     'PLUS', 'MINUS', 'TIMES', 'DIVIDE',
     'LPAREN', 'RPAREN',
     'POWER',
-    'ESCAPE', 'FILTER', 'EOL',
-    'ID'
+    # 'ESCAPE',
+    'FILTER', 'EOL',
+    'ID', 'CONST',
     ]+list(reserved.values())
 
 t_ignore     = " \t"
@@ -46,9 +47,9 @@ t_LPAREN     = r'\('
 t_RPAREN     = r'\)'
 t_POWER      = r'\^'
 t_ASSIGN     = r'='
-t_ESCAPE     = r'!'
+# t_ESCAPE     = r'!'
 t_FILTER     = r'\|'
-# t_MULTIPLIER = r'T|G|M|k|m|u|n|p'
+t_CONST      = r'[A-Z]+'
 
 def t_EOL(t):
     r'\n'
@@ -56,23 +57,25 @@ def t_EOL(t):
     return t
 
 def t_ID(t):
-    r'[a-z]+'
+    r'[a-z][a-z0-9]+'
     t.type = reserved.get(t.value, 'ID')
     return t
 
 def t_NUMBER(t):
-    r'(?:\d+(?:[.,]\d+)?)|(?:[.,]\d+)'
+    r'(?:(?:\d+(?:[.,]\d+)?)|(?:[.,]\d+))(?:(?:[Ee][+-]?\d+)|T|G|M|k|m|u|n|p|f)?'
     try:
         # TODO fazer aceitar virgula
-        t.value = float(t.value)
+        if t.value[-1] in multiplier.keys():
+            t.value = float(t.value[:-1])*multiplier[t.value[-1]]
+        else:
+            t.value = float(t.value)
     except ValueError:
         print("Integer value too large %d", t.value)
         t.value = 0
     return t
 
 def t_error(t):
-    print("Illegal character '%s'" % t.value[0])
-    t.lexer.skip(1)
+    raise LexError(t)
 
 
 #     ______
@@ -89,10 +92,10 @@ precedence = (
     ('right', 'SIN', 'COS', 'TAN', 'ASIN', 'ACOS', 'ATAN'),
     ('right', 'DEG', 'RAD'),
     ('left', 'TIMES', 'DIVIDE'),
-    ('left', 'SQR'),
+    # ('left', 'SQR'),
     ('left', 'POWER'),
     ('right', 'UMINUS', 'FILTER'),
-    ('nonassoc', 'ESCAPE'),
+    # ('nonassoc', 'ESCAPE'),
     )
 
 def p_result(p):
@@ -172,16 +175,24 @@ def p_val_square(p):
     p[0] = math.sqrt(p[2])
 
 def p_val_square_ex(p):
-    '''value : FILTER value SQR value'''
-    p[0] = math.pow(p[4], 1./p[2])
+    '''value : SQR value value'''
+    p[0] = math.pow(p[3], 1./p[2])
+
+def p_val_ln(p):
+    'value : LN value'
+    p[0] = math.log(p[2])
+
+def p_val_log(p):
+    'value : LOG value'
+    p[0] = math.log10(p[2])
+
+def p_val_log_ex(p):
+    'value : LOG value value'
+    p[0] = math.log(p[3], p[2])
 
 def p_val_group(p):
     'value : LPAREN value RPAREN'
     p[0] = p[2]
-
-# def p_val_number_multi(p):
-#     'value : NUMBER ID'
-#     p[0] = p[1]*multiplier[p[2]]
 
 def p_val_number(p):
     'value : NUMBER'
@@ -190,23 +201,18 @@ def p_val_number(p):
 def p_variable(p):
     'value : ID'
     p[0] = variables.get(p[1], 0)
+    # TODO avisar se nao existir
 
-def p_scaped(p):
-    'value : ESCAPE ID'
-    p[0] = 0
-    if p[2] == 'pi': p[0] = math.pi
-    if p[2] == 'e': p[0] = math.e
+def p_constant(p):
+    'value : CONST'
+    if p[1] in constants:
+        p[0] = constants[p[1]]
+    else:
+        raise ConstantError(p[1])
 
 def p_error(p):
-    # if p is not None:
-    #     print(p.lineno)
-    # p.lineno(1)        # Line number of the left expression
-    # p.lineno(2)        # line number of the PLUS operator
-    # p.lineno(3)        # line number of the right expression
-    # ...
-    # start,end = p.linespan(3)    # Start,end lines of the right expression
-    # starti,endi = p.lexspan(3)
-    print("Syntax line %d, at '%s'" % (p.lineno, p.value))
+    # print("Syntax line %d, at '%s'" % (p.lineno, p.value))
+    raise GrammarError(p)
 
 # def p_error(p):
 #     global flag_for_error
@@ -228,7 +234,7 @@ def p_error(p):
 #                  | |
 #                  |_|
 optimized = False
-debug = False
+debug = True
 
 lexer = lex.lex(lextab='solver_lex', optimize=optimized, debug=debug)
 parser = yacc.yacc(tabmodule='solver_tab', optimize=optimized, debug=debug)
@@ -268,7 +274,7 @@ if __name__ == '__main__':
             pass
 
         def default(self, line):
-            print('>>>> ', parser.parse(line, debug=debug))
+            print('>>>> ', parser.parse(line+'\n', debug=debug))
 
     mt = MeuTeste()
     mt.cmdloop()
