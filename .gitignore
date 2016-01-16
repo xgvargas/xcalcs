@@ -7,3 +7,6 @@ xcalcs/ui/*.png
 *_rc.py
 /venv
 /xcalcs/i18n/*.qm
+/xcalcs/parser.out
+/xcalcs/*_lex.py
+/xcalcs/*_tab.py

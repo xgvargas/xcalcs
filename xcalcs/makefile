@@ -67,5 +67,4 @@ dist:
 	"$(ProgramFilesX86)\Inno Setup 5\ISCC.exe" setup.iss
 
 update:
-	-md i18n
-	$(LUP) -verbose -noobsolete $(wildcard *.pro)
+	$(LUP) -verbose -noobsolete $(wildcard i18n/*.pro)
