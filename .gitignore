@@ -2,11 +2,11 @@ dist
 build
 *.py[co]
 *.egg-info
-xcalcs/ui/*.png
+/ui/*.png
 *_ui.py
 *_rc.py
 /venv
-/xcalcs/i18n/*.qm
-/xcalcs/parser.out
-/xcalcs/*_lex.py
-/xcalcs/*_tab.py
+/i18n/*.qm
+/parser.out
+/*_lex.py
+/*_tab.py
