@@ -64,11 +64,11 @@ def t_ID(t):
 def t_NUMBER(t):
     r'(?:(?:\d+(?:[.,]\d+)?)|(?:[.,]\d+))(?:(?:[Ee][+-]?\d+)|T|G|M|k|m|u|n|p|f)?'
     try:
-        # TODO fazer aceitar virgula
-        if t.value[-1] in multiplier.keys():
-            t.value = float(t.value[:-1])*multiplier[t.value[-1]]
+        v = t.value.translate({ord(','): '.'})
+        if v[-1] in multiplier.keys():
+            t.value = float(v[:-1])*multiplier[v[-1]]
         else:
-            t.value = float(t.value)
+            t.value = float(v)
     except ValueError:
         print("Integer value too large %d", t.value)
         t.value = 0

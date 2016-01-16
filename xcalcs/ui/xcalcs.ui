@@ -409,6 +409,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Root square of X in Y base</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -443,6 +446,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="toolTip">
+          <string>X times Y</string>
          </property>
          <property name="text">
           <string/>
@@ -479,6 +485,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Tangent of X</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -513,6 +522,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="toolTip">
+          <string>Negate X</string>
          </property>
          <property name="text">
           <string/>
@@ -549,6 +561,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Rise 10 to X power</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -583,6 +598,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="toolTip">
+          <string>Arc-Sine of X</string>
          </property>
          <property name="text">
           <string/>
@@ -619,6 +637,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Logarithyn of X in base 'e'</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -653,6 +674,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="toolTip">
+          <string>Arc-tangent of X</string>
          </property>
          <property name="text">
           <string/>
@@ -689,6 +713,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Cossene of X</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -723,6 +750,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="toolTip">
+          <string>Cunjugate of X</string>
          </property>
          <property name="text">
           <string/>
@@ -759,6 +789,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Root square of X</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -793,6 +826,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="toolTip">
+          <string>Logarithyn of X in base 2</string>
          </property>
          <property name="text">
           <string/>
@@ -829,6 +865,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Invert X (1/X)</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -863,6 +902,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="toolTip">
+          <string>Break comples into real (Y) and imaginary (X) parts</string>
          </property>
          <property name="text">
           <string/>
@@ -899,6 +941,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Rise X to power 2</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -933,6 +978,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="toolTip">
+          <string>Divide Y by X</string>
          </property>
          <property name="text">
           <string/>
@@ -969,6 +1017,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Merge X and Y into comples number. (Y+iX)</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -1003,6 +1054,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="toolTip">
+          <string>Subtract X from Y</string>
          </property>
          <property name="text">
           <string/>
@@ -1039,6 +1093,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Swap X and Y values</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -1073,6 +1130,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="toolTip">
+          <string>Rise Y to power X</string>
          </property>
          <property name="text">
           <string/>
@@ -1109,6 +1169,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Sine of X</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -1143,6 +1206,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="toolTip">
+          <string>Logarithyn of X in base 10</string>
          </property>
          <property name="text">
           <string/>
@@ -1179,6 +1245,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Rise 'e' to X power</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -1213,6 +1282,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="toolTip">
+          <string>Arc-Cossene of X</string>
          </property>
          <property name="text">
           <string/>
@@ -1251,6 +1323,9 @@ p, li { white-space: pre-wrap; }
          </property>
          <property name="contextMenuPolicy">
           <enum>Qt::DefaultContextMenu</enum>
+         </property>
+         <property name="toolTip">
+          <string>Add X to Y</string>
          </property>
          <property name="text">
           <string/>

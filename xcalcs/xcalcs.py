@@ -133,7 +133,8 @@ body {font-family:'Courier New'; font-size:9pt; font-weight:400; font-style:norm
 if __name__ == "__main__":
 
     translator = QtCore.QTranslator()
-    translator.load('i18n/pt_BR')
+    l = QtCore.QLocale.system().uiLanguages()[0].translate({ord('-'): '_'})
+    translator.load('i18n/'+l)
     app = QtGui.QApplication(sys.argv)
     app.installTranslator(translator)
     window = XCalcsApp()

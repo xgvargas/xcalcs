@@ -21,6 +21,13 @@
     <number>3</number>
    </property>
    <item>
+    <widget class="QLabel" name="lbl_error">
+     <property name="text">
+      <string notr="true">TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QSplitter" name="splitter">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -72,13 +79,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="lbl_error">
-     <property name="text">
-      <string notr="true">TextLabel</string>
-     </property>
     </widget>
    </item>
   </layout>

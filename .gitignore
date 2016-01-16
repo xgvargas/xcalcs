@@ -6,3 +6,4 @@ xcalcs/ui/*.png
 *_ui.py
 *_rc.py
 /venv
+/xcalcs/i18n/*.qm
