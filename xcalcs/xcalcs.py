@@ -8,6 +8,7 @@ import sys
 from xcalcs_ui import *
 import smartside.signal as smartsignal
 from smartside import setAsApplication
+from console import ConsoleForm
 
 
 __author__ = 'Gustavo Vargas <xgvargas@gmail.com>'
@@ -117,7 +118,12 @@ body {font-family:'Courier New'; font-size:9pt; font-weight:400; font-style:norm
         print('_on_btn_coord__clicked')
 
     def _on_btn_solver__toggled(self):
-        print('_on_btn_solver__toggled', self.sender().isDown(), self.sender().isChecked())
+        if self.sender().isChecked():
+            self.console = ConsoleForm()
+            self.console.show()
+        else:
+            self.console.hide()
+            self.console.destroy()
 
     def _on_btn_conv__toggled(self):
         print('_on_btn_conv__toggled', self.sender().isDown(), self.sender().isChecked())

@@ -4,7 +4,6 @@ import ply.lex as lex
 import ply.yacc as yacc
 import math
 
-
 variables = {}
 
 #      _
@@ -57,7 +56,7 @@ def t_EOL(t):
     return t
 
 def t_ID(t):
-    r'[a-z][a-z0-9]+'
+    r'[a-z][a-z0-9]*'
     t.type = reserved.get(t.value, 'ID')
     return t
 
@@ -208,7 +207,7 @@ def p_constant(p):
     if p[1] in constants:
         p[0] = constants[p[1]]
     else:
-        raise ConstantError(p[1])
+        raise ConstantError( (p[1], p.lexer.lineno) )
 
 def p_error(p):
     # print("Syntax line %d, at '%s'" % (p.lineno, p.value))
@@ -233,11 +232,12 @@ def p_error(p):
 #     \_| |_/\___|_| .__/ \___|_|
 #                  | |
 #                  |_|
-optimized = False
-debug = True
+optimized = True
+debug = False
 
 lexer = lex.lex(lextab='solver_lex', optimize=optimized, debug=debug)
 parser = yacc.yacc(tabmodule='solver_tab', optimize=optimized, debug=debug)
+
 
 def solve(text):
     global variables

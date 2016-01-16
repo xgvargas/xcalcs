@@ -1,19 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="pt_BR">
 <context>
+    <name></name>
+    <message>
+        <location filename="console.py" line="55"/>
+        <source>Undefined variable {}</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="console.py" line="59"/>
+        <source>Unknown character {} at line {:d}</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="console.py" line="63"/>
+        <source>Undefined constant {} in line {:d}</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="console.py" line="66"/>
+        <source>Syntax error at line {:d}</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="console.py" line="69"/>
+        <source>Unknown error!!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>XCalcsApp</name>
     <message>
-        <location filename="xcalcs.py" line="67"/>
+        <location filename="xcalcs.py" line="68"/>
         <source>Clean all</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="xcalcs.py" line="69"/>
+        <location filename="xcalcs.py" line="70"/>
         <source>apaga uma linha</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="xcalcs.py" line="71"/>
+        <location filename="xcalcs.py" line="72"/>
         <source>duplica</source>
         <translation type="unfinished"></translation>
     </message>
@@ -23,6 +51,14 @@
     <message>
         <location filename="ui/bases.ui" line="14"/>
         <source>Bases</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>form_console</name>
+    <message>
+        <location filename="ui/console.ui" line="14"/>
+        <source>Solver</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -124,135 +160,127 @@
     <message>
         <location filename="ui/xcalcs.ui" line="413"/>
         <source>Root square of X in Y base</source>
-        <translation type="unfinished"></translation>
+        <translation>Raiz X de Y</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="451"/>
         <source>X times Y</source>
-        <translation type="unfinished"></translation>
+        <translation>X vezes Y</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="489"/>
         <source>Tangent of X</source>
-        <translation type="unfinished"></translation>
+        <translation>Tangente de X</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="527"/>
         <source>Negate X</source>
-        <translation type="unfinished"></translation>
+        <translation>Negativo de X</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="565"/>
         <source>Rise 10 to X power</source>
-        <translation type="unfinished"></translation>
+        <translation>10 elevado a X</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="603"/>
         <source>Arc-Sine of X</source>
-        <translation type="unfinished"></translation>
+        <translation>Arco-seno de X</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="641"/>
         <source>Logarithyn of X in base &apos;e&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Logarítimo natural de X</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="679"/>
         <source>Arc-tangent of X</source>
-        <translation type="unfinished"></translation>
+        <translation>Arco-tangente de X</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="717"/>
         <source>Cossene of X</source>
-        <translation type="unfinished"></translation>
+        <translation>Coseno de X</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="755"/>
         <source>Cunjugate of X</source>
-        <translation type="unfinished"></translation>
+        <translation>Conjugado de X</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="793"/>
         <source>Root square of X</source>
-        <translation type="unfinished"></translation>
+        <translation>Raiz quadrada de X</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="831"/>
         <source>Logarithyn of X in base 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Logarítimo de X na base 2</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="869"/>
         <source>Invert X (1/X)</source>
-        <translation type="unfinished"></translation>
+        <translation>Inverso de X</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="907"/>
         <source>Break comples into real (Y) and imaginary (X) parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Quabra valor complexo na partes real (X) e imaginária (X)</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="945"/>
         <source>Rise X to power 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Quadrado de X</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="983"/>
         <source>Divide Y by X</source>
-        <translation type="unfinished"></translation>
+        <translation>Y dividido por X</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="1021"/>
         <source>Merge X and Y into comples number. (Y+iX)</source>
-        <translation type="unfinished"></translation>
+        <translation>Une X e Y num valor complexo (Y+iX)</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="1059"/>
         <source>Subtract X from Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Y menos X</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="1097"/>
         <source>Swap X and Y values</source>
-        <translation type="unfinished"></translation>
+        <translation>Inverte valor de X e Y na pilha</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="1135"/>
         <source>Rise Y to power X</source>
-        <translation type="unfinished"></translation>
+        <translation>Y elevado a X</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="1173"/>
         <source>Sine of X</source>
-        <translation type="unfinished"></translation>
+        <translation>Seno de X</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="1211"/>
         <source>Logarithyn of X in base 10</source>
-        <translation type="unfinished"></translation>
+        <translation>Logarítimo de X na base 10</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="1249"/>
         <source>Rise &apos;e&apos; to X power</source>
-        <translation type="unfinished"></translation>
+        <translation>e elevado a X</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="1287"/>
         <source>Arc-Cossene of X</source>
-        <translation type="unfinished"></translation>
+        <translation>Arco-coseno de X</translation>
     </message>
     <message>
         <location filename="ui/xcalcs.ui" line="1328"/>
         <source>Add X to Y</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>form_solver</name>
-    <message>
-        <location filename="ui/solver.ui" line="14"/>
-        <source>Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>X mais Y</translation>
     </message>
 </context>
 </TS>

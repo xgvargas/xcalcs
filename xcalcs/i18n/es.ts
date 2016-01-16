@@ -1,19 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1">
 <context>
+    <name></name>
+    <message>
+        <location filename="console.py" line="55"/>
+        <source>Undefined variable {}</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="console.py" line="59"/>
+        <source>Unknown character {} at line {:d}</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="console.py" line="63"/>
+        <source>Undefined constant {} in line {:d}</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="console.py" line="66"/>
+        <source>Syntax error at line {:d}</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="console.py" line="69"/>
+        <source>Unknown error!!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>XCalcsApp</name>
     <message>
-        <location filename="xcalcs.py" line="67"/>
+        <location filename="xcalcs.py" line="68"/>
         <source>Clean all</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="xcalcs.py" line="69"/>
+        <location filename="xcalcs.py" line="70"/>
         <source>apaga uma linha</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="xcalcs.py" line="71"/>
+        <location filename="xcalcs.py" line="72"/>
         <source>duplica</source>
         <translation type="unfinished"></translation>
     </message>
@@ -23,6 +51,14 @@
     <message>
         <location filename="ui/bases.ui" line="14"/>
         <source>Bases</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>form_console</name>
+    <message>
+        <location filename="ui/console.ui" line="14"/>
+        <source>Solver</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -244,14 +280,6 @@
     <message>
         <location filename="ui/xcalcs.ui" line="1328"/>
         <source>Add X to Y</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>form_solver</name>
-    <message>
-        <location filename="ui/solver.ui" line="14"/>
-        <source>Solver</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -54,6 +54,7 @@ clean:
 	-rd /s /q __pycache__
 	-$(NIX)\cat ui/*.extracted | $(NIX)\xargs $(NIX)\rm.exe
 	del ui\*.extracted
+	del i18n\*.qm
 
 .PHONY: images dist update
 
@@ -66,4 +67,5 @@ dist:
 	"$(ProgramFilesX86)\Inno Setup 5\ISCC.exe" setup.iss
 
 update:
+	-md i18n
 	$(LUP) -verbose -noobsolete $(wildcard *.pro)
