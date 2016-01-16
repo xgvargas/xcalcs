@@ -4,8 +4,6 @@
 """
 """
 
-# from PySide.QtGui import *
-# from PySide.QtCore import *
 import sys
 from xcalcs_ui import *
 import smartside.signal as smartsignal
@@ -17,9 +15,9 @@ __version_info__ = ('0', '1', '0')
 __version__ = '.'.join(__version_info__)
 
 
-class MyApplication(QtGui.QWidget, Ui_Form, smartsignal.SmartSignal):
+class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
     def __init__(self, parent=None):
-        super(MyApplication, self).__init__(parent)
+        super(XCalcsApp, self).__init__(parent)
         self.setupUi(self)
         self.auto_connect()
         # self.cfg = QSettings('oi', 'carcamano')
@@ -66,11 +64,11 @@ class MyApplication(QtGui.QWidget, Ui_Form, smartsignal.SmartSignal):
 
         if not self.editing:
             if e.key() == QtCore.Qt.Key_Escape:
-                print('limpa tudo')
+                print(self.tr('Clean all'))
             elif e.key() == QtCore.Qt.Key_Backspace:
-                print('apaga uma linha')
+                print(self.tr('apaga uma linha'))
             elif e.key() == QtCore.Qt.Key_Enter or e.key() == QtCore.Qt.Key_Return:
-                print('duplica')
+                print(self.tr('duplica'))
         else:
             if e.key() == QtCore.Qt.Key_Escape:
                 print('para edit')
@@ -133,8 +131,12 @@ body {font-family:'Courier New'; font-size:9pt; font-weight:400; font-style:norm
 
 
 if __name__ == "__main__":
+
+    translator = QtCore.QTranslator()
+    translator.load('i18n/pt_BR')
     app = QtGui.QApplication(sys.argv)
-    window = MyApplication()
+    app.installTranslator(translator)
+    window = XCalcsApp()
     setAsApplication('techin.xcalcs.'+__version__)
     window.show()
     #window.print_all_signals()

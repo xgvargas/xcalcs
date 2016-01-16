@@ -6,10 +6,14 @@
 
 
 # UIC = c:\Python27\scripts\pyside-uic
-UIC = $(VIRTUAL_ENV)\Scripts\pyside-uic
-
 # RCC = c:\Python27\Lib\site-packages\PySide\pyside-rcc
+# LUP = c:\Python27\Lib\site-packages\PySide\lupdate
+# LRL = c:\Python27\Lib\site-packages\PySide\lrelease
+
+UIC = $(VIRTUAL_ENV)\Scripts\pyside-uic
 RCC = $(VIRTUAL_ENV)\Lib\site-packages\PySide\pyside-rcc -py3
+LUP = $(VIRTUAL_ENV)\Lib\site-packages\PySide\pyside-lupdate
+LRL = $(VIRTUAL_ENV)\Lib\site-packages\PySide\lrelease
 
 NIX = $(ProgramFilesX86)\git\bin
 
@@ -23,10 +27,11 @@ RESOURCE_FILES = $(patsubst ui/%.qrc, %_rc.py, $(wildcard ui/*.qrc))
 
 IMAGE_FILES = $(patsubst ui/%.svg, ui/%.extracted, $(wildcard ui/*.svg))
 
+TRANSLATION_FILES = $(patsubst i18n/%.ts, i18n/%.qm, $(wildcard i18n/*.ts))
+
 default: compile
 
-compile: $(UI_FILES) $(RESOURCE_FILES)
-
+compile: $(UI_FILES) $(RESOURCE_FILES) $(TRANSLATION_FILES)
 
 .SECONDARY: $(IMAGE_FILES)
 
@@ -39,6 +44,9 @@ compile: $(UI_FILES) $(RESOURCE_FILES)
 %_ui.py : %.ui
 	$(UIC) -o $@ $<
 
+%.qm : %.ts
+	$(LRL) $< -qm $@
+
 clean:
 	del *_ui.py
 	del *_rc.py
@@ -47,7 +55,7 @@ clean:
 	-$(NIX)\cat ui/*.extracted | $(NIX)\xargs $(NIX)\rm.exe
 	del ui\*.extracted
 
-.PHONY: images dist
+.PHONY: images dist update
 
 images: $(IMAGE_FILES)
 
@@ -56,3 +64,6 @@ dist:
 	python setup-cx.py build
 #	python setup-cx.py bdist_msi
 	"$(ProgramFilesX86)\Inno Setup 5\ISCC.exe" setup.iss
+
+update:
+	$(LUP) -verbose -noobsolete $(wildcard *.pro)

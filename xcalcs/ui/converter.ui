@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>form_converter</class>
+ <widget class="QWidget" name="form_converter">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -28,7 +28,7 @@
      <item>
       <widget class="QLabel" name="label_3">
        <property name="text">
-        <string>Grandeza:</string>
+        <string>Quantity:</string>
        </property>
       </widget>
      </item>
@@ -45,47 +45,47 @@
        </property>
        <item>
         <property name="text">
-         <string>Ângulo</string>
+         <string>Angle</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Área</string>
+         <string>Area</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Dimensão</string>
+         <string>Dimension</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Energia</string>
+         <string>Energy</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Massa</string>
+         <string>Mass</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Potência</string>
+         <string>Power</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Pressão</string>
+         <string>Speed</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Temperatura</string>
+         <string>Pressure</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Velocidade</string>
+         <string>Temperature</string>
         </property>
        </item>
        <item>
@@ -119,10 +119,10 @@
      <item>
       <widget class="QToolButton" name="toolButton">
        <property name="toolTip">
-        <string>Inverter</string>
+        <string>Invert units</string>
        </property>
        <property name="text">
-        <string>...</string>
+        <string notr="true">...</string>
        </property>
       </widget>
      </item>
