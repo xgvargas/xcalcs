@@ -71,9 +71,15 @@ body {font-family:'Courier New'; font-size:14pt; font-weight:400; font-style:nor
         self.edt_equations.setHtml('')
 
     def _on_btn_copy__clicked(self):
-        r = self.edt_results.toPlainText()
-        e = self.edt_equations.toPlainText()
-        print(r, e)
+        r = self.edt_results.toPlainText().split('\n')
+        e = self.edt_equations.toPlainText().split('\n')
+        t = ''
+        for i, l in enumerate(e):
+            rr = r[i] if i < len(r) else ''
+            t+= '{: >16s} =: {}\n'.format(rr, l)
+
+        cb = QtGui.QApplication.clipboard()
+        cb.setText(t)
 
 if __name__ == "__main__":
 

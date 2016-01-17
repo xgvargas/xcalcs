@@ -4,13 +4,10 @@
 #define MyAppName "XcalcS"
 #define MyAppVersion "0.1"
 #define MyAppPublisher "gvTech"
-#define MyAppURL "http://www.example.com/"
+#define MyAppURL "http://www.gvtech.xyz/"
 #define MyAppExeName "xcalcs.exe"
 
 [Setup]
-; NOTE: The value of AppId uniquely identifies this application.
-; Do not use the same AppId value in installers for other applications.
-; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{A6198042-E8B3-4031-909F-CDF751DBB631}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
@@ -20,9 +17,9 @@ AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={userpf}\{#MyAppName}
-DisableDirPage=yes
+DisableDirPage=auto
 DefaultGroupName={#MyAppName}
-OutputBaseFilename=XcalcS-setup
+OutputBaseFilename={#MyAppName}-{#MyAppVersion}-Setup
 Compression=lzma/ultra
 SolidCompression=yes
 ShowLanguageDialog=no
@@ -30,20 +27,21 @@ OutputDir=dist
 WizardImageFile=compiler:WizModernImage-IS.bmp
 WizardSmallImageFile=compiler:WizModernSmallImage-IS.bmp
 PrivilegesRequired=none
+AlwaysShowGroupOnReadyPage=True
+AlwaysShowDirOnReadyPage=True
 
 [Languages]
-Name: "english"; MessagesFile: "compiler:Default.isl"
-Name: "brazilianportuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
-Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
+Name: "en"; MessagesFile: "compiler:Default.isl"
+Name: "pt"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
+Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "D:\Projetos\xcalcs\dist\pack\xcalcs.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Projetos\xcalcs\dist\pack\python34.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Projetos\xcalcs\dist\pack\xcalcs-*\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-; NOTE: Don't use "Flags: ignoreversion" on any shared system files
+Source: "dist\pack\xcalcs.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "dist\pack\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\vcredist_x86-2010-python3.4.exe"; DestDir: "{tmp}"; DestName: "vcredist_x86.exe"; Flags: deleteafterinstall
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
@@ -52,7 +50,23 @@ Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
 Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Run]
-Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+; Filename: {tmp}\vcredist_x86.exe; Parameters: "/passive /Q:a /c:""msiexec /qb /i vcredist.msi"" "; StatusMsg: Installing 2010 RunTime...
+Filename: "{tmp}\vcredist_x86.exe"; Parameters: "/q /passive /Q:a /c:""msiexec /q /i vcredist.msi"""; StatusMsg: "Installing VC++ 2010 Redistributables..."
+Filename: "{app}\{#MyAppExeName}"; Flags: nowait postinstall skipifsilent; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"
 
 [INI]
-Filename: "a.ini"; Section: "cfg"; Key: "lingua"; String: "pt_BR"; Flags: createkeyifdoesntexist; Languages: brazilianportuguese
+Filename: "{app}\cfg.ini"; Section: "cfg"; Key: "language"; String: "pt_BR"; Languages: pt
+Filename: "{app}\cfg.ini"; Section: "cfg"; Key: "language"; String: "es"; Languages: es
+Filename: "{app}\cfg.ini"; Section: "cfg"; Key: "language"; String: "en"; Languages: en
+Filename: "{app}\cfg.ini"; Section: "cfg"; Key: "language2"; String: "{language}"
+
+; exemplo de como fazer associacoes
+; [Setup]
+; ChangesAssociations = yes
+; [Tasks]
+; Name: mypAssociation; Description: "Associate "".mpl"" extension"; GroupDescription: File extensions:
+; [Registry]
+; Root: HKCR; Subkey: ".mpl";                             ValueData: "{#MyAppName}";          Flags: uninsdeletevalue; ValueType: string;  ValueName: ""; Tasks: mypAssociation
+; Root: HKCR; Subkey: "{#MyAppName}";                     ValueData: "Program {#MyAppName}";  Flags: uninsdeletekey;   ValueType: string;  ValueName: ""; Tasks: mypAssociation
+; Root: HKCR; Subkey: "{#AppName}\DefaultIcon";           ValueData: "{app}\{#MyAppExeName},0";               ValueType: string;  ValueName: ""; Tasks: mypAssociation
+; Root: HKCR; Subkey: "{#AppName}\shell\open\command";    ValueData: """{app}\{#MyAppExeName}.EXE"" ""%1""";  ValueType: string;  ValueName: ""; Tasks: mypAssociation
