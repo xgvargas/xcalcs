@@ -19,7 +19,7 @@ AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
-DefaultDirName={pf}\{#MyAppName}
+DefaultDirName={userpf}\{#MyAppName}
 DisableDirPage=yes
 DefaultGroupName={#MyAppName}
 OutputBaseFilename=XcalcS-setup
@@ -42,7 +42,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 [Files]
 Source: "D:\Projetos\xcalcs\dist\pack\xcalcs.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "D:\Projetos\xcalcs\dist\pack\python34.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Projetos\xcalcs\dist\pack\xcalcs-0.1.0.win32\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "D:\Projetos\xcalcs\dist\pack\xcalcs-*\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

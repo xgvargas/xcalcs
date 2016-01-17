@@ -3,27 +3,27 @@
 <context>
     <name></name>
     <message>
-        <location filename="../console.py" line="55"/>
+        <location filename="../console.py" line="56"/>
         <source>Undefined variable {}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../console.py" line="62"/>
+        <location filename="../console.py" line="63"/>
         <source>Undefined constant {} in line {:d}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../console.py" line="65"/>
+        <location filename="../console.py" line="66"/>
         <source>Syntax error at line {:d}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../console.py" line="68"/>
+        <location filename="../console.py" line="69"/>
         <source>Unknown error!!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../console.py" line="59"/>
+        <location filename="../console.py" line="60"/>
         <source>Unknown character &quot;{}&quot; at line {:d}</source>
         <translation type="unfinished"></translation>
     </message>
@@ -59,6 +59,16 @@
     <message>
         <location filename="../ui/console.ui" line="14"/>
         <source>Solver</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/console.ui" line="34"/>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/console.ui" line="41"/>
+        <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

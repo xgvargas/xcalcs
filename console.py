@@ -24,14 +24,13 @@ class ConsoleForm(QtGui.QWidget, Ui_form_console, smartsignal.SmartSignal):
 
         self.auto_connect()
 
-        self.lbl_error.setVisible(False)
+        self.lbl_error.setText('')
 
     def _on_eq_scroll__valueChanged(self):
         self.edt_results.verticalScrollBar().setValue(self.eq_scroll.value())
 
     def show_error(self, text):
         self.lbl_error.setText(text)
-        self.lbl_error.setVisible(True)
         self.edt_results.clear()
 
     def _on_edt_equations__textChanged(self):
@@ -50,7 +49,7 @@ body {font-family:'Courier New'; font-size:14pt; font-weight:400; font-style:nor
 
             self.edt_results.setHtml(txt+'</body></html>')
             self.edt_results.verticalScrollBar().setValue(self.eq_scroll.value())
-            self.lbl_error.setVisible(False)
+            self.lbl_error.setText('')
 
         except solver.VariableError as e:
             self.show_error(self.tr('Undefined variable {}').format('AINDA NAO DEFINIDO!!'))
@@ -67,6 +66,14 @@ body {font-family:'Courier New'; font-size:14pt; font-weight:400; font-style:nor
 
         except:
             self.lbl_error.setText(self.tr('Unknown error!!'))
+
+    def _on_btn_clear__clicked(self):
+        self.edt_equations.setHtml('')
+
+    def _on_btn_copy__clicked(self):
+        r = self.edt_results.toPlainText()
+        e = self.edt_equations.toPlainText()
+        print(r, e)
 
 if __name__ == "__main__":
 

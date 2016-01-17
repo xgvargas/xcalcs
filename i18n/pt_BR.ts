@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="pt_BR">
+<!DOCTYPE TS><TS version="1.1" language="pt_BR">
 <context>
-    <name>ConsoleForm</name>
+    <name></name>
     <message>
-        <location filename="../console.py" line="55"/>
+        <location filename="../console.py" line="56"/>
         <source>Undefined variable {}</source>
-        <translation>Variável desconhecida {}</translation>
+        <translation type="unfinished">Variável desconhecida {}</translation>
     </message>
     <message>
-        <location filename="../console.py" line="62"/>
-        <source>Undefined constant {} in line {:d}</source>
-        <translation>Constânte {} desconhecida na inha {:d}</translation>
-    </message>
-    <message>
-        <location filename="../console.py" line="65"/>
-        <source>Syntax error at line {:d}</source>
-        <translation>Erro de sintaxe na linha {:d}</translation>
-    </message>
-    <message>
-        <location filename="../console.py" line="68"/>
-        <source>Unknown error!!</source>
-        <translation>Erro desconhecido!</translation>
-    </message>
-    <message>
-        <location filename="../console.py" line="59"/>
+        <location filename="../console.py" line="60"/>
         <source>Unknown character &quot;{}&quot; at line {:d}</source>
-        <translation>Caractere &quot;{}&quot; desconhecido na linha {:d}</translation>
+        <translation type="unfinished">Caractere &quot;{}&quot; desconhecido na linha {:d}</translation>
+    </message>
+    <message>
+        <location filename="../console.py" line="63"/>
+        <source>Undefined constant {} in line {:d}</source>
+        <translation type="unfinished">Constânte {} desconhecida na inha {:d}</translation>
+    </message>
+    <message>
+        <location filename="../console.py" line="66"/>
+        <source>Syntax error at line {:d}</source>
+        <translation type="unfinished">Erro de sintaxe na linha {:d}</translation>
+    </message>
+    <message>
+        <location filename="../console.py" line="69"/>
+        <source>Unknown error!!</source>
+        <translation type="unfinished">Erro desconhecido!</translation>
     </message>
 </context>
 <context>
@@ -60,6 +59,16 @@
     <message>
         <location filename="../ui/console.ui" line="14"/>
         <source>Solver</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/console.ui" line="34"/>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/console.ui" line="41"/>
+        <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

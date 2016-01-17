@@ -50,6 +50,10 @@ t_ASSIGN     = r'='
 t_FILTER     = r'\|'
 t_CONST      = r'[A-Z]+'
 
+def t_comment(t):
+    r'\#[^\n]*'
+    pass
+
 def t_EOL(t):
     r'\n'
     t.lexer.lineno += t.value.count("\n")
