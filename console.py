@@ -32,6 +32,7 @@ class ConsoleForm(QtGui.QWidget, Ui_form_console, smartsignal.SmartSignal):
     def show_error(self, text):
         self.lbl_error.setText(text)
         self.lbl_error.setVisible(True)
+        self.edt_results.clear()
 
     def _on_edt_equations__textChanged(self):
         try:
@@ -56,7 +57,7 @@ body {font-family:'Courier New'; font-size:14pt; font-weight:400; font-style:nor
             print(e)
 
         except solver.LexError as e:
-            self.show_error(self.tr('Unknown character "{}" at line {:d}').format(e.args[0].value[1], e.args[0].lineno+1))
+            self.show_error(self.tr('Unknown character "{}" at line {:d}').format(e.args[0].value[0], e.args[0].lineno+1))
 
         except solver.ConstantError as e:
             self.show_error(self.tr('Undefined constant {} in line {:d}').format(e.args[0][0], e.args[0][1]))
