@@ -61,9 +61,11 @@ clean:
 images: $(IMAGE_FILES)
 
 dist:
-#	python setup-2exe.py
-	python setup-cx.py build
-#	python setup-cx.py bdist_msi
+	-rd /s /q dist
+#	echo $(ProgramFiles)
+#	echo $(ProgramFilesX86)
+	python setup.py bdist_esky
+	"c:\Program Files\7-Zip\7z.exe" x -odist\pack dist\*.zip
 	"$(ProgramFilesX86)\Inno Setup 5\ISCC.exe" setup.iss
 
 update:

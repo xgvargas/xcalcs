@@ -1,0 +1,7 @@
+cx-Freeze
+esky
+ply
+py2exe
+PyInstaller
+PySide
+smartside
