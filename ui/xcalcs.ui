@@ -6,24 +6,28 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>206</width>
-    <height>429</height>
+    <width>228</width>
+    <height>336</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>206</width>
+    <width>228</width>
     <height>0</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>206</width>
+    <width>228</width>
     <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>XCalcS</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="xcalcs.qrc">
+    <normaloff>:/icons/exeicon.ico</normaloff>:/icons/exeicon.ico</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -50,8 +54,8 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-253</y>
-        <width>187</width>
+        <y>0</y>
+        <width>209</width>
         <height>488</height>
        </rect>
       </property>
@@ -213,15 +217,9 @@ p, li { white-space: pre-wrap; }
    </item>
    <item>
     <widget class="QFrame" name="frame">
-     <property name="minimumSize">
-      <size>
-       <width>206</width>
-       <height>0</height>
-      </size>
-     </property>
      <property name="maximumSize">
       <size>
-       <width>206</width>
+       <width>228</width>
        <height>16777215</height>
       </size>
      </property>
@@ -258,6 +256,9 @@ p, li { white-space: pre-wrap; }
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="toolTip">
+         <string>Set angle mode: degress, radians </string>
+        </property>
         <property name="text">
          <string notr="true">Deg</string>
         </property>
@@ -270,6 +271,9 @@ p, li { white-space: pre-wrap; }
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>Set display mode: default, cientific, enginering</string>
         </property>
         <property name="text">
          <string notr="true">Eng</string>
@@ -284,6 +288,9 @@ p, li { white-space: pre-wrap; }
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="toolTip">
+         <string>Set coordinate mode: cartesian, polar</string>
+        </property>
         <property name="text">
          <string notr="true">Cart</string>
         </property>
@@ -293,58 +300,16 @@ p, li { white-space: pre-wrap; }
        <widget class="QPushButton" name="btn_solver">
         <property name="font">
          <font>
-          <pointsize>7</pointsize>
+          <pointsize>8</pointsize>
          </font>
         </property>
-        <property name="text">
-         <string notr="true">Solve</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="btn_conv">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>7</pointsize>
-         </font>
+        <property name="toolTip">
+         <string>Open equation solver</string>
         </property>
         <property name="text">
-         <string notr="true">Conv</string>
+         <string notr="true">Solver</string>
         </property>
         <property name="checkable">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="btn_base">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>7</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string notr="true">Base</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="flat">
          <bool>false</bool>
         </property>
        </widget>
@@ -354,30 +319,52 @@ p, li { white-space: pre-wrap; }
    </item>
    <item>
     <widget class="QTabWidget" name="tabWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="minimumSize">
       <size>
-       <width>206</width>
-       <height>227</height>
+       <width>228</width>
+       <height>205</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>206</width>
-       <height>227</height>
+       <width>228</width>
+       <height>205</height>
       </size>
      </property>
      <property name="focusPolicy">
       <enum>Qt::NoFocus</enum>
      </property>
      <property name="tabPosition">
-      <enum>QTabWidget::South</enum>
+      <enum>QTabWidget::East</enum>
      </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
+     <property name="iconSize">
+      <size>
+       <width>12</width>
+       <height>18</height>
+      </size>
+     </property>
+     <property name="usesScrollButtons">
+      <bool>false</bool>
+     </property>
      <widget class="QWidget" name="tab">
+      <attribute name="icon">
+       <iconset resource="xcalcs.qrc">
+        <normaloff>:/icons/basic.png</normaloff>:/icons/basic.png</iconset>
+      </attribute>
       <attribute name="title">
-       <string>Basic</string>
+       <string/>
+      </attribute>
+      <attribute name="toolTip">
+       <string>Basic Operations</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
        <property name="sizeConstraint">
@@ -1341,8 +1328,15 @@ p, li { white-space: pre-wrap; }
       </layout>
      </widget>
      <widget class="QWidget" name="tab_2">
+      <attribute name="icon">
+       <iconset resource="xcalcs.qrc">
+        <normaloff>:/icons/advanced.png</normaloff>:/icons/advanced.png</iconset>
+      </attribute>
       <attribute name="title">
-       <string>Advanced</string>
+       <string/>
+      </attribute>
+      <attribute name="toolTip">
+       <string>Advanced operations</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
        <property name="margin">
@@ -2184,8 +2178,352 @@ p, li { white-space: pre-wrap; }
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tab_5">
+     <widget class="QWidget" name="tab_3">
+      <attribute name="icon">
+       <iconset resource="xcalcs.qrc">
+        <normaloff>:/icons/converter.png</normaloff>:/icons/converter.png</iconset>
+      </attribute>
       <attribute name="title">
+       <string/>
+      </attribute>
+      <attribute name="toolTip">
+       <string>Unit converter</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="leftMargin">
+        <number>2</number>
+       </property>
+       <property name="topMargin">
+        <number>1</number>
+       </property>
+       <property name="rightMargin">
+        <number>2</number>
+       </property>
+       <property name="bottomMargin">
+        <number>5</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Quantity:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cmb_quantity">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maxVisibleItems">
+            <number>16</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>Angle</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Area</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Dimension</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Energy</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Force</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Mass</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Power</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Speed</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Pressure</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Temperature</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Volume</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QListWidget" name="list_from">
+           <property name="toolTip">
+            <string>From unit</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="list_to">
+           <property name="toolTip">
+            <string>To unit</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_invert_units">
+           <property name="toolTip">
+            <string>Invert to/from</string>
+           </property>
+           <property name="text">
+            <string>Invert</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <property name="leftMargin">
+          <number>8</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="lbl_converted">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 170, 127);</string>
+           </property>
+           <property name="text">
+            <string notr="true">TextLabel</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_copy_converted">
+           <property name="toolTip">
+            <string>Copy converted value to stack</string>
+           </property>
+           <property name="text">
+            <string>Stack</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="icon">
+       <iconset resource="xcalcs.qrc">
+        <normaloff>:/icons/base.png</normaloff>:/icons/base.png</iconset>
+      </attribute>
+      <attribute name="title">
+       <string/>
+      </attribute>
+      <attribute name="toolTip">
+       <string>Base converter</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>BIN</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="lineEdit"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>OCT</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="lineEdit_2"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>HEX</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="lineEdit_3"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>FLOAT</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>DOUBLE</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="lineEdit_4">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLineEdit" name="lineEdit_5">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QSlider" name="horizontalSlider">
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>64</number>
+           </property>
+           <property name="value">
+            <number>32</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string notr="true">32</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string notr="true">bits</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_5">
+      <attribute name="icon">
+       <iconset resource="xcalcs.qrc">
+        <normaloff>:/icons/about.png</normaloff>:/icons/about.png</iconset>
+      </attribute>
+      <attribute name="title">
+       <string/>
+      </attribute>
+      <attribute name="toolTip">
        <string>About...</string>
       </attribute>
       <widget class="QLabel" name="label">
@@ -2209,5 +2547,22 @@ p, li { white-space: pre-wrap; }
  <resources>
   <include location="xcalcs.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_10</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>125</x>
+     <y>345</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>162</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

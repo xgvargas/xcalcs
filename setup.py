@@ -4,8 +4,7 @@ from esky.bdist_esky import Executable
 from glob import glob
 
 
-# executables = [Executable('xcalcs.py', icon='spam.ico', gui_only=True)]
-executables = [Executable('xcalcs.py', gui_only=True)]
+executables = [Executable('xcalcs.py', icon='ui/exeicon.ico', gui_only=True)]
 
 setup(name='xcalcs',
         version='0.1.0',

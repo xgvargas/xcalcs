@@ -7,7 +7,7 @@
 import sys
 from xcalcs_ui import *
 import smartside.signal as smartsignal
-from smartside import setAsApplication
+from smartside import setAsApplication#, getBestTranslation
 from console import ConsoleForm
 
 
@@ -28,6 +28,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
         self._display_to_bottom()
 
+        self.console = None
         self.editing = None
         self.nuns = [0]*32
 
@@ -117,34 +118,58 @@ body {font-family:'Courier New'; font-size:9pt; font-weight:400; font-style:norm
     def _on_btn_coord__clicked(self):
         print('_on_btn_coord__clicked')
 
-    def _on_btn_solver__toggled(self):
-        if self.sender().isChecked():
+    def _on_btn_solver__clicked(self):
+        if not self.console:
             self.console = ConsoleForm()
-            self.console.show()
-        else:
-            self.console.hide()
-            self.console.destroy()
-
-    def _on_btn_conv__toggled(self):
-        print('_on_btn_conv__toggled', self.sender().isDown(), self.sender().isChecked())
-
-    def _on_btn_base__toggled(self):
-        print('_on_btn_base__toggled', self.sender().isDown(), self.sender().isChecked())
+        self.console.show()
 
     _funcoes = '`btn_f_.+`'
     def _when_funcoes__clicked(self):
         print(self.sender().objectName())
 
+from os import path
+def getBestTranslation(basedir, lang=None):
+    """
+    Find inside basedir the best translation available.
+
+    lang, if defined, should be a list of prefered languages.
+
+    It will look for file in the form:
+    - en-US.qm
+    - en_US.qm
+    - en.qm
+    """
+    if not lang:
+        lang = QtCore.QLocale.system().uiLanguages()
+
+    for l in lang:
+
+        l = l.translate({ord('_'): '-'})
+        f = path.join(basedir, l+'.qm')
+        if path.isfile(f): break
+
+        l = l.translate({ord('-'): '_'})
+        f = path.join(basedir, l+'.qm')
+        if path.isfile(f): break
+
+        l = l.split('_')[0]
+        f = path.join(basedir, l+'.qm')
+        if path.isfile(f): break
+
+    else:
+        return None
+
+    translator = QtCore.QTranslator()
+    translator.load(f)
+    return translator
 
 if __name__ == "__main__":
 
-    translator = QtCore.QTranslator()
-    l = QtCore.QLocale.system().uiLanguages()[0].translate({ord('-'): '_'})
-    translator.load('i18n/'+l)
     app = QtGui.QApplication(sys.argv)
+    translator = getBestTranslation('i18n')
     app.installTranslator(translator)
     window = XCalcsApp()
-    setAsApplication('techin.xcalcs.'+__version__)
+    setAsApplication('gvtech.xcalcs.'+__version__)
     window.show()
     #window.print_all_signals()
     sys.exit(app.exec_())
