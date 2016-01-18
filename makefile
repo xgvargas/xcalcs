@@ -61,12 +61,14 @@ clean:
 images: $(IMAGE_FILES)
 
 dist:
+# versao usando o Esky
 	-rd /s /q dist
-#	echo $(ProgramFiles)
-#	echo $(ProgramFilesX86)
-	python setup.py bdist_esky
+	python setup-esky.py bdist_esky
 	"c:\Program Files\7-Zip\7z.exe" x -odist\pack dist\*.zip
 	"$(ProgramFilesX86)\Inno Setup 5\ISCC.exe" setup.iss
+
+# versao do cx-freeze
+# .............
 
 update:
 	$(LUP) -verbose -noobsolete $(wildcard i18n/*.pro)

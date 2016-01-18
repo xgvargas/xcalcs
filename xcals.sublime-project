@@ -1,0 +1,13 @@
+{
+	"folders":
+	[
+		{
+			"path": "/",
+			"folder_exclude_patterns": ["__pycache__"],
+			"file_exclude_patterns":  [
+				"ui/*.png",
+				"i18n/*.qm"
+				]
+		}
+	]
+}

@@ -37,9 +37,9 @@ class ConsoleForm(QtGui.QWidget, Ui_form_console, smartsignal.SmartSignal):
         try:
             r = solver.solve(self.edt_equations.toPlainText())
             txt = '''<html><head><style type="text/css">
-p {margin: 0px 0px; -qt-block-indent:0; text-indent:0px; white-space: pre-wrap; text-align: right;}
-body {font-family:'Courier New'; font-size:14pt; font-weight:400; font-style:normal;}
-</style></head><body>'''
+ p {margin: 0px 0px; -qt-block-indent:0; text-indent:0px; white-space: pre-wrap; text-align: right;}
+ body {font-family:'Courier New'; font-size:14pt; font-weight:400; font-style:normal;}
+ </style></head><body>'''
 
             for v in r:
                 if v[1] is not None:
@@ -80,6 +80,7 @@ body {font-family:'Courier New'; font-size:14pt; font-weight:400; font-style:nor
 
         cb = QtGui.QApplication.clipboard()
         cb.setText(t)
+
 
 if __name__ == "__main__":
 

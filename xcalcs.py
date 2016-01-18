@@ -16,6 +16,10 @@ __version_info__ = ('0', '1', '0')
 __version__ = '.'.join(__version_info__)
 
 
+class XCalcsBaruga(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
+    def __init__(self, parent=None):
+        self.a = self.tr('texto do baruga')
+
 class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
     def __init__(self, parent=None):
         super(XCalcsApp, self).__init__(parent)

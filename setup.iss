@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "XcalcS"
-#define MyAppVersion "0.1"
+#define MyAppVersion "0.1.0"
 #define MyAppPublisher "gvTech"
 #define MyAppURL "http://www.gvtech.xyz/"
 #define MyAppExeName "xcalcs.exe"

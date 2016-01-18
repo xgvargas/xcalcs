@@ -891,7 +891,7 @@ p, li { white-space: pre-wrap; }
           </size>
          </property>
          <property name="toolTip">
-          <string>Break comples into real (Y) and imaginary (X) parts</string>
+          <string>Break complex into real (Y) and imaginary (X) parts</string>
          </property>
          <property name="text">
           <string/>
@@ -1005,7 +1005,7 @@ p, li { white-space: pre-wrap; }
           </size>
          </property>
          <property name="toolTip">
-          <string>Merge X and Y into comples number. (Y+iX)</string>
+          <string>Merge X and Y into complex number. (Y+iX)</string>
          </property>
          <property name="text">
           <string/>
@@ -2190,6 +2190,9 @@ p, li { white-space: pre-wrap; }
        <string>Unit converter</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="spacing">
+        <number>3</number>
+       </property>
        <property name="leftMargin">
         <number>2</number>
        </property>
@@ -2283,6 +2286,9 @@ p, li { white-space: pre-wrap; }
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <property name="spacing">
+          <number>3</number>
+         </property>
          <item>
           <widget class="QListWidget" name="list_from">
            <property name="toolTip">
@@ -2389,6 +2395,21 @@ p, li { white-space: pre-wrap; }
        <string>Base converter</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
+       <property name="spacing">
+        <number>5</number>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>6</number>
+       </property>
+       <property name="rightMargin">
+        <number>6</number>
+       </property>
+       <property name="bottomMargin">
+        <number>10</number>
+       </property>
        <item>
         <layout class="QGridLayout" name="gridLayout_3">
          <item row="0" column="0">
@@ -2526,19 +2547,35 @@ p, li { white-space: pre-wrap; }
       <attribute name="toolTip">
        <string>About...</string>
       </attribute>
-      <widget class="QLabel" name="label">
-       <property name="geometry">
-        <rect>
-         <x>50</x>
-         <y>80</y>
-         <width>81</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>NHAaaaaa</string>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="font">
+          <font>
+           <pointsize>32</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>XcalcS</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>&lt;a href=&quot;https://github.com/xgvargas/xcalcs&quot;&gt;https://github.com/xgvargas/xcalcs&lt;/a&gt;</string>
+         </property>
+         <property name="openExternalLinks">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
    </item>
