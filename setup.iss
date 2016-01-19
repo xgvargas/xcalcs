@@ -29,6 +29,11 @@ WizardSmallImageFile=compiler:WizModernSmallImage-IS.bmp
 PrivilegesRequired=none
 AlwaysShowGroupOnReadyPage=True
 AlwaysShowDirOnReadyPage=True
+LicenseFile=D:\Projetos\xcalcs\license
+; SetupIconFile=D:\Projetos\xcalcs\ui\exeicon.ico
+; VersionInfoVersion=12
+; VersionInfoCompany=gvTech
+; VersionInfoProductVersion=0.1.1
 
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
@@ -50,15 +55,11 @@ Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
 Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Run]
-; Filename: {tmp}\vcredist_x86.exe; Parameters: "/passive /Q:a /c:""msiexec /qb /i vcredist.msi"" "; StatusMsg: Installing 2010 RunTime...
-Filename: "{tmp}\vcredist_x86.exe"; Parameters: "/q /passive /Q:a /c:""msiexec /q /i vcredist.msi"""; StatusMsg: "Installing VC++ 2010 Redistributables..."
+Filename: {tmp}\vcredist_x86.exe; Parameters: "/passive /Q:a /c:""msiexec /qb /i vcredist.msi"" "; StatusMsg: "Installing VC++ 2010 Redistributables..."
 Filename: "{app}\{#MyAppExeName}"; Flags: nowait postinstall skipifsilent; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"
 
 [INI]
-Filename: "{app}\cfg.ini"; Section: "cfg"; Key: "language"; String: "pt_BR"; Languages: pt
-Filename: "{app}\cfg.ini"; Section: "cfg"; Key: "language"; String: "es"; Languages: es
-Filename: "{app}\cfg.ini"; Section: "cfg"; Key: "language"; String: "en"; Languages: en
-Filename: "{app}\cfg.ini"; Section: "cfg"; Key: "language2"; String: "{language}"
+Filename: "{app}\cfg.ini"; Section: "cfg"; Key: "language"; String: "{language}"
 
 ; exemplo de como fazer associacoes
 ; [Setup]

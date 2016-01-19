@@ -31,26 +31,18 @@
 <context>
     <name>XCalcsApp</name>
     <message>
-        <location filename="../xcalcs.py" line="73"/>
+        <location filename="../xcalcs.py" line="69"/>
         <source>Clean all</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../xcalcs.py" line="75"/>
+        <location filename="../xcalcs.py" line="71"/>
         <source>apaga uma linha</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../xcalcs.py" line="77"/>
+        <location filename="../xcalcs.py" line="73"/>
         <source>duplica</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>XCalcsBaruga</name>
-    <message>
-        <location filename="../xcalcs.py" line="23"/>
-        <source>texto do baruga</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -62,12 +54,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/console.ui" line="34"/>
+        <location filename="../ui/console.ui" line="38"/>
         <source>Clear</source>
         <translation>Limpar</translation>
     </message>
     <message>
-        <location filename="../ui/console.ui" line="41"/>
+        <location filename="../ui/console.ui" line="45"/>
         <source>Copy</source>
         <translation>Copiar</translation>
     </message>

@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Solver</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="xcalcs.qrc">
+    <normaloff>:/icons/exeicon.ico</normaloff>:/icons/exeicon.ico</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
     <number>4</number>
@@ -129,6 +133,8 @@ p, li { white-space: pre-wrap; }
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="xcalcs.qrc"/>
+ </resources>
  <connections/>
 </ui>
