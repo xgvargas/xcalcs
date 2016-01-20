@@ -9,8 +9,8 @@ setup(
     version='0.2.0',
     description='Calculadora RPN',
     scripts=[
-        Executable('xcalcs.py', icon='ui/exeicon.ico', gui_only=True)
-        Executable('console.py', icon='ui/exeicon.ico', gui_only=True)
+        Executable('xcalcs.py', icon='ui/exeicon.ico', gui_only=True),
+        Executable('console.py', icon='ui/exeicon.ico', gui_only=True),
         ],
     options={
         'build_exe': {
@@ -27,8 +27,6 @@ setup(
         },
     data_files=[
         ('i18n', glob(r'.\i18n\*.qm')),
-        # ('', ['MyApp.xib']),
-        # ('files', ['file1', 'file2']),
-        # ('img', glob(r'.\img\*.*'))
+        ('', ['xcalcs.cfg']),
         ],
     )

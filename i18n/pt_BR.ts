@@ -31,18 +31,23 @@
 <context>
     <name>XCalcsApp</name>
     <message>
-        <location filename="../xcalcs.py" line="69"/>
+        <location filename="../xcalcs.py" line="68"/>
         <source>Clean all</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../xcalcs.py" line="71"/>
+        <location filename="../xcalcs.py" line="70"/>
         <source>apaga uma linha</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../xcalcs.py" line="73"/>
+        <location filename="../xcalcs.py" line="72"/>
         <source>duplica</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../xcalcs.py" line="43"/>
+        <source>(Shortcut: {})</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -322,37 +327,37 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2431"/>
+        <location filename="../ui/xcalcs.ui" line="2435"/>
         <source>OCT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2444"/>
+        <location filename="../ui/xcalcs.ui" line="2452"/>
         <source>HEX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2457"/>
+        <location filename="../ui/xcalcs.ui" line="2469"/>
         <source>FLOAT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2467"/>
+        <location filename="../ui/xcalcs.ui" line="2479"/>
         <source>DOUBLE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2548"/>
+        <location filename="../ui/xcalcs.ui" line="2560"/>
         <source>About...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2561"/>
+        <location filename="../ui/xcalcs.ui" line="2573"/>
         <source>XcalcS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2571"/>
+        <location filename="../ui/xcalcs.ui" line="2583"/>
         <source>&lt;a href=&quot;https://github.com/xgvargas/xcalcs&quot;&gt;https://github.com/xgvargas/xcalcs&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>

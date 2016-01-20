@@ -45,7 +45,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "dist\pack\xcalcs.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "dist\pack\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "dist\pack\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "python34.dll"
 Source: "..\vcredist_x86-2010-python3.4.exe"; DestDir: "{tmp}"; DestName: "vcredist_x86.exe"; Flags: deleteafterinstall
 
 [Icons]
@@ -59,7 +59,7 @@ Filename: {tmp}\vcredist_x86.exe; Parameters: "/passive /Q:a /c:""msiexec /qb /i
 Filename: "{app}\{#MyAppExeName}"; Flags: nowait postinstall skipifsilent; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"
 
 [INI]
-Filename: "{app}\cfg.ini"; Section: "cfg"; Key: "language"; String: "{language}"
+Filename: "{app}\xcalcs.cfg"; Section: "Config"; Key: "language"; String: "{language}"
 
 ; exemplo de como fazer associacoes
 ; [Setup]
@@ -69,5 +69,5 @@ Filename: "{app}\cfg.ini"; Section: "cfg"; Key: "language"; String: "{language}"
 ; [Registry]
 ; Root: HKCR; Subkey: ".mpl";                             ValueData: "{#MyAppName}";          Flags: uninsdeletevalue; ValueType: string;  ValueName: ""; Tasks: mypAssociation
 ; Root: HKCR; Subkey: "{#MyAppName}";                     ValueData: "Program {#MyAppName}";  Flags: uninsdeletekey;   ValueType: string;  ValueName: ""; Tasks: mypAssociation
-; Root: HKCR; Subkey: "{#AppName}\DefaultIcon";           ValueData: "{app}\{#MyAppExeName},0";               ValueType: string;  ValueName: ""; Tasks: mypAssociation
-; Root: HKCR; Subkey: "{#AppName}\shell\open\command";    ValueData: """{app}\{#MyAppExeName}.EXE"" ""%1""";  ValueType: string;  ValueName: ""; Tasks: mypAssociation
+; Root: HKCR; Subkey: "{#MyAppName}\DefaultIcon";         ValueData: "{app}\{#MyAppExeName},0";               ValueType: string;  ValueName: ""; Tasks: mypAssociation
+; Root: HKCR; Subkey: "{#MyAppName}\shell\open\command";  ValueData: """{app}\{#MyAppExeName}.EXE"" ""%1""";  ValueType: string;  ValueName: ""; Tasks: mypAssociation

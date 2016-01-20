@@ -1,9 +1,9 @@
-xcalcs
+XcalcS
 ======
 
-RPM calculator in Python/Qt
+RPM calculator in Python/PySide
 
-Black by now
+Blank by now
 ------------
 
 * Soon I'll write something in here.

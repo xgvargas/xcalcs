@@ -29,7 +29,7 @@ class ConsoleForm(QtGui.QWidget, Ui_form_console, smartsignal.SmartSignal):
     def _on_eq_scroll__valueChanged(self):
         self.edt_results.verticalScrollBar().setValue(self.eq_scroll.value())
 
-    def show_error(self, text):
+    def showError(self, text):
         self.lbl_error.setText(text)
         self.edt_results.clear()
 
@@ -52,17 +52,17 @@ class ConsoleForm(QtGui.QWidget, Ui_form_console, smartsignal.SmartSignal):
             self.lbl_error.setText('')
 
         except solver.VariableError as e:
-            self.show_error(self.tr('Undefined variable {}').format('AINDA NAO DEFINIDO!!'))
+            self.showError(self.tr('Undefined variable {}').format('AINDA NAO DEFINIDO!!'))
             print(e)
 
         except solver.LexError as e:
-            self.show_error(self.tr('Unknown character "{}" at line {:d}').format(e.args[0].value[0], e.args[0].lineno+1))
+            self.showError(self.tr('Unknown character "{}" at line {:d}').format(e.args[0].value[0], e.args[0].lineno+1))
 
         except solver.ConstantError as e:
-            self.show_error(self.tr('Undefined constant {} in line {:d}').format(e.args[0][0], e.args[0][1]))
+            self.showError(self.tr('Undefined constant {} in line {:d}').format(e.args[0][0], e.args[0][1]))
 
         except solver.GrammarError as e:
-            self.show_error(self.tr('Syntax error at line {:d}').format(e.args[0].lineno+1))
+            self.showError(self.tr('Syntax error at line {:d}').format(e.args[0].lineno+1))
 
         except:
             self.lbl_error.setText(self.tr('Unknown error!!'))
