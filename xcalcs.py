@@ -10,6 +10,7 @@ import smartside.signal as smartsignal
 from smartside import setAsApplication#, getBestTranslation
 from console import ConsoleForm
 import configparser
+# from collections import deque
 
 
 __author__ = 'Gustavo Vargas <xgvargas@gmail.com>'
@@ -27,31 +28,48 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.setupUi(self)
         self.auto_connect()
 
-        self.shortcuts = self.installShortcuts(self.tr('(Shortcut: {})'))
-
         self.restoreGeometry(QtCore.QByteArray.fromBase64(cfg['Config']['geometry']))
 
-        self.setDisplayToBottom()
+        self.shortcuts = self.installShortcuts('Interface_shortcuts', self.tr('(Shortcut: {})'))
+        self.shortcuts = self.installShortcuts('Basic_shortcuts', self.tr('(Shortcut: {})'))
+
+        self.format = cfg['Config']['format']
+        self.angle = cfg['Config']['angle']
+        self.coordinate = cfg['Config']['coordinate']
 
         self.console = None
         self.editing = None
-        self.nuns = [0]*32
+        self.entry_val = 0
+
+        # self.stack = [0]*32
+        self.stack = []
+        # for i in range(3):
+        #     self.stack.append(i)
+
+        self.nhaca=0
+
+        self.moveStackToBottom()
+        self.updateAll()
 
     def closeEvent(self, e):
         cfg['Config']['geometry'] = str(self.saveGeometry().toBase64())
+        cfg['Config']['format'] = self.format
+        cfg['Config']['angle'] = self.angle
+        cfg['Config']['coordinate'] = self.coordinate
         with open('xcalcs.cfg', 'w') as configfile:
             cfg.write(configfile)
         e.accept()
 
-    def installShortcuts(self, shortcut_text):
+    def installShortcuts(self, section, shortcut_text):
         shortcuts = []
-        for k in cfg['Shortcuts']:
-            v = cfg['Shortcuts'][k]
+        for k in cfg[section]:
+            v = cfg[section][k]
             if hasattr(self, k) and v:
                 ks = QtGui.QKeySequence(v)
                 s = QtGui.QShortcut(ks, self)
                 obj = getattr(self, k)
-                obj.setToolTip('{} {}'.format(obj.toolTip(), shortcut_text.format(ks.toString())))
+                if shortcut_text:
+                    obj.setToolTip('{} {}'.format(obj.toolTip(), shortcut_text.format(ks.toString())))
                 s.activated.connect(obj.click)
                 shortcuts.append(s)
         return shortcuts
@@ -60,20 +78,33 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         # print(e.key(), e.nativeModifiers(), e.nativeScanCode(), e.nativeVirtualKey())
         c = chr(e.key()) if e.key() < 255 else ''
 
+        # multiplier = {'T': 1e12, 'G': 1e9, 'M': 1e6, 'k': 1e3, 'm': 1e-3, 'u': 1e-6, 'n': 1e-9, 'p': 1e-12, 'f': 1e-15}
+
         if not self.editing:
             if e.key() == QtCore.Qt.Key_Escape:
                 print(self.tr('Clean all'))
+
             elif e.key() == QtCore.Qt.Key_Backspace:
-                print(self.tr('apaga uma linha'))
+                if len(self.stack):
+                    print('apaga uma linha')
+                    self.stack.pop()
+                    self.updateAll()
+
             elif e.key() == QtCore.Qt.Key_Enter or e.key() == QtCore.Qt.Key_Return:
-                print(self.tr('duplica'))
+                print('duplica', self.nhaca)
+                self.stack.append(self.nhaca)
+                self.nhaca += 1
+                self.updateAll()
         else:
             if e.key() == QtCore.Qt.Key_Escape:
                 print('para edit')
+
             elif e.key() == QtCore.Qt.Key_Backspace:
                 print('volta edit')
+
             elif e.key() == QtCore.Qt.Key_Enter or e.key() == QtCore.Qt.Key_Return:
                 print('confirma')
+
             elif c == 'E':
                 pass
             elif c == 'G':
@@ -87,22 +118,68 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
                 #entra modo edicao
                 self.editing = True
             print('numero')
-            self.showNuns()
+            self.updateAll()
 
-    def showNuns(self):
-        txt = '''<html><head><style type="text/css">
-p {margin: 0px 0px; -qt-block-indent:0; text-indent:0px; white-space: pre-wrap; text-align: right;}
-body {font-family:'Courier New'; font-size:9pt; font-weight:400; font-style:normal;}
-</style></head><body>'''
+    def getX(self):
+        if self.editing:
+            return self.entry_val
 
-        for n in self.nuns:
-            txt += '<p align="right">{}</p>'.format('nhaaa')   #<span style=" color:#ff0000;">asdqweqweasd</span>
+        if len(self.stack):
+            return self.stack[-1]
 
-        self.edt_num.setHtml(txt+'</body></html>')
-        self.setDisplayToBottom()
+        return 0
 
-    def setDisplayToBottom(self):
-            b = self.scr_display.verticalScrollBar()
+    def formatNumber(self, val):
+        if self.format == 'sci':
+            v = str(val)
+        elif self.format == 'eng':
+            v = str(val)
+        else:
+            v = str(val)
+
+        return v
+
+    def updateBases(self):
+        self.edt_bin.setText(bin(self.getX()))
+        self.edt_oct.setText(oct(self.getX()))
+        self.edt_hex.setText(hex(self.getX()))
+        self.edt_float.setText(str(self.getX()))
+        self.edt_double.setText(str(self.getX()))
+
+    def updateConverter(self):
+        v = self.getX()
+        self.lbl_converted.setText(self.formatNumber(v))
+
+    def updateStack(self):
+        txt = '''<html><head>
+<style type="text/css"> p, li { white-space: pre-wrap; } </style>
+</head><body style=" font-family:'Courier New'; font-size:9pt; font-weight:400; font-style:normal;">
+<table border="0" align="right" cellspacing="2" cellpadding="0">'''
+
+        for n in self.stack:
+            txt += '''<tr><td align="right">{}</td><td width="30" align="center">
+<span style="color:#D482B2;">{}</span></td></tr>'''.format(self.formatNumber(n), '23')
+
+#         if self.editing:
+#             txt += '''<tr><td><span style="color:#f00;">{}</span></td>
+# <td width="30" bgcolor="#fff" align="center">
+# <span style="color:#D482B2;">{}</span></td></tr>'''.format(self.formatNumber(self.entry_val), '23')
+#             size += 1
+
+        self.edt_stack.setHtml(txt+'</table></body></html>')
+
+        dh = self.edt_stack.document().size().height()
+        self.layout_stack.setMaximumHeight(dh)
+        self.layout_stack.setMinimumHeight(dh)
+        self.moveStackToBottom()
+
+    def updateAll(self):
+        self.updateStack()
+        self.updateConverter()
+        self.updateBases()
+
+    def moveStackToBottom(self):
+            b = self.scr_stack.verticalScrollBar()
             b.setValue(b.maximum())
 
     def _on_btn_angle__clicked(self):

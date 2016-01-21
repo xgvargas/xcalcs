@@ -55,11 +55,21 @@ Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
 Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Run]
-Filename: {tmp}\vcredist_x86.exe; Parameters: "/passive /Q:a /c:""msiexec /qb /i vcredist.msi"" "; StatusMsg: "Installing VC++ 2010 Redistributables..."
+Filename: {tmp}\vcredist_x86.exe; Parameters: "/passive /Q:a /c:""msiexec /qb /i vcredist.msi"" "; StatusMsg: "{cm:InstallVCR}"
 Filename: "{app}\{#MyAppExeName}"; Flags: nowait postinstall skipifsilent; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"
 
 [INI]
 Filename: "{app}\xcalcs.cfg"; Section: "Config"; Key: "language"; String: "{language}"
+
+; [InstallDelete]
+; Type: files; Name: "xcalcs.cfg"
+
+[CustomMessages]
+InstallVCR=Installing VC++ 2010 Redistributables...
+pt.InstallVCR=Instalando Bibliotecas VC++ 2010...
+es.InstallVCR=Instalando Bibliotecas VC++ 2010...
+
+
 
 ; exemplo de como fazer associacoes
 ; [Setup]
@@ -71,3 +81,4 @@ Filename: "{app}\xcalcs.cfg"; Section: "Config"; Key: "language"; String: "{lang
 ; Root: HKCR; Subkey: "{#MyAppName}";                     ValueData: "Program {#MyAppName}";  Flags: uninsdeletekey;   ValueType: string;  ValueName: ""; Tasks: mypAssociation
 ; Root: HKCR; Subkey: "{#MyAppName}\DefaultIcon";         ValueData: "{app}\{#MyAppExeName},0";               ValueType: string;  ValueName: ""; Tasks: mypAssociation
 ; Root: HKCR; Subkey: "{#MyAppName}\shell\open\command";  ValueData: """{app}\{#MyAppExeName}.EXE"" ""%1""";  ValueType: string;  ValueName: ""; Tasks: mypAssociation
+
