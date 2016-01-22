@@ -3,3 +3,4 @@ esky
 ply
 PySide
 smartside
+nuitka

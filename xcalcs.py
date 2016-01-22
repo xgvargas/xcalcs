@@ -4,13 +4,13 @@
 """
 """
 
-import sys
+import sys, os
 from xcalcs_ui import *
 import smartside.signal as smartsignal
 from smartside import setAsApplication#, getBestTranslation
 from console import ConsoleForm
 import configparser
-# from collections import deque
+import pickle
 
 
 __author__ = 'Gustavo Vargas <xgvargas@gmail.com>'
@@ -41,10 +41,10 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.editing = None
         self.entry_val = 0
 
-        # self.stack = [0]*32
-        self.stack = []
-        # for i in range(3):
-        #     self.stack.append(i)
+        if cfg['Config'].getboolean('savestack') and os.path.isfile('stack.dat'):
+            self.stack = pickle.load(open('stack.dat', 'rb'))
+        else:
+            self.stack = []
 
         self.nhaca=0
 
@@ -58,6 +58,10 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         cfg['Config']['coordinate'] = self.coordinate
         with open('xcalcs.cfg', 'w') as configfile:
             cfg.write(configfile)
+        if cfg['Config'].getboolean('savestack'):
+            pickle.dump(self.stack, open('stack.dat', 'wb'))
+        elif os.path.isfile('stack.dat'):
+            os.remove('stack.dat')
         e.accept()
 
     def installShortcuts(self, section, shortcut_text):
