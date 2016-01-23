@@ -12,6 +12,7 @@ from console import ConsoleForm
 import configparser
 import pickle
 import decimal
+import units
 
 __author__ = 'Gustavo Vargas <xgvargas@gmail.com>'
 __version_info__ = ('0', '1', '0')
@@ -24,6 +25,9 @@ cfg = settings['Config']
 
 
 class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
+
+    multiplier = {'T': 1e12, 'G': 1e9, 'M': 1e6, 'k': 1e3, 'm': 1e-3, 'u': 1e-6, 'n': 1e-9, 'p': 1e-12, 'f': 1e-15}
+
     def __init__(self, parent=None):
         super(XCalcsApp, self).__init__(parent)
         self.setupUi(self)
@@ -50,7 +54,8 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         else:
             self.stack = []
 
-        self.nhaca=0
+        self.converter = units.Converter()
+        self.cmb_quantity.setCurrentIndex(2)
 
         self.moveStackToBottom()
         self.updateAll()
@@ -86,11 +91,8 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         print(e.key(), e.nativeModifiers(), e.nativeScanCode(), e.nativeVirtualKey())
         c = chr(e.key()) if e.key() < 255 else ''
 
-        # multiplier = {'T': 1e12, 'G': 1e9, 'M': 1e6, 'k': 1e3, 'm': 1e-3, 'u': 1e-6, 'n': 1e-9, 'p': 1e-12, 'f': 1e-15}
-
         if not self.editing:
             if e.key() == QtCore.Qt.Key_Escape:
-                print(self.tr('Clean all'))
                 self.stack.clear()
                 self.updateAll()
 
@@ -142,17 +144,14 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
                 if '.' not in self.entry_str:
                     self.entry_str += '.'
 
-            self.updateAll()
 
         try:
             self.entry_val = float(self.entry_str)
         except:
             pass
 
-        print(self.editing, self.entry_str, self.entry_val)
-
-    # def stopEdit(self):
-    #     self.editing = False
+        self.updateAll()
+        # print(self.editing, self.entry_str, self.entry_val)
 
     def getX(self):
         if self.editing:
@@ -182,7 +181,11 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
     def updateConverter(self):
         v = self.getX()
-        self.lbl_converted.setText(self.formatNumber(v))
+        c = self.converter.convert(v,
+                                   self.cmb_quantity.currentIndex(),
+                                   self.list_from.currentRow(),
+                                   self.list_to.currentRow())
+        self.lbl_converted.setText(self.formatNumber(c))
 
     def updateStack(self):
         txt = '''<html><head>
@@ -221,6 +224,32 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
             b = self.scr_stack.verticalScrollBar()
             b.setValue(b.maximum())
 
+    def _on_cmb_quantity__currentIndexChanged(self):
+        names = self.converter.getNames(self.cmb_quantity.currentIndex())
+        self.list_from.clear()
+        self.list_from.insertItems(0, names)
+        self.list_from.setCurrentRow(0)
+        self.list_to.clear()
+        self.list_to.insertItems(0, names)
+        self.list_to.setCurrentRow(1)
+        self.updateConverter()
+
+    def _on_list_from__itemPressed(self):
+        self.updateConverter()
+
+    def _on_list_to__clicked(self):
+        self.updateConverter()
+
+    def _on_btn_invert_units__clicked(self):
+        tmp = self.list_from.currentRow()
+        self.list_from.setCurrentRow(self.list_to.currentRow())
+        self.list_to.setCurrentRow(tmp)
+        self.updateConverter()
+
+    def _on_btn_copy_converted__clicked(self):
+        self.stack.append(float(self.lbl_converted.text()))
+        self.updateAll()
+
     def _on_btn_angle__clicked(self):
         print('_on_btn_angle__clicked')
 
@@ -238,6 +267,81 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
     _funcoes = '`btn_f_.+`'
     def _when_funcoes__clicked(self):
         print(self.sender().objectName())
+
+        if self.editing:
+            self.stack.append(self.entry_val)
+            self.editing = False
+
+        op = self.sender().objectName().split('_')[2]
+
+        if op == '10powerx':
+            pass
+        elif op == 'acos':
+            pass
+        elif op == 'add':
+            x, y = self.stack.pop(), self.stack.pop()
+            self.stack.append(x+y)
+
+        elif op == 'asin':
+            pass
+        elif op == 'atg':
+            pass
+        elif op == 'breakcomplex':
+            pass
+        elif op == 'conjugate':
+            pass
+        elif op == 'cos':
+            pass
+        elif op == 'div':
+            x, y = self.stack.pop(), self.stack.pop()
+            self.stack.append(y/x)
+
+            pass
+        elif op == 'epowerx':
+            pass
+        elif op == 'inv':
+            x = self.stack.pop()
+            self.stack.append(1./x)
+
+        elif op == 'ln':
+            pass
+        elif op == 'log10':
+            pass
+        elif op == 'log2':
+            pass
+        elif op == 'minus':
+            x = self.stack.pop()
+            self.stack.append(-x)
+
+        elif op == 'mul':
+            x, y = self.stack.pop(), self.stack.pop()
+            self.stack.append(x*y)
+
+        elif op == 'power2':
+            pass
+        elif op == 'powerx':
+            pass
+        elif op == 'sin':
+            pass
+        elif op == 'sqrt2':
+            pass
+        elif op == 'sqrtx':
+            pass
+        elif op == 'sub':
+            x, y = self.stack.pop(), self.stack.pop()
+            self.stack.append(y-x)
+
+        elif op == 'swap':
+            x, y = self.stack.pop(), self.stack.pop()
+            self.stack.append(x)
+            self.stack.append(y)
+
+        elif op == 'tg':
+            pass
+        elif op == 'tocomplex':
+            pass
+
+        self.updateAll()
 
 
 from os import path
@@ -284,5 +388,5 @@ if __name__ == "__main__":
     window = XCalcsApp()
     # setAsApplication('gvtech.xcalcs.'+__version__)
     window.show()
-    #window.print_all_signals()
+    # window.print_all_signals()
     sys.exit(app.exec_())

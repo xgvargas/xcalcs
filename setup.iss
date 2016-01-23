@@ -61,8 +61,8 @@ Filename: "{app}\{#MyAppExeName}"; Flags: nowait postinstall skipifsilent; Descr
 [INI]
 Filename: "{app}\xcalcs.cfg"; Section: "Config"; Key: "language"; String: "{language}"
 
-; [InstallDelete]
-; Type: files; Name: "xcalcs.cfg"
+[InstallDelete]
+Type: files; Name: "stack.dat"
 
 [CustomMessages]
 InstallVCR=Installing VC++ 2010 Redistributables...

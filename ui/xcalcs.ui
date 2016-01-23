@@ -157,6 +157,9 @@ p, li { white-space: pre-wrap; }
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
         <property name="toolTip">
          <string>Set angle mode: degress, radians </string>
         </property>
@@ -172,6 +175,9 @@ p, li { white-space: pre-wrap; }
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
         </property>
         <property name="toolTip">
          <string>Set display mode: default, cientific, enginering</string>
@@ -189,6 +195,9 @@ p, li { white-space: pre-wrap; }
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
         <property name="toolTip">
          <string>Set coordinate mode: cartesian, polar</string>
         </property>
@@ -203,6 +212,9 @@ p, li { white-space: pre-wrap; }
          <font>
           <pointsize>8</pointsize>
          </font>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
         </property>
         <property name="toolTip">
          <string>Open equation solver</string>
@@ -245,7 +257,7 @@ p, li { white-space: pre-wrap; }
       <enum>QTabWidget::East</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <property name="iconSize">
       <size>
@@ -297,6 +309,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="toolTip">
           <string>Root square of X in Y base</string>
          </property>
@@ -334,6 +349,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="toolTip">
           <string>X times Y</string>
@@ -373,6 +391,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="toolTip">
           <string>Tangent of X</string>
          </property>
@@ -410,6 +431,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="toolTip">
           <string>Negate X</string>
@@ -449,6 +473,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="toolTip">
           <string>Rise 10 to X power</string>
          </property>
@@ -486,6 +513,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="toolTip">
           <string>Arc-Sine of X</string>
@@ -525,6 +555,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="toolTip">
           <string>Logarithyn of X in base 'e'</string>
          </property>
@@ -562,6 +595,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="toolTip">
           <string>Arc-tangent of X</string>
@@ -601,6 +637,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="toolTip">
           <string>Cossene of X</string>
          </property>
@@ -638,6 +677,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="toolTip">
           <string>Cunjugate of X</string>
@@ -677,6 +719,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="toolTip">
           <string>Root square of X</string>
          </property>
@@ -714,6 +759,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="toolTip">
           <string>Logarithyn of X in base 2</string>
@@ -753,6 +801,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="toolTip">
           <string>Invert X (1/X)</string>
          </property>
@@ -790,6 +841,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="toolTip">
           <string>Break complex into real (Y) and imaginary (X) parts</string>
@@ -829,6 +883,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="toolTip">
           <string>Rise X to power 2</string>
          </property>
@@ -866,6 +923,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="toolTip">
           <string>Divide Y by X</string>
@@ -905,6 +965,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="toolTip">
           <string>Merge X and Y into complex number. (Y+iX)</string>
          </property>
@@ -942,6 +1005,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="toolTip">
           <string>Subtract X from Y</string>
@@ -981,6 +1047,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="toolTip">
           <string>Swap X and Y values</string>
          </property>
@@ -1018,6 +1087,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="toolTip">
           <string>Rise Y to power X</string>
@@ -1057,6 +1129,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="toolTip">
           <string>Sine of X</string>
          </property>
@@ -1094,6 +1169,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="toolTip">
           <string>Logarithyn of X in base 10</string>
@@ -1133,6 +1211,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="toolTip">
           <string>Rise 'e' to X power</string>
          </property>
@@ -1171,6 +1252,9 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="toolTip">
           <string>Arc-Cossene of X</string>
          </property>
@@ -1208,6 +1292,9 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
          </property>
          <property name="contextMenuPolicy">
           <enum>Qt::DefaultContextMenu</enum>
@@ -2123,6 +2210,9 @@ p, li { white-space: pre-wrap; }
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
            <property name="maxVisibleItems">
             <number>16</number>
            </property>
@@ -2144,6 +2234,11 @@ p, li { white-space: pre-wrap; }
            <item>
             <property name="text">
              <string>Energy</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Flux</string>
             </property>
            </item>
            <item>
@@ -2192,6 +2287,9 @@ p, li { white-space: pre-wrap; }
          </property>
          <item>
           <widget class="QListWidget" name="list_from">
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
            <property name="toolTip">
             <string>From unit</string>
            </property>
@@ -2199,6 +2297,9 @@ p, li { white-space: pre-wrap; }
          </item>
          <item>
           <widget class="QListWidget" name="list_to">
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
            <property name="toolTip">
             <string>To unit</string>
            </property>
@@ -2223,6 +2324,9 @@ p, li { white-space: pre-wrap; }
          </item>
          <item>
           <widget class="QPushButton" name="btn_invert_units">
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
            <property name="toolTip">
             <string>Invert to/from</string>
            </property>
@@ -2272,6 +2376,9 @@ p, li { white-space: pre-wrap; }
          </item>
          <item>
           <widget class="QPushButton" name="btn_copy_converted">
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
            <property name="toolTip">
             <string>Copy converted value to stack</string>
            </property>
