@@ -11,15 +11,16 @@ from smartside import setAsApplication#, getBestTranslation
 from console import ConsoleForm
 import configparser
 import pickle
-
+import decimal
 
 __author__ = 'Gustavo Vargas <xgvargas@gmail.com>'
 __version_info__ = ('0', '1', '0')
 __version__ = '.'.join(__version_info__)
 
 
-cfg = configparser.ConfigParser()
-cfg.read('xcalcs.cfg')
+settings = configparser.ConfigParser()
+settings.read('xcalcs.cfg')
+cfg = settings['Config']
 
 
 class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
@@ -28,20 +29,23 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.setupUi(self)
         self.auto_connect()
 
-        self.restoreGeometry(QtCore.QByteArray.fromBase64(cfg['Config']['geometry']))
+        self.restoreGeometry(QtCore.QByteArray.fromBase64(cfg['geometry']))
 
         self.shortcuts = self.installShortcuts('Interface_shortcuts', self.tr('(Shortcut: {})'))
         self.shortcuts = self.installShortcuts('Basic_shortcuts', self.tr('(Shortcut: {})'))
 
-        self.format = cfg['Config']['format']
-        self.angle = cfg['Config']['angle']
-        self.coordinate = cfg['Config']['coordinate']
+        self.format = cfg['format']
+        self.angle = cfg['angle']
+        self.coordinate = cfg['coordinate']
+
+        decimal.getcontext().prec = int(cfg['precision'])
 
         self.console = None
         self.editing = None
         self.entry_val = 0
+        self.entry_str = ''
 
-        if cfg['Config'].getboolean('savestack') and os.path.isfile('stack.dat'):
+        if cfg.getboolean('savestack') and os.path.isfile('stack.dat'):
             self.stack = pickle.load(open('stack.dat', 'rb'))
         else:
             self.stack = []
@@ -52,13 +56,13 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.updateAll()
 
     def closeEvent(self, e):
-        cfg['Config']['geometry'] = str(self.saveGeometry().toBase64())
-        cfg['Config']['format'] = self.format
-        cfg['Config']['angle'] = self.angle
-        cfg['Config']['coordinate'] = self.coordinate
+        cfg['geometry'] = str(self.saveGeometry().toBase64())
+        cfg['format'] = self.format
+        cfg['angle'] = self.angle
+        cfg['coordinate'] = self.coordinate
         with open('xcalcs.cfg', 'w') as configfile:
-            cfg.write(configfile)
-        if cfg['Config'].getboolean('savestack'):
+            settings.write(configfile)
+        if cfg.getboolean('savestack'):
             pickle.dump(self.stack, open('stack.dat', 'wb'))
         elif os.path.isfile('stack.dat'):
             os.remove('stack.dat')
@@ -66,8 +70,8 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
     def installShortcuts(self, section, shortcut_text):
         shortcuts = []
-        for k in cfg[section]:
-            v = cfg[section][k]
+        for k in settings[section]:
+            v = settings[section][k]
             if hasattr(self, k) and v:
                 ks = QtGui.QKeySequence(v)
                 s = QtGui.QShortcut(ks, self)
@@ -79,7 +83,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         return shortcuts
 
     def keyPressEvent(self, e):
-        # print(e.key(), e.nativeModifiers(), e.nativeScanCode(), e.nativeVirtualKey())
+        print(e.key(), e.nativeModifiers(), e.nativeScanCode(), e.nativeVirtualKey())
         c = chr(e.key()) if e.key() < 255 else ''
 
         # multiplier = {'T': 1e12, 'G': 1e9, 'M': 1e6, 'k': 1e3, 'm': 1e-3, 'u': 1e-6, 'n': 1e-9, 'p': 1e-12, 'f': 1e-15}
@@ -87,42 +91,68 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         if not self.editing:
             if e.key() == QtCore.Qt.Key_Escape:
                 print(self.tr('Clean all'))
+                self.stack.clear()
+                self.updateAll()
 
             elif e.key() == QtCore.Qt.Key_Backspace:
                 if len(self.stack):
-                    print('apaga uma linha')
                     self.stack.pop()
                     self.updateAll()
 
             elif e.key() == QtCore.Qt.Key_Enter or e.key() == QtCore.Qt.Key_Return:
-                print('duplica', self.nhaca)
-                self.stack.append(self.nhaca)
-                self.nhaca += 1
+                self.stack.append(self.stack[-1])
                 self.updateAll()
         else:
             if e.key() == QtCore.Qt.Key_Escape:
-                print('para edit')
+                self.editing = False
+                self.updateAll()
 
             elif e.key() == QtCore.Qt.Key_Backspace:
-                print('volta edit')
+                if len(self.entry_str) > 1:
+                    self.entry_str = self.entry_str[:-1]
+                else:
+                    self.editing = False
+                self.updateAll()
 
             elif e.key() == QtCore.Qt.Key_Enter or e.key() == QtCore.Qt.Key_Return:
-                print('confirma')
+                self.stack.append(self.entry_val)
+                self.editing = False
+                self.updateAll()
 
             elif c == 'E':
                 pass
+
             elif c == 'G':
                 pass
 
-        if c >= '0' and c <= '9' or c == '.' or c == ',':
-            if self.editing:
-                #continua edicao
-                pass
             else:
+                pass  # TODO buscar por multiplicadores
+
+        if c >= '0' and c <= '9' or c == '.' or c == ',':
+            if not self.editing:
                 #entra modo edicao
                 self.editing = True
-            print('numero')
+                self.entry_val = 0
+                self.entry_str = ''
+
+            if c >= '0' and c <= '9':
+                self.entry_str += c
+
+            if c == '.' or c == ',':
+                if '.' not in self.entry_str:
+                    self.entry_str += '.'
+
             self.updateAll()
+
+        try:
+            self.entry_val = float(self.entry_str)
+        except:
+            pass
+
+        print(self.editing, self.entry_str, self.entry_val)
+
+    # def stopEdit(self):
+    #     self.editing = False
 
     def getX(self):
         if self.editing:
@@ -131,7 +161,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         if len(self.stack):
             return self.stack[-1]
 
-        return 0
+        return 0 # FIXME
 
     def formatNumber(self, val):
         if self.format == 'sci':
@@ -144,9 +174,9 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         return v
 
     def updateBases(self):
-        self.edt_bin.setText(bin(self.getX()))
-        self.edt_oct.setText(oct(self.getX()))
-        self.edt_hex.setText(hex(self.getX()))
+        self.edt_bin.setText(bin(int(self.getX())))
+        self.edt_oct.setText(oct(int(self.getX())))
+        self.edt_hex.setText(hex(int(self.getX())))
         self.edt_float.setText(str(self.getX()))
         self.edt_double.setText(str(self.getX()))
 
@@ -160,15 +190,20 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 </head><body style=" font-family:'Courier New'; font-size:9pt; font-weight:400; font-style:normal;">
 <table border="0" align="right" cellspacing="2" cellpadding="0">'''
 
-        for n in self.stack:
-            txt += '''<tr><td align="right">{}</td><td width="30" align="center">
-<span style="color:#D482B2;">{}</span></td></tr>'''.format(self.formatNumber(n), '23')
+        adjust = 1 if self.editing else 0
 
-#         if self.editing:
-#             txt += '''<tr><td><span style="color:#f00;">{}</span></td>
-# <td width="30" bgcolor="#fff" align="center">
-# <span style="color:#D482B2;">{}</span></td></tr>'''.format(self.formatNumber(self.entry_val), '23')
-#             size += 1
+        for i, n in enumerate(self.stack):
+            if i < len(self.stack)-3+adjust:
+                line = str(len(self.stack)-i+adjust)
+            else:
+                line = ['X', 'Y', 'Z'][len(self.stack)-i-1+adjust]
+            txt += '''<tr><td align="right">{}</td><td width="30" align="center">
+<span style="color:#D482B2;">{}</span></td></tr>'''.format(self.formatNumber(n), line)
+
+        if self.editing:
+            txt += '''<tr><td align="right"><span style="color:#f00;">{}</span></td>
+<td width="30" bgcolor="#fff" align="center">
+<span style="color:#D482B2;">X</span></td></tr>'''.format(self.formatNumber(self.entry_str))
 
         self.edt_stack.setHtml(txt+'</table></body></html>')
 
@@ -244,7 +279,7 @@ def getBestTranslation(basedir, lang=None):
 if __name__ == "__main__":
 
     app = QtGui.QApplication(sys.argv)
-    translator = getBestTranslation('i18n', [cfg['Config']['language']])
+    translator = getBestTranslation('i18n', [cfg['language']])
     app.installTranslator(translator)
     window = XCalcsApp()
     # setAsApplication('gvtech.xcalcs.'+__version__)
