@@ -257,7 +257,7 @@ p, li { white-space: pre-wrap; }
       <enum>QTabWidget::East</enum>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <property name="iconSize">
       <size>
@@ -319,8 +319,8 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/raizn.bmp</normaloff>:/func/imgs/raizn.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/sqrtx.png</normaloff>:/func/sqrtx.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -360,8 +360,8 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/vezes.bmp</normaloff>:/func/imgs/vezes.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/mul.png</normaloff>:/func/mul.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -402,7 +402,7 @@ p, li { white-space: pre-wrap; }
          </property>
          <property name="icon">
           <iconset resource="xcalcs.qrc">
-           <normaloff>:/func/tan.png</normaloff>:/func/tan.png</iconset>
+           <normaloff>:/func/tg.png</normaloff>:/func/tg.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -442,8 +442,8 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/sign.bmp</normaloff>:/func/imgs/sign.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/neg.png</normaloff>:/func/neg.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -484,7 +484,7 @@ p, li { white-space: pre-wrap; }
          </property>
          <property name="icon">
           <iconset resource="xcalcs.qrc">
-           <normaloff>:/func/10x.png</normaloff>:/func/10x.png</iconset>
+           <normaloff>:/func/10powerx.png</normaloff>:/func/10powerx.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -688,8 +688,8 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/conj.bmp</normaloff>:/func/imgs/conj.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/conjugate.png</normaloff>:/func/conjugate.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -729,8 +729,8 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/sqrt.bmp</normaloff>:/func/imgs/sqrt.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/sqrt.png</normaloff>:/func/sqrt.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -811,8 +811,8 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/invert.bmp</normaloff>:/func/imgs/invert.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/inv.png</normaloff>:/func/inv.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -852,8 +852,8 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/decomplex.bmp</normaloff>:/func/imgs/decomplex.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/break.png</normaloff>:/func/break.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -893,8 +893,8 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/power2.bmp</normaloff>:/func/imgs/power2.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/power2.png</normaloff>:/func/power2.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -934,8 +934,8 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/div.bmp</normaloff>:/func/imgs/div.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/div.png</normaloff>:/func/div.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -975,8 +975,8 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/toimag.png</normaloff>:/func/imgs/toimag.png</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/complex.png</normaloff>:/func/complex.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -1016,8 +1016,8 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/minus.bmp</normaloff>:/func/imgs/minus.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/sub.png</normaloff>:/func/sub.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -1057,8 +1057,8 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/swap.bmp</normaloff>:/func/imgs/swap.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/swap.png</normaloff>:/func/swap.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -1098,8 +1098,8 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/powery.bmp</normaloff>:/func/imgs/powery.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/ypowerx.png</normaloff>:/func/ypowerx.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -1222,7 +1222,7 @@ p, li { white-space: pre-wrap; }
          </property>
          <property name="icon">
           <iconset resource="xcalcs.qrc">
-           <normaloff>:/func/ex.png</normaloff>:/func/ex.png</iconset>
+           <normaloff>:/func/epowerx.png</normaloff>:/func/epowerx.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -1304,6 +1304,10 @@ p, li { white-space: pre-wrap; }
          </property>
          <property name="text">
           <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/add.png</normaloff>:/func/add.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -2555,6 +2559,9 @@ p, li { white-space: pre-wrap; }
         <widget class="QLabel" name="label_8">
          <property name="text">
           <string>&lt;a href=&quot;https://github.com/xgvargas/xcalcs&quot;&gt;https://github.com/xgvargas/xcalcs&lt;/a&gt;</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
          <property name="openExternalLinks">
           <bool>true</bool>
