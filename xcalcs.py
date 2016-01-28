@@ -35,6 +35,9 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
         self.restoreGeometry(QtCore.QByteArray.fromBase64(cfg['geometry']))
 
+        if cfg.getboolean('stayontop', False):
+            self.setWindowFlags(self.windowFlags() | QtCore.Qt.WindowStaysOnTopHint)
+
         self.shortcuts = self.installShortcuts('Interface_shortcuts', self.tr('(Shortcut: {})'))
         self.shortcuts = self.installShortcuts('Basic_shortcuts', self.tr('(Shortcut: {})'))
 
@@ -49,7 +52,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.entry_val = 0
         self.entry_str = ''
 
-        if cfg.getboolean('savestack') and os.path.isfile('stack.dat'):
+        if cfg.getboolean('savestack', False) and os.path.isfile('stack.dat'):
             self.stack = pickle.load(open('stack.dat', 'rb'))
         else:
             self.stack = []
@@ -67,7 +70,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         cfg['coordinate'] = self.coordinate
         with open('xcalcs.cfg', 'w') as configfile:
             settings.write(configfile)
-        if cfg.getboolean('savestack'):
+        if cfg.getboolean('savestack', False):
             pickle.dump(self.stack, open('stack.dat', 'wb'))
         elif os.path.isfile('stack.dat'):
             os.remove('stack.dat')

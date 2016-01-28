@@ -55,6 +55,9 @@ clean:
 	-$(NIX)\cat ui/*.extracted | $(NIX)\xargs $(NIX)\rm.exe
 	del ui\*.extracted
 	del i18n\*.qm
+	del *_lex.py
+	del *_tab.py
+	del stack.dat
 
 .PHONY: images dist update
 

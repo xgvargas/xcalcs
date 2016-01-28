@@ -18,7 +18,11 @@ class Converter(QtCore.QObject):
                 (self.tr('second'), '', 1),
                 ],
             1: [ # area
-                (self.tr(''), '', ),
+                (self.tr('m2'), '', 1),
+                (self.tr('mm2'), '', 2),
+                (self.tr('in2'), '', 3),
+                (self.tr('foot2'), '', 4),
+                (self.tr('cm2'), '', 5),
                 ],
             2: [ # dimension
                 (self.tr('milimeter'), 'mm', 1.),
@@ -102,10 +106,10 @@ class Converter(QtCore.QObject):
             elif from_idx == 4: tmp = (val/1.8-273.15)/100
 
             if to_idx == 0: out = tmp*100
-            elif to_idx ==1: out = tmp*100+273.15
-            elif to_idx ==2: out = tmp*180+32
-            elif to_idx ==3: out = tmp*80
-            elif to_idx ==4: out = (tmp*100+273.15)*1.8
+            elif to_idx == 1: out = tmp*100+273.15
+            elif to_idx == 2: out = tmp*180+32
+            elif to_idx == 3: out = tmp*80
+            elif to_idx == 4: out = (tmp*100+273.15)*1.8
         else:
             out = val*self.units[index][from_idx][2]/self.units[index][to_idx][2]
 

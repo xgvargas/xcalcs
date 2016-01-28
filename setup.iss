@@ -60,6 +60,7 @@ Filename: "{app}\{#MyAppExeName}"; Flags: nowait postinstall skipifsilent; Descr
 
 [INI]
 Filename: "{app}\xcalcs.cfg"; Section: "Config"; Key: "language"; String: "{language}"
+Filename: "{app}\xcalcs.cfg"; Section: "Config"; Key: "geometry"; String: ""
 
 [InstallDelete]
 Type: files; Name: "stack.dat"

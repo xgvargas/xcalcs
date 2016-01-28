@@ -7,6 +7,7 @@
       ],
       "file_exclude_patterns": [
         "ui/*.png",
+        "ui/*.ico",
         "i18n/*.qm"
       ]
     }
