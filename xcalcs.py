@@ -11,8 +11,9 @@ from smartside import setAsApplication#, getBestTranslation
 from console import ConsoleForm
 import configparser
 import pickle
-import decimal
 import units
+import math
+from struct import pack
 
 __author__ = 'Gustavo Vargas <xgvargas@gmail.com>'
 __version_info__ = ('0', '1', '0')
@@ -42,10 +43,13 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.shortcuts = self.installShortcuts('Basic_shortcuts', self.tr('(Shortcut: {})'))
 
         self.format = cfg['format']
+        self.btn_format.setText(self.format.title())
         self.angle = cfg['angle']
+        self.btn_angle.setText(self.angle.title())
         self.coordinate = cfg['coordinate']
+        self.btn_coord.setText(self.coordinate.title())
 
-        decimal.getcontext().prec = int(cfg['precision'])
+        self.precision = int(cfg['precision'])
 
         self.console = None
         self.editing = None
@@ -91,7 +95,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         return shortcuts
 
     def keyPressEvent(self, e):
-        print(e.key(), e.nativeModifiers(), e.nativeScanCode(), e.nativeVirtualKey())
+        # print(e.key(), e.nativeModifiers(), e.nativeScanCode(), e.nativeVirtualKey())
         c = chr(e.key()) if e.key() < 255 else ''
 
         if not self.editing:
@@ -105,8 +109,9 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
                     self.updateAll()
 
             elif e.key() == QtCore.Qt.Key_Enter or e.key() == QtCore.Qt.Key_Return:
-                self.stack.append(self.stack[-1])
-                self.updateAll()
+                if len(self.stack):
+                    self.stack.append(self.stack[-1])
+                    self.updateAll()
         else:
             if e.key() == QtCore.Qt.Key_Escape:
                 self.editing = False
@@ -165,9 +170,32 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
         return 0 # FIXME
 
+    def pop(self, n=1):
+        if len(self.stack) >= n:
+            r = []
+            for _ in range(n):
+                r.append(self.stack.pop())
+        else:
+            raise IndexError
+
+        return tuple(r)
+
+    def popAngle(self):
+        v = self.stack.pop()
+        if self.angle == 'deg':
+            v = math.radians(v)
+        return v
+
+    def appendAngle(self, a):
+        if self.angle == 'deg':
+            a = math.degrees(a)
+
+        self.stack.append(a)
+
     def formatNumber(self, val):
+
         if self.format == 'sci':
-            v = str(val)
+            v = '{0:.{pre}e}'.format(val, pre=self.precision)
         elif self.format == 'eng':
             v = str(val)
         else:
@@ -179,8 +207,10 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.edt_bin.setText(bin(int(self.getX())))
         self.edt_oct.setText(oct(int(self.getX())))
         self.edt_hex.setText(hex(int(self.getX())))
-        self.edt_float.setText(str(self.getX()))
-        self.edt_double.setText(str(self.getX()))
+        d = pack('>fd', self.getX(), self.getX())
+        self.edt_float.setText('{0[0]:02X}.{0[1]:02X}.{0[2]:02X}.{0[3]:02X}'.format(d))
+        self.edt_double.setText(
+            '{0[0]:02X}.{0[1]:02X}.{0[2]:02X}.{0[3]:02X}.{0[4]:02X}.{0[5]:02X}.{0[6]:02X}.{0[7]:02X}'.format(d[4:]))
 
     def updateConverter(self):
         v = self.getX()
@@ -209,7 +239,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         if self.editing:
             txt += '''<tr><td align="right"><span style="color:#f00;">{}</span></td>
 <td width="30" bgcolor="#fff" align="center">
-<span style="color:#D482B2;">X</span></td></tr>'''.format(self.formatNumber(self.entry_str))
+<span style="color:#D482B2;">X</span></td></tr>'''.format(self.entry_str)
 
         self.edt_stack.setHtml(txt+'</table></body></html>')
 
@@ -254,13 +284,25 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.updateAll()
 
     def _on_btn_angle__clicked(self):
-        print('_on_btn_angle__clicked')
+        self.angle = 'deg' if self.angle == 'rad' else 'rad'
+
+        self.btn_angle.setText(self.angle.title())
 
     def _on_btn_format__clicked(self):
-        print('_on_btn_format__clicked')
+        if self.format == 'def':
+            self.format = 'sci'
+        elif self.format == 'sci':
+            self.format = 'eng'
+        else:
+            self.format = 'def'
+
+        self.btn_format.setText(self.format.title())
+        self.updateAll()
 
     def _on_btn_coord__clicked(self):
-        print('_on_btn_coord__clicked')
+        self.coordinate = 'cart' if self.coordinate == 'pol' else 'pol'
+
+        self.btn_coord.setText(self.coordinate.title())
 
     def _on_btn_solver__clicked(self):
         if not self.console:
@@ -269,7 +311,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
     _funcoes = '`btn_f_.+`'
     def _when_funcoes__clicked(self):
-        print(self.sender().objectName())
+        # print(self.sender().objectName())
 
         if self.editing:
             self.stack.append(self.entry_val)
@@ -277,72 +319,108 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
         op = self.sender().objectName().split('_')[2]
 
-        if op == '10powerx':
-            pass
-        elif op == 'acos':
-            pass
-        elif op == 'add':
-            x, y = self.stack.pop(), self.stack.pop()
-            self.stack.append(x+y)
+        try:
+            if op == '10powerx':
+                x, = self.pop()
+                self.stack.append(math.pow(10, x))
 
-        elif op == 'asin':
-            pass
-        elif op == 'atg':
-            pass
-        elif op == 'breakcomplex':
-            pass
-        elif op == 'conjugate':
-            pass
-        elif op == 'cos':
-            pass
-        elif op == 'div':
-            x, y = self.stack.pop(), self.stack.pop()
-            self.stack.append(y/x)
+            elif op == 'acos':
+                x, = self.pop()
+                self.appendAngle(math.acos(x))
 
-            pass
-        elif op == 'epowerx':
-            pass
-        elif op == 'inv':
-            x = self.stack.pop()
-            self.stack.append(1./x)
+            elif op == 'add':
+                x, y = self.pop(2)
+                self.stack.append(x+y)
 
-        elif op == 'ln':
-            pass
-        elif op == 'log10':
-            pass
-        elif op == 'log2':
-            pass
-        elif op == 'minus':
-            x = self.stack.pop()
-            self.stack.append(-x)
+            elif op == 'asin':
+                x, = self.pop()
+                self.appendAngle(math.asin(x))
 
-        elif op == 'mul':
-            x, y = self.stack.pop(), self.stack.pop()
-            self.stack.append(x*y)
+            elif op == 'atg':
+                x, = self.pop()
+                self.appendAngle(math.atan(x))
 
-        elif op == 'power2':
-            pass
-        elif op == 'powerx':
-            pass
-        elif op == 'sin':
-            pass
-        elif op == 'sqrt2':
-            pass
-        elif op == 'sqrtx':
-            pass
-        elif op == 'sub':
-            x, y = self.stack.pop(), self.stack.pop()
-            self.stack.append(y-x)
+            elif op == 'breakcomplex':
+                pass
+            elif op == 'conjugate':
+                pass
+            elif op == 'cos':
+                x = self.popAngle()
+                self.stack.append(math.cos(x))
 
-        elif op == 'swap':
-            x, y = self.stack.pop(), self.stack.pop()
-            self.stack.append(x)
-            self.stack.append(y)
+            elif op == 'div':
+                x, y = self.pop(2)
+                self.stack.append(y/x)
 
-        elif op == 'tg':
+
+            elif op == 'epowerx':
+                x, = self.pop()
+                self.stack.append(math.exp(x))
+
+            elif op == 'inv':
+                x, = self.pop()
+                self.stack.append(1./x)
+
+            elif op == 'ln':
+                x, = self.pop()
+                self.stack.append(math.log(x))
+
+            elif op == 'log10':
+                x, = self.pop()
+                self.stack.append(math.log10(x))
+
+            elif op == 'log2':
+                x, = self.pop()
+                self.stack.append(math.log2(x))
+
+            elif op == 'minus':
+                x, = self.pop()
+                self.stack.append(-x)
+
+            elif op == 'mul':
+                x, y = self.pop(2)
+                self.stack.append(x*y)
+
+            elif op == 'power2':
+                x, = self.pop()
+                self.stack.append(math.pow(x, 2))
+
+            elif op == 'powerx':
+                x, y = self.pop(2)
+                self.stack.append(math.pow(y, x))
+
+            elif op == 'sin':
+                x = self.popAngle()
+                self.stack.append(math.sin(x))
+
+            elif op == 'sqrt2':
+                x, = self.pop()
+                self.stack.append(math.sqrt(x))
+
+            elif op == 'sqrtx':
+                x, y = self.pop(2)
+                self.stack.append(math.pow(y, 1./x))
+
+            elif op == 'sub':
+                x, y = self.pop(2)
+                self.stack.append(y-x)
+
+            elif op == 'swap':
+                x, y = self.pop(2)
+                self.stack.append(x)
+                self.stack.append(y)
+
+            elif op == 'tg':
+                x = self.popAngle()
+                self.stack.append(math.tan(x))
+
+            elif op == 'tocomplex':
+                pass
+        except IndexError:
             pass
-        elif op == 'tocomplex':
-            pass
+            print('nhaca')
+        except:
+            raise
 
         self.updateAll()
 
