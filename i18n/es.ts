@@ -31,22 +31,22 @@
 <context>
     <name>Converter</name>
     <message>
-        <location filename="../units.py" line="24"/>
+        <location filename="../units.py" line="28"/>
         <source>milimeter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="25"/>
+        <location filename="../units.py" line="29"/>
         <source>centimeter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="27"/>
+        <location filename="../units.py" line="31"/>
         <source>inch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="26"/>
+        <location filename="../units.py" line="30"/>
         <source>meter</source>
         <translation type="unfinished"></translation>
     </message>
@@ -76,177 +76,177 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="28"/>
+        <location filename="../units.py" line="32"/>
         <source>kilometer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="29"/>
+        <location filename="../units.py" line="33"/>
         <source>mils</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="30"/>
+        <location filename="../units.py" line="34"/>
         <source>mile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="31"/>
+        <location filename="../units.py" line="35"/>
         <source>yard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="32"/>
+        <location filename="../units.py" line="36"/>
         <source>feet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="35"/>
+        <location filename="../units.py" line="39"/>
         <source>joule</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="36"/>
+        <location filename="../units.py" line="40"/>
         <source>watt-second</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="37"/>
+        <location filename="../units.py" line="41"/>
         <source>watt-hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="38"/>
+        <location filename="../units.py" line="42"/>
         <source>kWatt-hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="39"/>
+        <location filename="../units.py" line="43"/>
         <source>calory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="40"/>
+        <location filename="../units.py" line="44"/>
         <source>BTU</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="41"/>
+        <location filename="../units.py" line="45"/>
         <source>Nm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="50"/>
+        <location filename="../units.py" line="54"/>
         <source>gram</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="51"/>
+        <location filename="../units.py" line="55"/>
         <source>kilogram</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="52"/>
+        <location filename="../units.py" line="56"/>
         <source>pound</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="53"/>
+        <location filename="../units.py" line="57"/>
         <source>ounce</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="54"/>
+        <location filename="../units.py" line="58"/>
         <source>libre</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="55"/>
+        <location filename="../units.py" line="59"/>
         <source>grain</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="56"/>
+        <location filename="../units.py" line="60"/>
         <source>ton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="62"/>
+        <location filename="../units.py" line="66"/>
         <source>km/h</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="63"/>
+        <location filename="../units.py" line="67"/>
         <source>m/s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="64"/>
+        <location filename="../units.py" line="68"/>
         <source>mi/h</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="67"/>
+        <location filename="../units.py" line="71"/>
         <source>bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="68"/>
+        <location filename="../units.py" line="72"/>
         <source>atm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="69"/>
+        <location filename="../units.py" line="73"/>
         <source>psi</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="70"/>
+        <location filename="../units.py" line="74"/>
         <source>torr</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="71"/>
+        <location filename="../units.py" line="75"/>
         <source>pascal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="74"/>
+        <location filename="../units.py" line="78"/>
         <source>celsius</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="75"/>
+        <location filename="../units.py" line="79"/>
         <source>kelvin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="76"/>
+        <location filename="../units.py" line="80"/>
         <source>fahrenheit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="77"/>
+        <location filename="../units.py" line="81"/>
         <source>r&#xc3;&#xa9;aumur</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="78"/>
+        <location filename="../units.py" line="82"/>
         <source>rankine</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="81"/>
+        <location filename="../units.py" line="85"/>
         <source>l</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="82"/>
+        <location filename="../units.py" line="86"/>
         <source>gal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="83"/>
+        <location filename="../units.py" line="87"/>
         <source>m^3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -260,11 +260,36 @@
         <source>gradians</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../units.py" line="21"/>
+        <source>m2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="22"/>
+        <source>mm2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="23"/>
+        <source>in2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="24"/>
+        <source>foot2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="25"/>
+        <source>cm2</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>XCalcsApp</name>
     <message>
-        <location filename="../xcalcs.py" line="39"/>
+        <location filename="../xcalcs.py" line="45"/>
         <source>(Shortcut: {})</source>
         <translation type="unfinished"></translation>
     </message>
@@ -515,67 +540,47 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2335"/>
-        <source>Invert to/from</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/xcalcs.ui" line="2338"/>
-        <source>Invert</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/xcalcs.ui" line="2387"/>
-        <source>Copy converted value to stack</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/xcalcs.ui" line="2390"/>
-        <source>Stack</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/xcalcs.ui" line="2407"/>
+        <location filename="../ui/xcalcs.ui" line="2355"/>
         <source>Base converter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2430"/>
+        <location filename="../ui/xcalcs.ui" line="2378"/>
         <source>BIN</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2447"/>
+        <location filename="../ui/xcalcs.ui" line="2395"/>
         <source>OCT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2464"/>
+        <location filename="../ui/xcalcs.ui" line="2412"/>
         <source>HEX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2481"/>
+        <location filename="../ui/xcalcs.ui" line="2429"/>
         <source>FLOAT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2491"/>
+        <location filename="../ui/xcalcs.ui" line="2439"/>
         <source>DOUBLE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2538"/>
+        <location filename="../ui/xcalcs.ui" line="2486"/>
         <source>About...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2551"/>
+        <location filename="../ui/xcalcs.ui" line="2499"/>
         <source>XcalcS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2561"/>
+        <location filename="../ui/xcalcs.ui" line="2509"/>
         <source>&lt;a href=&quot;https://github.com/xgvargas/xcalcs&quot;&gt;https://github.com/xgvargas/xcalcs&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -606,6 +611,11 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/xcalcs.ui" line="2245"/>
         <source>Flux</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/xcalcs.ui" line="2332"/>
+        <source>Copy this value to stack</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -218,14 +218,14 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         v = self.getX()
         c = self.converter.convert(v,
                                    self.cmb_quantity.currentIndex(),
-                                   self.list_from.currentRow(),
-                                   self.list_to.currentRow())
-        self.lbl_convert_right.setText(self.formatNumber(c))
+                                   self.list_conv_left.currentRow(),
+                                   self.list_conv_right.currentRow())
+        self.btn_conv_right.setText(self.formatNumber(c))
         c = self.converter.convert(v,
                                    self.cmb_quantity.currentIndex(),
-                                   self.list_to.currentRow(),
-                                   self.list_from.currentRow())
-        self.lbl_convert_left.setText(self.formatNumber(c))
+                                   self.list_conv_right.currentRow(),
+                                   self.list_conv_left.currentRow())
+        self.btn_conv_left.setText(self.formatNumber(c))
 
     def updateStack(self):
         txt = '''<html><head>
@@ -266,23 +266,22 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
     def _on_cmb_quantity__currentIndexChanged(self):
         names = self.converter.getNames(self.cmb_quantity.currentIndex())
-        self.list_from.clear()
-        self.list_from.insertItems(0, names)
-        self.list_from.setCurrentRow(0)
-        self.list_to.clear()
-        self.list_to.insertItems(0, names)
-        self.list_to.setCurrentRow(1)
+        self.list_conv_left.clear()
+        self.list_conv_left.insertItems(0, names)
+        self.list_conv_left.setCurrentRow(0)
+        self.list_conv_right.clear()
+        self.list_conv_right.insertItems(0, names)
+        self.list_conv_right.setCurrentRow(1)
         self.updateConverter()
 
-    def _on_list_from__itemPressed(self):
+    _conv_lists = '`list_conv_.+`'
+    def _when_conv_lists__clicked(self):
         self.updateConverter()
 
-    def _on_list_to__clicked(self):
-        self.updateConverter()
-
-    # def _on_btn_copy_converted__clicked(self):
-    #     self.stack.append(float(self.lbl_converted.text()))
-    #     self.updateAll()
+    _conv_copy = '`btn_conv_.+`'
+    def _when_conv_copy__clicked(self):
+        self.stack.append(float(self.sender().text()))
+        self.updateAll()
 
     def _on_btn_angle__clicked(self):
         self.angle = 'deg' if self.angle == 'rad' else 'rad'
@@ -352,7 +351,6 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
             elif op == 'div':
                 x, y = self.pop(2)
                 self.stack.append(y/x)
-
 
             elif op == 'epowerx':
                 x, = self.pop()
@@ -463,6 +461,10 @@ def getBestTranslation(basedir, lang=None):
     return translator
 
 if __name__ == "__main__":
+
+    # if hasattr(sys, "frozen"):
+    #     appver = esky.Esky(sys.executable, "http://example.com/downloads/")
+    #     appver.auto_update()
 
     app = QtGui.QApplication(sys.argv)
     translator = getBestTranslation('i18n', [cfg['language']])
