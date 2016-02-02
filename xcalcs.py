@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 """
+cmd /k "cd /d D:\Projetos\xcalcs\venv\Scripts & activate & cd /d D:\Projetos\xcalcs & python xcalcs.py"
+D:\Projetos\xcalcs\venv\Scripts\pythonw.exe xcalcs.py
 """
 
 import sys, os
@@ -218,7 +220,12 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
                                    self.cmb_quantity.currentIndex(),
                                    self.list_from.currentRow(),
                                    self.list_to.currentRow())
-        self.lbl_converted.setText(self.formatNumber(c))
+        self.lbl_convert_right.setText(self.formatNumber(c))
+        c = self.converter.convert(v,
+                                   self.cmb_quantity.currentIndex(),
+                                   self.list_to.currentRow(),
+                                   self.list_from.currentRow())
+        self.lbl_convert_left.setText(self.formatNumber(c))
 
     def updateStack(self):
         txt = '''<html><head>
@@ -273,15 +280,9 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
     def _on_list_to__clicked(self):
         self.updateConverter()
 
-    def _on_btn_invert_units__clicked(self):
-        tmp = self.list_from.currentRow()
-        self.list_from.setCurrentRow(self.list_to.currentRow())
-        self.list_to.setCurrentRow(tmp)
-        self.updateConverter()
-
-    def _on_btn_copy_converted__clicked(self):
-        self.stack.append(float(self.lbl_converted.text()))
-        self.updateAll()
+    # def _on_btn_copy_converted__clicked(self):
+    #     self.stack.append(float(self.lbl_converted.text()))
+    #     self.updateAll()
 
     def _on_btn_angle__clicked(self):
         self.angle = 'deg' if self.angle == 'rad' else 'rad'

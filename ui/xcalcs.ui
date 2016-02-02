@@ -2312,55 +2312,15 @@ p, li { white-space: pre-wrap; }
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
-         <item>
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QPushButton" name="btn_invert_units">
-           <property name="focusPolicy">
-            <enum>Qt::NoFocus</enum>
-           </property>
-           <property name="toolTip">
-            <string>Invert to/from</string>
-           </property>
-           <property name="text">
-            <string>Invert</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
-       </item>
-       <item>
         <layout class="QHBoxLayout" name="horizontalLayout_6">
-         <property name="leftMargin">
+         <property name="spacing">
           <number>8</number>
          </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
          <item>
-          <widget class="QLabel" name="lbl_converted">
+          <widget class="QLabel" name="lbl_convert_left">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -2379,15 +2339,21 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="btn_copy_converted">
-           <property name="focusPolicy">
-            <enum>Qt::NoFocus</enum>
+          <widget class="QLabel" name="lbl_convert_right">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
            </property>
-           <property name="toolTip">
-            <string>Copy converted value to stack</string>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 170, 127);</string>
            </property>
            <property name="text">
-            <string>Stack</string>
+            <string notr="true">TextLabel</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
            </property>
           </widget>
          </item>
