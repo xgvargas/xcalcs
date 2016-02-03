@@ -12,3 +12,4 @@ build
 /*_tab.py
 *.extracted
 *.sublime-workspace
+/ui/exeicon.ico

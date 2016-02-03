@@ -27,8 +27,8 @@
     <file>sin.png</file>
   </qresource>
   <qresource prefix="icons">
-    <file>exeicon.ico</file>
     <file>advanced.png</file>
+    <file>icon32.png</file>
     <file>converter.png</file>
     <file>base.png</file>
     <file>basic.png</file>

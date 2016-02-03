@@ -424,6 +424,14 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.updateAll()
 
 
+        # fatorial
+        #  combinacao C(n,r) = n! / ( r! (n - r)! )
+        # permutacao P(n,r) = n! / (n - r)!
+        # random
+
+
+
+
 from os import path
 def getBestTranslation(basedir, lang=None):
     """

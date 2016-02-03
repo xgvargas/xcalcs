@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="xcalcs.qrc">
-    <normaloff>:/icons/exeicon.ico</normaloff>:/icons/exeicon.ico</iconset>
+    <normaloff>:/icons/icon32.png</normaloff>:/icons/icon32.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
