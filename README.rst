@@ -1,7 +1,7 @@
 XcalcS
 ======
 
-RPM calculator in Python/PySide
+RPN calculator in Python/PySide
 
 Blank by now
 ------------
