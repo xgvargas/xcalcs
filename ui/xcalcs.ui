@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>form_main</class>
+ <widget class="QWidget" name="form_main">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>206</width>
-    <height>379</height>
+    <width>228</width>
+    <height>318</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>206</width>
+    <width>228</width>
     <height>0</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>206</width>
+    <width>228</width>
     <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>XCalcS</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <property name="windowIcon">
+   <iconset resource="xcalcs.qrc">
+    <normaloff>:/icons/icon32.png</normaloff>:/icons/icon32.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_5">
    <property name="spacing">
     <number>0</number>
    </property>
@@ -33,29 +37,32 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="QScrollArea" name="scrollArea">
+    <widget class="QScrollArea" name="scr_stack">
      <property name="verticalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOn</enum>
      </property>
      <property name="horizontalScrollBarPolicy">
-      <enum>Qt::ScrollBarAlwaysOff</enum>
-     </property>
-     <property name="widgetResizable">
-      <bool>true</bool>
+      <enum>Qt::ScrollBarAsNeeded</enum>
      </property>
      <property name="alignment">
       <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
      </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents">
+     <widget class="QWidget" name="layout_stack">
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-341</y>
-        <width>187</width>
-        <height>458</height>
+        <y>0</y>
+        <width>209</width>
+        <height>192</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
        <property name="spacing">
         <number>0</number>
        </property>
@@ -63,121 +70,45 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QTextEdit" name="edt_num">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>458</height>
-          </size>
-         </property>
+        <widget class="QTextEdit" name="edt_stack">
          <property name="font">
           <font>
+           <family>Courier New</family>
            <pointsize>9</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">font: 9pt &quot;Courier New&quot;;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
          <property name="undoRedoEnabled">
           <bool>false</bool>
+         </property>
+         <property name="lineWrapMode">
+          <enum>QTextEdit::NoWrap</enum>
          </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;
-&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;asdqweqweasd&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Courier New'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; align=&quot;right&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p align=&quot;right&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;{}&lt;/p&gt;&lt;/td&gt;
+&lt;td width=&quot;30&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#d482b2;&quot;&gt;{}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="textInteractionFlags">
-          <set>Qt::TextSelectableByMouse</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QTextEdit" name="edt_label">
-         <property name="maximumSize">
-          <size>
-           <width>24</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="cursor" stdset="0">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="undoRedoEnabled">
-          <bool>false</bool>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-         <property name="html">
-          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;32&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;31&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;30&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;29&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;28&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;nhaa&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;27&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;26&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;25&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;24&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;23&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;22&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;21&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;20&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;19&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;18&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;17&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;16&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;15&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;14&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;13&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;12&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;11&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;10&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;9&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;8&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;7&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;6&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;5&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;4&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;Z&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;Y&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0000ff;&quot;&gt;X&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-         <property name="textInteractionFlags">
-          <set>Qt::LinksAccessibleByMouse</set>
+          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
          </property>
         </widget>
        </item>
@@ -187,15 +118,9 @@ p, li { white-space: pre-wrap; }
    </item>
    <item>
     <widget class="QFrame" name="frame">
-     <property name="minimumSize">
-      <size>
-       <width>206</width>
-       <height>0</height>
-      </size>
-     </property>
      <property name="maximumSize">
       <size>
-       <width>206</width>
+       <width>228</width>
        <height>16777215</height>
       </size>
      </property>
@@ -232,20 +157,14 @@ p, li { white-space: pre-wrap; }
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="minimumSize">
-         <size>
-          <width>38</width>
-          <height>0</height>
-         </size>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
         </property>
-        <property name="maximumSize">
-         <size>
-          <width>30</width>
-          <height>16777215</height>
-         </size>
+        <property name="toolTip">
+         <string>Set angle mode: degress, radians </string>
         </property>
         <property name="text">
-         <string>Deg</string>
+         <string notr="true">Deg</string>
         </property>
        </widget>
       </item>
@@ -257,20 +176,14 @@ p, li { white-space: pre-wrap; }
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="minimumSize">
-         <size>
-          <width>38</width>
-          <height>0</height>
-         </size>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
         </property>
-        <property name="maximumSize">
-         <size>
-          <width>30</width>
-          <height>16777215</height>
-         </size>
+        <property name="toolTip">
+         <string>Set display mode: default, cientific, enginering</string>
         </property>
         <property name="text">
-         <string>Eng</string>
+         <string notr="true">Eng</string>
         </property>
        </widget>
       </item>
@@ -282,78 +195,34 @@ p, li { white-space: pre-wrap; }
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="minimumSize">
-         <size>
-          <width>38</width>
-          <height>0</height>
-         </size>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
         </property>
-        <property name="maximumSize">
-         <size>
-          <width>30</width>
-          <height>16777215</height>
-         </size>
+        <property name="toolTip">
+         <string>Set coordinate mode: cartesian, polar</string>
         </property>
         <property name="text">
-         <string>Cart</string>
+         <string notr="true">Cart</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="btn_conv">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
+       <widget class="QPushButton" name="btn_solver">
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+         </font>
         </property>
-        <property name="minimumSize">
-         <size>
-          <width>38</width>
-          <height>0</height>
-         </size>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
         </property>
-        <property name="maximumSize">
-         <size>
-          <width>30</width>
-          <height>16777215</height>
-         </size>
+        <property name="toolTip">
+         <string>Open equation solver</string>
         </property>
         <property name="text">
-         <string>Conv</string>
+         <string notr="true">Solver</string>
         </property>
         <property name="checkable">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="btn_base">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>38</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>30</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Base</string>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="flat">
          <bool>false</bool>
         </property>
        </widget>
@@ -363,30 +232,52 @@ p, li { white-space: pre-wrap; }
    </item>
    <item>
     <widget class="QTabWidget" name="tabWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="minimumSize">
       <size>
-       <width>206</width>
-       <height>227</height>
+       <width>228</width>
+       <height>205</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>206</width>
-       <height>227</height>
+       <width>228</width>
+       <height>205</height>
       </size>
      </property>
      <property name="focusPolicy">
       <enum>Qt::NoFocus</enum>
      </property>
      <property name="tabPosition">
-      <enum>QTabWidget::South</enum>
+      <enum>QTabWidget::East</enum>
      </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
+     <property name="iconSize">
+      <size>
+       <width>12</width>
+       <height>18</height>
+      </size>
+     </property>
+     <property name="usesScrollButtons">
+      <bool>false</bool>
+     </property>
      <widget class="QWidget" name="tab">
+      <attribute name="icon">
+       <iconset resource="xcalcs.qrc">
+        <normaloff>:/icons/basic.png</normaloff>:/icons/basic.png</iconset>
+      </attribute>
       <attribute name="title">
-       <string>Basic</string>
+       <string/>
+      </attribute>
+      <attribute name="toolTip">
+       <string>Basic Operations</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
        <property name="sizeConstraint">
@@ -418,12 +309,18 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Root square of X in Y base</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/raizn.bmp</normaloff>:/func/imgs/raizn.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/sqrtx.png</normaloff>:/func/sqrtx.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -453,12 +350,18 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>X times Y</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/vezes.bmp</normaloff>:/func/imgs/vezes.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/mul.png</normaloff>:/func/mul.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -488,12 +391,18 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Tangent of X</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
           <iconset resource="xcalcs.qrc">
-           <normaloff>:/func/tan.png</normaloff>:/func/tan.png</iconset>
+           <normaloff>:/func/tg.png</normaloff>:/func/tg.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -523,12 +432,18 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Negate X</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/sign.bmp</normaloff>:/func/imgs/sign.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/neg.png</normaloff>:/func/neg.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -558,12 +473,18 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Rise 10 to X power</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
           <iconset resource="xcalcs.qrc">
-           <normaloff>:/func/10x.png</normaloff>:/func/10x.png</iconset>
+           <normaloff>:/func/10powerx.png</normaloff>:/func/10powerx.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -592,6 +513,12 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Arc-Sine of X</string>
          </property>
          <property name="text">
           <string/>
@@ -628,6 +555,12 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Logarithyn of X in base 'e'</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -662,6 +595,12 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Arc-tangent of X</string>
          </property>
          <property name="text">
           <string/>
@@ -698,6 +637,12 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Cossene of X</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -733,12 +678,18 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Cunjugate of X</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/conj.bmp</normaloff>:/func/imgs/conj.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/conjugate.png</normaloff>:/func/conjugate.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -768,12 +719,18 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Root square of X</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/sqrt.bmp</normaloff>:/func/imgs/sqrt.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/sqrt.png</normaloff>:/func/sqrt.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -802,6 +759,12 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Logarithyn of X in base 2</string>
          </property>
          <property name="text">
           <string/>
@@ -838,12 +801,18 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Invert X (1/X)</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/invert.bmp</normaloff>:/func/imgs/invert.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/inv.png</normaloff>:/func/inv.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -873,12 +842,18 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Break complex into real (Y) and imaginary (X) parts</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/decomplex.bmp</normaloff>:/func/imgs/decomplex.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/break.png</normaloff>:/func/break.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -908,12 +883,18 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Rise X to power 2</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/power2.bmp</normaloff>:/func/imgs/power2.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/power2.png</normaloff>:/func/power2.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -943,12 +924,18 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Divide Y by X</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/div.bmp</normaloff>:/func/imgs/div.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/div.png</normaloff>:/func/div.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -978,12 +965,18 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Merge X and Y into complex number. (Y+iX)</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/toimag.png</normaloff>:/func/imgs/toimag.png</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/complex.png</normaloff>:/func/complex.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -1013,12 +1006,18 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Subtract X from Y</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/minus.bmp</normaloff>:/func/imgs/minus.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/sub.png</normaloff>:/func/sub.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -1048,12 +1047,18 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Swap X and Y values</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/swap.bmp</normaloff>:/func/imgs/swap.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/swap.png</normaloff>:/func/swap.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -1083,12 +1088,18 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Rise Y to power X</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/powery.bmp</normaloff>:/func/imgs/powery.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/ypowerx.png</normaloff>:/func/ypowerx.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -1117,6 +1128,12 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Sine of X</string>
          </property>
          <property name="text">
           <string/>
@@ -1153,6 +1170,12 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Logarithyn of X in base 10</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -1188,12 +1211,18 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Rise 'e' to X power</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
           <iconset resource="xcalcs.qrc">
-           <normaloff>:/func/ex.png</normaloff>:/func/ex.png</iconset>
+           <normaloff>:/func/epowerx.png</normaloff>:/func/epowerx.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -1222,6 +1251,12 @@ p, li { white-space: pre-wrap; }
            <width>40</width>
            <height>40</height>
           </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Arc-Cossene of X</string>
          </property>
          <property name="text">
           <string/>
@@ -1258,11 +1293,21 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="contextMenuPolicy">
           <enum>Qt::DefaultContextMenu</enum>
          </property>
+         <property name="toolTip">
+          <string>Add X to Y</string>
+         </property>
          <property name="text">
           <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/func/add.png</normaloff>:/func/add.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -1275,8 +1320,15 @@ p, li { white-space: pre-wrap; }
       </layout>
      </widget>
      <widget class="QWidget" name="tab_2">
+      <attribute name="icon">
+       <iconset resource="xcalcs.qrc">
+        <normaloff>:/icons/advanced.png</normaloff>:/icons/advanced.png</iconset>
+      </attribute>
       <attribute name="title">
-       <string>Advanced</string>
+       <string/>
+      </attribute>
+      <attribute name="toolTip">
+       <string>Advanced operations</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
        <property name="margin">
@@ -2118,10 +2170,353 @@ p, li { white-space: pre-wrap; }
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tab_5">
+     <widget class="QWidget" name="tab_3">
+      <attribute name="icon">
+       <iconset resource="xcalcs.qrc">
+        <normaloff>:/icons/converter.png</normaloff>:/icons/converter.png</iconset>
+      </attribute>
       <attribute name="title">
+       <string/>
+      </attribute>
+      <attribute name="toolTip">
+       <string>Unit converter</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="spacing">
+        <number>3</number>
+       </property>
+       <property name="leftMargin">
+        <number>2</number>
+       </property>
+       <property name="topMargin">
+        <number>1</number>
+       </property>
+       <property name="rightMargin">
+        <number>2</number>
+       </property>
+       <property name="bottomMargin">
+        <number>5</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Quantity:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cmb_quantity">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="maxVisibleItems">
+            <number>16</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>Angle</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Area</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Dimension</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Energy</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Flux</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Force</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Mass</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Power</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Speed</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Pressure</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Temperature</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Volume</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <property name="spacing">
+          <number>3</number>
+         </property>
+         <item>
+          <widget class="QListWidget" name="list_conv_left">
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="toolTip">
+            <string>From unit</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="list_conv_right">
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="toolTip">
+            <string>To unit</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QPushButton" name="btn_conv_left">
+           <property name="toolTip">
+            <string>Copy this value to stack</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 170, 127);</string>
+           </property>
+           <property name="text">
+            <string notr="true">PushButton</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_conv_right">
+           <property name="toolTip">
+            <string>Copy this value to stack</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 170, 127);</string>
+           </property>
+           <property name="text">
+            <string notr="true">PushButton</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="icon">
+       <iconset resource="xcalcs.qrc">
+        <normaloff>:/icons/base.png</normaloff>:/icons/base.png</iconset>
+      </attribute>
+      <attribute name="title">
+       <string/>
+      </attribute>
+      <attribute name="toolTip">
+       <string>Base converter</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <property name="spacing">
+        <number>5</number>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>6</number>
+       </property>
+       <property name="rightMargin">
+        <number>6</number>
+       </property>
+       <property name="bottomMargin">
+        <number>10</number>
+       </property>
+       <item>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>BIN</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="edt_bin">
+           <property name="focusPolicy">
+            <enum>Qt::ClickFocus</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>OCT</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="edt_oct">
+           <property name="focusPolicy">
+            <enum>Qt::ClickFocus</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>HEX</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="edt_hex">
+           <property name="focusPolicy">
+            <enum>Qt::ClickFocus</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>FLOAT</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>DOUBLE</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="edt_float">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLineEdit" name="edt_double">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_5">
+      <attribute name="icon">
+       <iconset resource="xcalcs.qrc">
+        <normaloff>:/icons/about.png</normaloff>:/icons/about.png</iconset>
+      </attribute>
+      <attribute name="title">
+       <string/>
+      </attribute>
+      <attribute name="toolTip">
        <string>About...</string>
       </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="font">
+          <font>
+           <pointsize>32</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>XcalcS</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>&lt;a href=&quot;https://github.com/xgvargas/xcalcs&quot;&gt;https://github.com/xgvargas/xcalcs&lt;/a&gt;</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="openExternalLinks">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
    </item>

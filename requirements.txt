@@ -1,0 +1,6 @@
+cx-Freeze
+esky
+ply
+PySide
+smartside
+nuitka
