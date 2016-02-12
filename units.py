@@ -84,22 +84,16 @@ class Converter(QtCore.QObject):
 # mil mil degree  360/6400    0.05625 radian  2π/6400 9.817477e-4
                 ],
             1: [ # area
-                (self.tr('m2'), '', 1),
-                (self.tr('mm2'), '', 2),
-                (self.tr('in2'), '', 3),
-                (self.tr('foot2'), '', 4),
-                (self.tr('cm2'), '', 5),
-# square inch in2 square meter    0.00064516
-# square foot ft2 square meter    0.09290304
-# square yard yd2 square meter    0.83612736
-# square mile mi2 square meter    2589988.110336
-# acre    ac  square meter    4046.8564224
-# hectare ha  square meter    10000
-# square millimeter   mm2 square meter    0.000001
-# square centimeter   cm2 square meter    0.0001
-# square meter    m2  square meter    1
-# square kilometer    km2 square meter    1000000
-
+                (self.tr('square inch'), 'in2', 0.00064516),
+                (self.tr('square foot'), 'ft2', 0.09290304),
+                (self.tr('square yard'), 'yd2', 0.83612736),
+                (self.tr('square mile'), 'mi2', 2589988.110336),
+                (self.tr('acre'), 'ac', 4046.8564224),
+                (self.tr('hectare'), 'ha', 10000),
+                (self.tr('square millimeter'), 'mm2', 0.000001),
+                (self.tr('square centimeter'), 'cm2', 0.0001),
+                (self.tr('square meter'), 'm2', 1),
+                (self.tr('square kilometer'), 'km2', 1000000),
                 ],
             2: [ # dimension
                 (self.tr('milimeter'), 'mm', 1.),
@@ -174,17 +168,16 @@ class Converter(QtCore.QObject):
                 (self.tr(''), '', ),
                 ],
             5: [ # force
-                (self.tr(''), '', ),
-# dyne    dyn newton  0.00001
-# kilogram-force  kgf newton  9.80665
-# kilopond    kp  newton  9.80665
-# kip kip newton  4448.222
-# newton  N   newton  1
-# kilonewton  kN  newton  1000
-# ounce-force ozf newton  0.2780139
-# poundal pdl newton  0.138255
-# pound-force lbf newton  4.448222
-# ton-force   tnf newton  8896.443
+                (self.tr('dyne'), 'dyn', 0.00001),
+                (self.tr('kilogram-force'), 'kgf', 9.80665),
+                (self.tr('kilopond'), 'kp', 9.80665),
+                (self.tr('kip'), 'kip', 4448.222),
+                (self.tr('newton'), 'N', 1),
+                (self.tr('kilonewton'), 'kN', 1000),
+                (self.tr('ounce-force'), 'ozf', 0.2780139),
+                (self.tr('poundal'), 'pdl', 0.138255),
+                (self.tr('pound-force'), 'lbf', 4.448222),
+                (self.tr('ton-force'), 'tnf', 8896.443),
                 ],
             6: [ # mass
                 (self.tr('gram'), 'g', 1),
@@ -399,4 +392,4 @@ class Converter(QtCore.QObject):
         else:
             out = val*self.units[index][from_idx][2]/self.units[index][to_idx][2]
 
-        return out
+        return out, self.units[index][to_idx][1]

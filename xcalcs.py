@@ -217,16 +217,16 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
     def updateConverter(self):
         v = self.getX()
-        c = self.converter.convert(v,
-                                   self.cmb_quantity.currentIndex(),
-                                   self.list_conv_left.currentRow(),
-                                   self.list_conv_right.currentRow())
-        self.btn_conv_right.setText(self.formatNumber(c))
-        c = self.converter.convert(v,
-                                   self.cmb_quantity.currentIndex(),
-                                   self.list_conv_right.currentRow(),
-                                   self.list_conv_left.currentRow())
-        self.btn_conv_left.setText(self.formatNumber(c))
+        c, u = self.converter.convert(v,
+                                      self.cmb_quantity.currentIndex(),
+                                      self.list_conv_left.currentRow(),
+                                      self.list_conv_right.currentRow())
+        self.btn_conv_right.setText('{} {}'.format(self.formatNumber(c), u))
+        c, u = self.converter.convert(v,
+                                      self.cmb_quantity.currentIndex(),
+                                      self.list_conv_right.currentRow(),
+                                      self.list_conv_left.currentRow())
+        self.btn_conv_left.setText('{} {}'.format(self.formatNumber(c), u))
 
     def updateStack(self):
         txt = '''<html><head>
