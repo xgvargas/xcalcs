@@ -169,7 +169,7 @@ p, li { white-space: pre-wrap; }
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="btn_format">
+       <widget class="PushAndScroll" name="btn_format">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -2522,6 +2522,13 @@ p, li { white-space: pre-wrap; }
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PushAndScroll</class>
+   <extends>QPushButton</extends>
+   <header>pushandscroll</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="xcalcs.qrc"/>
  </resources>

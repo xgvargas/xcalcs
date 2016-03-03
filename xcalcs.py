@@ -45,13 +45,15 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.shortcuts = self.installShortcuts('Basic_shortcuts', self.tr('(Shortcut: {})'))
 
         self.format = cfg['format']
-        self.btn_format.setText(self.format.title())
         self.angle = cfg['angle']
-        self.btn_angle.setText(self.angle.title())
         self.coordinate = cfg['coordinate']
-        self.btn_coord.setText(self.coordinate.title())
 
         self.precision = int(cfg['precision'])
+        self.btn_format.setValue(self.precision, 1, 12)
+
+        self.btn_format.setText('{} ({:d})'.format(self.format.title(), self.precision))
+        self.btn_angle.setText(self.angle.title())
+        self.btn_coord.setText(self.coordinate.title())
 
         self.console = None
         self.editing = None
@@ -74,6 +76,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         cfg['format'] = self.format
         cfg['angle'] = self.angle
         cfg['coordinate'] = self.coordinate
+        cfg['precision'] = str(self.precision)
         with open('xcalcs.cfg', 'w') as configfile:
             settings.write(configfile)
         if cfg.getboolean('savestack', False):
@@ -297,7 +300,12 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         else:
             self.format = 'def'
 
-        self.btn_format.setText(self.format.title())
+        self.btn_format.setText('{} ({:d})'.format(self.format.title(), self.precision))
+        self.updateAll()
+
+    def _on_btn_format__value_changed(self, val):
+        self.precision = val
+        self.btn_format.setText('{} ({:d})'.format(self.format.title(), self.precision))
         self.updateAll()
 
     def _on_btn_coord__clicked(self):

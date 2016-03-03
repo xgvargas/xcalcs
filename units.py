@@ -96,34 +96,25 @@ class Converter(QtCore.QObject):
                 (self.tr('square kilometer'), 'km2', 1000000),
                 ],
             2: [ # dimension
-                (self.tr('milimeter'), 'mm', 1.),
-                (self.tr('centimeter'), 'cm', 10.),
-                (self.tr('meter'), 'm', 1000.),
-                (self.tr('inch'), 'in', 25.4),
-                (self.tr('kilometer'), 'km', 1000000),
-                (self.tr('mils'), 'mil', .0254),
-                (self.tr('mile'), 'mi', 1609344),
-                (self.tr('yard'), 'yd', 914.4),
-                (self.tr('feet'), 'ft', 304.8),
-# mil (0.001 in)  mil meter   0.0000254
-# inch    in  meter   0.0254
-# foot    ft  meter   0.3048
-# yard    yd  meter   0.9144
-# mile    mi  meter   1609.344
-# capefoot    cf  meter   0.314856
-# rod rd  meter   5.0292
-# angstrom    Å   meter   1E-10
-# nanometer   n   meter   0.000000001
-# micron  µ   meter   0.000001
-# millimeter  mm  meter   0.001
-# centimeter  cm  meter   0.01
-# meter   m   meter   1
-# kilometer   km  meter   1000
-# light-year  l.y.    meter   9,460,730,472,580,800
-# light-day       meter   25,902,068,371,200
-# light-hour      meter   1,079,252,848,800
-# light-minute        meter   17,987,547,480
-# light-second        meter   299,792,458
+                (self.tr('mil'), 'mil', 0.0000254),
+                (self.tr('inch'), 'in', 0.0254),
+                (self.tr('foot'), 'ft', 0.3048),
+                (self.tr('yard'), 'yd', 0.9144),
+                (self.tr('mile'), 'mi', 1609.344),
+                (self.tr('capefoot'), 'cf', 0.314856),
+                (self.tr('rod'), 'rd', 5.0292),
+                (self.tr('angstrom'), 'Å', 1E-10),
+                (self.tr('nanometer'), 'n', 0.000000001),
+                (self.tr('micron'), 'µ', 0.000001),
+                (self.tr('millimeter'), 'mm', 0.001),
+                (self.tr('centimeter'), 'cm', 0.01),
+                (self.tr('meter'), 'm', 1),
+                (self.tr('kilometer'), 'km', 1000),
+                (self.tr('light-year'), 'l.y', 9460730472580800),
+                (self.tr('light-day'), '', 25902068371200),
+                (self.tr('light-hour'), '', 1079252848800),
+                (self.tr('light-minute'), '', 17987547480),
+                (self.tr('light-second'), '', 299792458),
                 ],
             3: [ # energy
                 (self.tr('joule'), 'J', 1),
