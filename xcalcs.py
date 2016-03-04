@@ -200,12 +200,12 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
     def formatNumber(self, val):
 
         if self.format == 'sci':
-            a = '{0:.{pre}E}'.format(val, pre=self.precision)
-            v = a.split('E')[0].rstrip('0').rstrip('.') + 'E' + a.split('E')[1]
+            v = '{0:.{pre}E}'.format(val, pre=self.precision)
+            # v = a.split('E')[0].rstrip('0').rstrip('.') + 'E' + a.split('E')[1]
         elif self.format == 'eng':
             v = str(val)
         else:
-            v = str(val)
+            v = '{0:.{pre}f}'.format(val, pre=self.precision)
 
         return v
 

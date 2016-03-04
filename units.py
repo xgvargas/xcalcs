@@ -2,6 +2,7 @@
 
 from PySide import QtCore
 
+
 class Converter(QtCore.QObject):
 
     def __init__(self):
@@ -65,23 +66,16 @@ class Converter(QtCore.QObject):
 # century c   second  3153600000
 # millennium  millennium  second  31536000000
             0: [ # angle
-                (self.tr('degrees'), '', 3600),
-                (self.tr('gradians'), '', 3240),
-                (self.tr('minute'), '', 60),
-                (self.tr('rad'), '', 206265),
-                (self.tr('revolution'), '', 1296000),
-                (self.tr('straight'), '', 324000),
-                (self.tr('second'), '', 1),
-# radian  rad degree  180/π   57.29578    radian  1   1
-# degree  °   degree  1   1   radian  π/180   0.01745329
-# minutes '   degree  1/60    0.016667    radian  (π/180)/60  2.908882e-04
-# seconds "   degree  1/3600  2.777778e-4 radian  (π/180)/3600    4.848137e-06
-# octant  octant  degree  360/8   45  radian  2π/8    0.7853982
-# sextant sextant degree  360/6   60  radian  2π/6    1.047196
-# quadrant    quadrant    degree  360/4   90  radian  2π/4    1.570796
-# revolution  r   degree  360/1   360 radian  2π  6.283185
-# gon gon degree  360/400 0.9 radian  2π/400  0.01570796
-# mil mil degree  360/6400    0.05625 radian  2π/6400 9.817477e-4
+                (self.tr('radian'), 'rad', 180/3.141592),
+                (self.tr('degree'), '°', 1),
+                (self.tr('minutes'), '\'', 1/60),
+                (self.tr('seconds'), '"', 1/3600),
+                (self.tr('octant'), 'octant', 360/8),
+                (self.tr('sextant'), 'sextant', 360/6),
+                (self.tr('quadrant'), 'quadrant', 360/4),
+                (self.tr('revolution'), 'r', 360/1),
+                (self.tr('gon'), 'gon', 360/400),
+                (self.tr('mil'), 'mil', 360/6400),
                 ],
             1: [ # area
                 (self.tr('square inch'), 'in2', 0.00064516),
