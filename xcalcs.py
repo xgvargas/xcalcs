@@ -166,12 +166,15 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.updateAll()
         # print(self.editing, self.entry_str, self.entry_val)
 
-    def getX(self):
+    def getX(self, accept_complex=False):
         if self.editing:
             return self.entry_val
 
         if len(self.stack):
-            return self.stack[-1]
+            v = self.stack[-1]
+            if isinstance(v, complex) and not accept_complex:
+                v = v.real
+            return v
 
         return 0 # FIXME
 
@@ -199,11 +202,35 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
     def formatNumber(self, val):
 
+        if isinstance(val, complex):
+            if self.coordinate == 'cart':
+                r = self.formatNumber(val.real)
+                i = self.formatNumber(val.imag)
+                v = '{} j{}'.format(r, i)
+            else:
+                pass
+
+            return v
+
         if self.format == 'sci':
             v = '{0:.{pre}E}'.format(val, pre=self.precision)
             # v = a.split('E')[0].rstrip('0').rstrip('.') + 'E' + a.split('E')[1]
+
         elif self.format == 'eng':
-            v = str(val)
+            s = 1 if val >= 0 else -1
+            t = '{0:.{pre}E}'.format(abs(val), pre=self.precision+2)
+            n = t.split('E')[0].replace('.', '')
+            e = int(t.split('E')[1])
+            multiplier = ['a', 'p', 'n', 'µ', 'm', '&nbsp;', 'k', 'M', 'G', 'T', 'E']
+            d = e%3
+            e = 3*(e//3)
+            if e >= -15 and e <= 15:
+                m = multiplier[e//3+5]
+            else:
+                m = str(e)
+            # FIXME o arredondamento nao esta funcionando....
+            v = '{:d}.{} {}'.format(s*int(n[:1+d]), n[1+d:1+d+self.precision], m)
+
         else:
             v = '{0:.{pre}f}'.format(val, pre=self.precision)
 
@@ -215,8 +242,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.edt_hex.setText(hex(int(self.getX())))
         d = pack('>fd', self.getX(), self.getX())
         self.edt_float.setText('{0[0]:02X}.{0[1]:02X}.{0[2]:02X}.{0[3]:02X}'.format(d))
-        self.edt_double.setText(
-            '{0[0]:02X}.{0[1]:02X}.{0[2]:02X}.{0[3]:02X}.{0[4]:02X}.{0[5]:02X}.{0[6]:02X}.{0[7]:02X}'.format(d[4:]))
+        self.edt_double.setText('{0[0]:02X}.{0[1]:02X}.{0[2]:02X}.{0[3]:02X}.{0[4]:02X}.{0[5]:02X}.{0[6]:02X}.{0[7]:02X}'.format(d[4:]))
 
     def updateConverter(self):
         v = self.getX()
@@ -350,9 +376,20 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
                 self.appendAngle(math.atan(x))
 
             elif op == 'breakcomplex':
-                pass
+                x, = self.pop()
+                if isinstance(x, complex):
+                    self.stack.append(x.real)
+                    self.stack.append(x.imag)
+                else:
+                    self.stack.append(x)
+
             elif op == 'conjugate':
-                pass
+                x, = self.pop()
+                if isinstance(x, complex):
+                    self.stack.append(x.conjugate())
+                else:
+                    self.stack.append(x)
+
             elif op == 'cos':
                 x = self.popAngle()
                 self.stack.append(math.cos(x))
@@ -423,7 +460,9 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
                 self.stack.append(math.tan(x))
 
             elif op == 'tocomplex':
-                pass
+                x, y = self.pop(2)
+                self.stack.append(complex(y, x))
+
         except IndexError:
             pass
             print('nhaca')

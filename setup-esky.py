@@ -26,7 +26,7 @@ setup(
             },
         },
     data_files=[
-        ('i18n', glob(r'.\i18n\*.qm')),
+        ('i18n', glob('.\\i18n\\*.qm')),
         ('', ['xcalcs.cfg']),
         ],
     )
