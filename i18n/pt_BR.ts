@@ -1,6 +1,409 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="pt_BR">
 <context>
+    <name></name>
+    <message>
+        <location filename="../units.py" line="69"/>
+        <source>radian</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="70"/>
+        <source>degree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="71"/>
+        <source>minutes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="72"/>
+        <source>seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="73"/>
+        <source>octant</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="74"/>
+        <source>sextant</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="75"/>
+        <source>quadrant</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="76"/>
+        <source>revolution</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="77"/>
+        <source>gon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="93"/>
+        <source>mil</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="81"/>
+        <source>square inch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="82"/>
+        <source>square foot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="83"/>
+        <source>square yard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="84"/>
+        <source>square mile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="85"/>
+        <source>acre</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="86"/>
+        <source>hectare</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="87"/>
+        <source>square millimeter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="88"/>
+        <source>square centimeter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="89"/>
+        <source>square meter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="90"/>
+        <source>square kilometer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="94"/>
+        <source>inch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="95"/>
+        <source>foot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="96"/>
+        <source>yard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="97"/>
+        <source>mile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="98"/>
+        <source>capefoot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="99"/>
+        <source>rod</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="100"/>
+        <source>angstrom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="101"/>
+        <source>nanometer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="102"/>
+        <source>micron</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="103"/>
+        <source>millimeter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="104"/>
+        <source>centimeter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="105"/>
+        <source>meter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="106"/>
+        <source>kilometer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="107"/>
+        <source>light-year</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="108"/>
+        <source>light-day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="109"/>
+        <source>light-hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="110"/>
+        <source>light-minute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="111"/>
+        <source>light-second</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="114"/>
+        <source>joule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="115"/>
+        <source>watt-second</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="116"/>
+        <source>watt-hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="117"/>
+        <source>kWatt-hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="118"/>
+        <source>calory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="119"/>
+        <source>BTU</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="120"/>
+        <source>Nm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="156"/>
+        <source>dyne</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="157"/>
+        <source>kilogram-force</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="158"/>
+        <source>kilopond</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="159"/>
+        <source>kip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="160"/>
+        <source>newton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="161"/>
+        <source>kilonewton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="162"/>
+        <source>ounce-force</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="163"/>
+        <source>poundal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="164"/>
+        <source>pound-force</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="165"/>
+        <source>ton-force</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="168"/>
+        <source>gram</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="169"/>
+        <source>kilogram</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="170"/>
+        <source>pound</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="171"/>
+        <source>ounce</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="172"/>
+        <source>libre</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="173"/>
+        <source>grain</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="174"/>
+        <source>ton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="241"/>
+        <source>km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="242"/>
+        <source>m/s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="243"/>
+        <source>mi/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="267"/>
+        <source>bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="268"/>
+        <source>atm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="269"/>
+        <source>psi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="270"/>
+        <source>torr</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="271"/>
+        <source>pascal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="272"/>
+        <source>cmHg</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="273"/>
+        <source>cmH2O</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="300"/>
+        <source>celsius</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="301"/>
+        <source>kelvin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="302"/>
+        <source>fahrenheit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="303"/>
+        <source>r&#xc3;&#xa9;aumur</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="304"/>
+        <source>rankine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="307"/>
+        <source>l</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="308"/>
+        <source>gal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="309"/>
+        <source>m^3</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ConsoleForm</name>
     <message>
         <location filename="../console.py" line="55"/>
@@ -26,264 +429,6 @@
         <location filename="../console.py" line="68"/>
         <source>Unknown error!!</source>
         <translation>Erro desconhecido!</translation>
-    </message>
-</context>
-<context>
-    <name>Converter</name>
-    <message>
-        <location filename="../units.py" line="28"/>
-        <source>milimeter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="29"/>
-        <source>centimeter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="31"/>
-        <source>inch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="30"/>
-        <source>meter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="14"/>
-        <source>minute</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="15"/>
-        <source>rad</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="16"/>
-        <source>revolution</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="17"/>
-        <source>straight</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="18"/>
-        <source>second</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="32"/>
-        <source>kilometer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="33"/>
-        <source>mils</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="34"/>
-        <source>mile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="35"/>
-        <source>yard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="36"/>
-        <source>feet</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="39"/>
-        <source>joule</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="40"/>
-        <source>watt-second</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="41"/>
-        <source>watt-hour</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="42"/>
-        <source>kWatt-hour</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="43"/>
-        <source>calory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="44"/>
-        <source>BTU</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="45"/>
-        <source>Nm</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="54"/>
-        <source>gram</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="55"/>
-        <source>kilogram</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="56"/>
-        <source>pound</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="57"/>
-        <source>ounce</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="58"/>
-        <source>libre</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="59"/>
-        <source>grain</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="60"/>
-        <source>ton</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="66"/>
-        <source>km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="67"/>
-        <source>m/s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="68"/>
-        <source>mi/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="71"/>
-        <source>bar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="72"/>
-        <source>atm</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="73"/>
-        <source>psi</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="74"/>
-        <source>torr</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="75"/>
-        <source>pascal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="78"/>
-        <source>celsius</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="79"/>
-        <source>kelvin</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="80"/>
-        <source>fahrenheit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="81"/>
-        <source>r&#xc3;&#xa9;aumur</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="82"/>
-        <source>rankine</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="85"/>
-        <source>l</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="86"/>
-        <source>gal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="87"/>
-        <source>m^3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="12"/>
-        <source>degrees</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="13"/>
-        <source>gradians</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="21"/>
-        <source>m2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="22"/>
-        <source>mm2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="23"/>
-        <source>in2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="24"/>
-        <source>foot2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="25"/>
-        <source>cm2</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
