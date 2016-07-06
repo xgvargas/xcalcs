@@ -1,15 +1,24 @@
 {
-  "folders": [
-    {
-      "path": "/",
-      "folder_exclude_patterns": [
-        "__pycache__"
-      ],
-      "file_exclude_patterns": [
-        "ui/*.png",
-        "ui/*.ico",
-        "i18n/*.qm"
-      ]
-    }
-  ]
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"ui/*.png",
+				"ui/*.ico",
+				"i18n/*.qm"
+			],
+			"folder_exclude_patterns":
+			[
+				"__pycache__"
+			],
+			"path": "/"
+		}
+	],
+	"settings":
+	{
+		"FuzzyFilePath":
+		{
+		}
+	}
 }

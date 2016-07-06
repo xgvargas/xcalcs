@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="pt_BR">
+<!DOCTYPE TS>
+<TS version="2.1" language="pt_BR">
 <context>
     <name></name>
     <message>
         <location filename="../units.py" line="69"/>
         <source>radian</source>
-        <translation type="unfinished"></translation>
+        <translation>radianos</translation>
     </message>
     <message>
         <location filename="../units.py" line="70"/>
         <source>degree</source>
-        <translation type="unfinished"></translation>
+        <translation>graus</translation>
     </message>
     <message>
         <location filename="../units.py" line="71"/>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>minuto</translation>
     </message>
     <message>
         <location filename="../units.py" line="72"/>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>segundos</translation>
     </message>
     <message>
         <location filename="../units.py" line="73"/>
@@ -35,12 +36,12 @@
     <message>
         <location filename="../units.py" line="75"/>
         <source>quadrant</source>
-        <translation type="unfinished"></translation>
+        <translation>quadrante</translation>
     </message>
     <message>
         <location filename="../units.py" line="76"/>
         <source>revolution</source>
-        <translation type="unfinished"></translation>
+        <translation>revolução</translation>
     </message>
     <message>
         <location filename="../units.py" line="77"/>
@@ -55,22 +56,22 @@
     <message>
         <location filename="../units.py" line="81"/>
         <source>square inch</source>
-        <translation type="unfinished"></translation>
+        <translation>polegada quadrada</translation>
     </message>
     <message>
         <location filename="../units.py" line="82"/>
         <source>square foot</source>
-        <translation type="unfinished"></translation>
+        <translation>pé quadrado</translation>
     </message>
     <message>
         <location filename="../units.py" line="83"/>
         <source>square yard</source>
-        <translation type="unfinished"></translation>
+        <translation>jarda quadrada</translation>
     </message>
     <message>
         <location filename="../units.py" line="84"/>
         <source>square mile</source>
-        <translation type="unfinished"></translation>
+        <translation>milha quadrada</translation>
     </message>
     <message>
         <location filename="../units.py" line="85"/>
@@ -85,42 +86,42 @@
     <message>
         <location filename="../units.py" line="87"/>
         <source>square millimeter</source>
-        <translation type="unfinished"></translation>
+        <translation>milimetro quadrado</translation>
     </message>
     <message>
         <location filename="../units.py" line="88"/>
         <source>square centimeter</source>
-        <translation type="unfinished"></translation>
+        <translation>centimetro quadrado</translation>
     </message>
     <message>
         <location filename="../units.py" line="89"/>
         <source>square meter</source>
-        <translation type="unfinished"></translation>
+        <translation>metro quadrado</translation>
     </message>
     <message>
         <location filename="../units.py" line="90"/>
         <source>square kilometer</source>
-        <translation type="unfinished"></translation>
+        <translation>kilometro quadrado</translation>
     </message>
     <message>
         <location filename="../units.py" line="94"/>
         <source>inch</source>
-        <translation type="unfinished"></translation>
+        <translation>polegada</translation>
     </message>
     <message>
         <location filename="../units.py" line="95"/>
         <source>foot</source>
-        <translation type="unfinished"></translation>
+        <translation>pés</translation>
     </message>
     <message>
         <location filename="../units.py" line="96"/>
         <source>yard</source>
-        <translation type="unfinished"></translation>
+        <translation>jarda</translation>
     </message>
     <message>
         <location filename="../units.py" line="97"/>
         <source>mile</source>
-        <translation type="unfinished"></translation>
+        <translation>milha</translation>
     </message>
     <message>
         <location filename="../units.py" line="98"/>
@@ -140,7 +141,7 @@
     <message>
         <location filename="../units.py" line="101"/>
         <source>nanometer</source>
-        <translation type="unfinished"></translation>
+        <translation>nanometro</translation>
     </message>
     <message>
         <location filename="../units.py" line="102"/>
@@ -150,7 +151,7 @@
     <message>
         <location filename="../units.py" line="103"/>
         <source>millimeter</source>
-        <translation type="unfinished"></translation>
+        <translation>milimetro</translation>
     </message>
     <message>
         <location filename="../units.py" line="104"/>
@@ -160,37 +161,37 @@
     <message>
         <location filename="../units.py" line="105"/>
         <source>meter</source>
-        <translation type="unfinished"></translation>
+        <translation>metro</translation>
     </message>
     <message>
         <location filename="../units.py" line="106"/>
         <source>kilometer</source>
-        <translation type="unfinished"></translation>
+        <translation>kilometro</translation>
     </message>
     <message>
         <location filename="../units.py" line="107"/>
         <source>light-year</source>
-        <translation type="unfinished"></translation>
+        <translation>ano-luz</translation>
     </message>
     <message>
         <location filename="../units.py" line="108"/>
         <source>light-day</source>
-        <translation type="unfinished"></translation>
+        <translation>dia-luz</translation>
     </message>
     <message>
         <location filename="../units.py" line="109"/>
         <source>light-hour</source>
-        <translation type="unfinished"></translation>
+        <translation>hora-luz</translation>
     </message>
     <message>
         <location filename="../units.py" line="110"/>
         <source>light-minute</source>
-        <translation type="unfinished"></translation>
+        <translation>minuto-luz</translation>
     </message>
     <message>
         <location filename="../units.py" line="111"/>
         <source>light-second</source>
-        <translation type="unfinished"></translation>
+        <translation>segundo-luz</translation>
     </message>
     <message>
         <location filename="../units.py" line="114"/>
@@ -215,7 +216,7 @@
     <message>
         <location filename="../units.py" line="118"/>
         <source>calory</source>
-        <translation type="unfinished"></translation>
+        <translation>caloria</translation>
     </message>
     <message>
         <location filename="../units.py" line="119"/>
@@ -235,7 +236,7 @@
     <message>
         <location filename="../units.py" line="157"/>
         <source>kilogram-force</source>
-        <translation type="unfinished"></translation>
+        <translation>kilograma-força</translation>
     </message>
     <message>
         <location filename="../units.py" line="158"/>
@@ -280,12 +281,12 @@
     <message>
         <location filename="../units.py" line="168"/>
         <source>gram</source>
-        <translation type="unfinished"></translation>
+        <translation>grama</translation>
     </message>
     <message>
         <location filename="../units.py" line="169"/>
         <source>kilogram</source>
-        <translation type="unfinished"></translation>
+        <translation>kilograma</translation>
     </message>
     <message>
         <location filename="../units.py" line="170"/>
@@ -300,7 +301,7 @@
     <message>
         <location filename="../units.py" line="172"/>
         <source>libre</source>
-        <translation type="unfinished"></translation>
+        <translation>libra</translation>
     </message>
     <message>
         <location filename="../units.py" line="173"/>
@@ -379,7 +380,7 @@
     </message>
     <message>
         <location filename="../units.py" line="303"/>
-        <source>r&#xc3;&#xa9;aumur</source>
+        <source>rÃ©aumur</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -4,35 +4,37 @@
 #
 #--------------------------------------------------------------------------
 
+ifdef VIRTUAL_ENV
+  UIC = $(VIRTUAL_ENV)/Scripts/pyside-uic
+  RCC = $(VIRTUAL_ENV)/Lib/site-packages/PySide/pyside-rcc -py3
+  LUP = $(VIRTUAL_ENV)/Lib/site-packages/PySide/pyside-lupdate
+  LRL = $(VIRTUAL_ENV)/Lib/site-packages/PySide/lrelease
+else
+  UIC = c:/Python27/scripts/pyside-uic
+  RCC = c:/Python27/Lib/site-packages/PySide/pyside-rcc
+  LUP = c:/Python27/Lib/site-packages/PySide/lupdate
+  LRL = c:/Python27/Lib/site-packages/PySide/lrelease
+endif
 
-# UIC = c:\Python27\scripts\pyside-uic
-# RCC = c:\Python27\Lib\site-packages\PySide\pyside-rcc
-# LUP = c:\Python27\Lib\site-packages\PySide\lupdate
-# LRL = c:\Python27\Lib\site-packages\PySide\lrelease
-
-UIC = $(VIRTUAL_ENV)\Scripts\pyside-uic
-RCC = $(VIRTUAL_ENV)\Lib\site-packages\PySide\pyside-rcc -py3
-LUP = $(VIRTUAL_ENV)\Lib\site-packages\PySide\pyside-lupdate
-LRL = $(VIRTUAL_ENV)\Lib\site-packages\PySide\lrelease
-
-
-#--------------------------------------------------------------------------
 VPATH = ui/
 
-UI_FILES = $(patsubst ui/%.ui, %_ui.py, $(wildcard ui/*.ui))
+UI_FILES          = $(patsubst ui/%.ui,   %_ui.py,        $(wildcard ui/*.ui))
+RESOURCE_FILES    = $(patsubst ui/%.qrc,  %_rc.py,        $(wildcard ui/*.qrc))
+IMAGE_FILES       = $(patsubst ui/%.svg,  ui/%.extracted, $(wildcard ui/*.svg))
+TRANSLATION_FILES = $(patsubst i18n/%.ts, i18n/%.qm,      $(wildcard i18n/*.ts))
 
-RESOURCE_FILES = $(patsubst ui/%.qrc, %_rc.py, $(wildcard ui/*.qrc))
+ifneq ("$(wildcard ui/icon.svg)","")
+  EXTRA_TARGET = ui/exeicon.ico
+else
+  EXTRA_TARGET =
+endif
 
-IMAGE_FILES = $(patsubst ui/%.svg, ui/%.extracted, $(wildcard ui/*.svg))
-
-TRANSLATION_FILES = $(patsubst i18n/%.ts, i18n/%.qm, $(wildcard i18n/*.ts))
-
-default: $(UI_FILES) $(RESOURCE_FILES) $(TRANSLATION_FILES) ui\exeicon.ico
+default: $(UI_FILES) $(RESOURCE_FILES) $(TRANSLATION_FILES) $(EXTRA_TARGET)
 
 .SECONDARY: $(IMAGE_FILES)
 
 %.extracted : %.svg
-	bash d:\bin\svg-extract.sh -f -o ui -s $@ $<
+	bash d:/bin/svg-extract.sh -f -o ui -s $@ $<
 
 %_rc.py : %.qrc $(IMAGE_FILES)
 	$(RCC) -o $@ $<
@@ -43,9 +45,9 @@ default: $(UI_FILES) $(RESOURCE_FILES) $(TRANSLATION_FILES) ui\exeicon.ico
 %.qm : %.ts
 	$(LRL) $< -qm $@
 
-ui\exeicon.ico : ui/icon.extracted
-#	curl -X POST -F "key=df23zr!4" -F "MAX_FILE_SIZE=3072000" -F "sizes[]=16" -F "sizes[]=32" -F "sizes[]=48" -F "bpp=32" -F "image=@ui/icon256.png;type=image/png;filename=icon256.png" -o ui\exeicon.ico http://www.icoconverter.com/index.php
-	echo -e "from PIL import Image\na=Image.open('ui/icon256.png')\na.save('ui/exeicon.ico', sizes=[(16,16), (32, 32), (48, 48)])" | c:/python27/python
+ui/exeicon.ico : ui/icon.extracted
+#	echo -e "from PIL import Image\nImage.open('ui/icon256.png').save('ui/exeicon.ico', sizes=[(16,16), (32, 32), (48, 48)])" | c:/python27/python
+	echo -e "from PIL import Image\nImage.open('ui/icon256.png').save('ui/exeicon.ico')" | c:/python27/python
 
 clean:
 	-rm *_ui.py *_rc.py *.pyc *_lex.py *_tab.py stack.dat
@@ -62,8 +64,8 @@ dist:
 # versao usando o Esky
 	-rm -r dist
 	python setup-esky.py bdist_esky
-	"c:\Program Files\7-Zip\7z.exe" x -odist\pack dist\*.zip
-	"$(ProgramFilesX86)\Inno Setup 5\ISCC.exe" setup.iss
+	"c:/Program Files/7-Zip/7z.exe" x -odist/pack dist/*.zip
+	"$(ProgramFilesX86)/Inno Setup 5/ISCC.exe" setup.iss
 
 # versao do cx-freeze
 # .............
