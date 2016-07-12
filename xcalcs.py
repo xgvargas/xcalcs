@@ -9,7 +9,7 @@ D:\Projetos\xcalcs\venv\Scripts\pythonw.exe xcalcs.py
 import sys, os
 from xcalcs_ui import *
 import smartside.signal as smartsignal
-from smartside import setAsApplication#, getBestTranslation
+from smartside import setAsApplication, getBestTranslation
 from console import ConsoleForm
 import configparser
 import pickle
@@ -477,44 +477,6 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         # permutacao P(n,r) = n! / (n - r)!
         # random
 
-
-
-
-from os import path
-def getBestTranslation(basedir, lang=None):
-    """
-    Find inside basedir the best translation available.
-
-    lang, if defined, should be a list of prefered languages.
-
-    It will look for file in the form:
-    - en-US.qm
-    - en_US.qm
-    - en.qm
-    """
-    if not lang:
-        lang = QtCore.QLocale.system().uiLanguages()
-
-    for l in lang:
-
-        l = l.translate({ord('_'): '-'})
-        f = path.join(basedir, l+'.qm')
-        if path.isfile(f): break
-
-        l = l.translate({ord('-'): '_'})
-        f = path.join(basedir, l+'.qm')
-        if path.isfile(f): break
-
-        l = l.split('_')[0]
-        f = path.join(basedir, l+'.qm')
-        if path.isfile(f): break
-
-    else:
-        return None
-
-    translator = QtCore.QTranslator()
-    translator.load(f)
-    return translator
 
 if __name__ == "__main__":
 
