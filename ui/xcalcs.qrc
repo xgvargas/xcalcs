@@ -26,6 +26,13 @@
     <file>log10.png</file>
     <file>sin.png</file>
   </qresource>
+  <qresource prefix="advanced">
+    <file>cstc.png</file>
+    <file>cste.png</file>
+    <file>cstG.png</file>
+    <file>cstpi.png</file>
+    <file>quadratic.png</file>
+  </qresource>
   <qresource prefix="icons">
     <file>advanced.png</file>
     <file>icon32.png</file>

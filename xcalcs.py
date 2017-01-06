@@ -43,6 +43,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
         self.shortcuts = self.installShortcuts('Interface_shortcuts', self.tr('(Shortcut: {})'))
         self.shortcuts = self.installShortcuts('Basic_shortcuts', self.tr('(Shortcut: {})'))
+        self.shortcuts = self.installShortcuts('Advanced_shortcuts', self.tr('(Shortcut: {})'))
 
         self.format = cfg['format']
         self.angle = cfg['angle']
@@ -186,7 +187,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         else:
             raise IndexError
 
-        return tuple(r)
+        return tuple(r[::-1])
 
     def popAngle(self):
         v = self.stack.pop()
@@ -471,11 +472,70 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
         self.updateAll()
 
+    _avancadas = '`btn_s_.+`'
+    def _when_avancadas__clicked(self):
+        # print(self.sender().objectName())
+
+        if self.editing:
+            self.stack.append(self.entry_val)
+            self.editing = False
+
+        op = self.sender().objectName().split('_')[2]
+
+        try:
+            if op == 'root2':
+                a, b, c = self.pop(3)
+
+                d = b*b - 4 * a * c
+
+                if d >= 0:
+                    rd = math.sqrt(d)
+                else:
+                    rd = complex(0, math.sqrt(-d))
+
+                self.stack.append((-b - rd) / (2*a))
+                self.stack.append((-b + rd) / (2*a))
 
         # fatorial
         #  combinacao C(n,r) = n! / ( r! (n - r)! )
         # permutacao P(n,r) = n! / (n - r)!
         # random
+
+        except IndexError:
+            pass
+            print('nhaca')
+        except:
+            raise
+
+        self.updateAll()
+
+    _constantes = '`btn_c_.+`'
+    def _when_constantes__clicked(self):
+        # print(self.sender().objectName())
+
+        if self.editing:
+            self.stack.append(self.entry_val)
+            self.editing = False
+
+        op = self.sender().objectName().split('_')[2]
+
+        try:
+            if op == 'pi':
+                self.stack.append(3.14159265358979323846264338327950288)
+            elif op == 'e':
+                self.stack.append(2.71828182845904523536028747135266249)
+            elif op == 'c':
+                self.stack.append(299792458)
+            elif op == 'G':
+                self.stack.append(6.67408313131e-11)
+
+        except IndexError:
+            pass
+            print('nhaca')
+        except:
+            raise
+
+        self.updateAll()
 
 
 if __name__ == "__main__":

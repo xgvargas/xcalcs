@@ -50,10 +50,10 @@ ui/exeicon.ico : ui/icon.extracted
 	echo -e "from PIL import Image\nImage.open('ui/icon256.png').save('ui/exeicon.ico')" | c:/python27/python
 
 %.lnk : %.ico
-	set TARGET='d:\projetos\xcalcs\venv\scripts\pythonw.exe'
+	set TARGET='d:/projetos/xcalcs/venv/scripts/pythonw.exe'
 	set SHORTCUT='test1.lnk'
-	set WORK='d:\projetos\xcalcs'
-	set ICON='d:\projetos\xcalcs\ui\exeicon.ico'
+	set WORK='d:/projetos/xcalcs'
+	set ICON='d:/projetos/xcalcs/ui/exeicon.ico'
 	set ARGUMENTS='xcalcs.py'
 	set PWS=powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile
 

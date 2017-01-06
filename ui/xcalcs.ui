@@ -1338,7 +1338,7 @@ p, li { white-space: pre-wrap; }
         <number>0</number>
        </property>
        <item row="0" column="0">
-        <widget class="QPushButton" name="pushButton_34">
+        <widget class="QPushButton" name="btn_s_root2">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -1357,8 +1357,15 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Quadratic root</string>
+         </property>
          <property name="text">
           <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/advanced/quadratic.png</normaloff>:/advanced/quadratic.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -1998,7 +2005,7 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item row="4" column="0">
-        <widget class="QPushButton" name="pushButton_57">
+        <widget class="QPushButton" name="btn_c_pi">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -2017,12 +2024,15 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Constant Pi</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/ce.bmp</normaloff>:/func/imgs/ce.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/advanced/cstpi.png</normaloff>:/advanced/cstpi.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -2033,7 +2043,7 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QPushButton" name="pushButton_58">
+        <widget class="QPushButton" name="btn_c_e">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -2052,12 +2062,15 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Constant E</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/avogrado.bmp</normaloff>:/func/imgs/avogrado.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/advanced/cste.png</normaloff>:/advanced/cste.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -2068,7 +2081,7 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item row="4" column="2">
-        <widget class="QPushButton" name="pushButton_55">
+        <widget class="QPushButton" name="btn_c_c">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -2087,12 +2100,15 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Constant c (light speed) [m.s-1]</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/erre.bmp</normaloff>:/func/imgs/erre.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/advanced/cstc.png</normaloff>:/advanced/cstc.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -2103,7 +2119,7 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item row="4" column="3">
-        <widget class="QPushButton" name="pushButton_56">
+        <widget class="QPushButton" name="btn_c_G">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -2122,12 +2138,15 @@ p, li { white-space: pre-wrap; }
            <height>40</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>Constant G (gravitation) [m3.kg−1.s−2]</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/func/imgs/ec.bmp</normaloff>:/func/imgs/ec.bmp</iconset>
+          <iconset resource="xcalcs.qrc">
+           <normaloff>:/advanced/cstG.png</normaloff>:/advanced/cstG.png</iconset>
          </property>
          <property name="iconSize">
           <size>

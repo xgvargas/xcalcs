@@ -434,7 +434,7 @@
 <context>
     <name>XCalcsApp</name>
     <message>
-        <location filename="../xcalcs.py" line="45"/>
+        <location filename="../xcalcs.py" line="46"/>
         <source>(Shortcut: {})</source>
         <translation type="unfinished"></translation>
     </message>
@@ -610,122 +610,122 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2182"/>
+        <location filename="../ui/xcalcs.ui" line="2197"/>
         <source>Unit converter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2205"/>
+        <location filename="../ui/xcalcs.ui" line="2220"/>
         <source>Quantity:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2225"/>
+        <location filename="../ui/xcalcs.ui" line="2240"/>
         <source>Angle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2230"/>
+        <location filename="../ui/xcalcs.ui" line="2245"/>
         <source>Area</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2235"/>
+        <location filename="../ui/xcalcs.ui" line="2250"/>
         <source>Dimension</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2240"/>
+        <location filename="../ui/xcalcs.ui" line="2255"/>
         <source>Energy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2250"/>
+        <location filename="../ui/xcalcs.ui" line="2265"/>
         <source>Force</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2255"/>
+        <location filename="../ui/xcalcs.ui" line="2270"/>
         <source>Mass</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2260"/>
+        <location filename="../ui/xcalcs.ui" line="2275"/>
         <source>Power</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2265"/>
+        <location filename="../ui/xcalcs.ui" line="2280"/>
         <source>Speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2270"/>
+        <location filename="../ui/xcalcs.ui" line="2285"/>
         <source>Pressure</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2275"/>
+        <location filename="../ui/xcalcs.ui" line="2290"/>
         <source>Temperature</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2280"/>
+        <location filename="../ui/xcalcs.ui" line="2295"/>
         <source>Volume</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2298"/>
+        <location filename="../ui/xcalcs.ui" line="2313"/>
         <source>From unit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2308"/>
+        <location filename="../ui/xcalcs.ui" line="2323"/>
         <source>To unit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2355"/>
+        <location filename="../ui/xcalcs.ui" line="2370"/>
         <source>Base converter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2378"/>
+        <location filename="../ui/xcalcs.ui" line="2393"/>
         <source>BIN</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2395"/>
+        <location filename="../ui/xcalcs.ui" line="2410"/>
         <source>OCT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2412"/>
+        <location filename="../ui/xcalcs.ui" line="2427"/>
         <source>HEX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2429"/>
+        <location filename="../ui/xcalcs.ui" line="2444"/>
         <source>FLOAT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2439"/>
+        <location filename="../ui/xcalcs.ui" line="2454"/>
         <source>DOUBLE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2486"/>
+        <location filename="../ui/xcalcs.ui" line="2501"/>
         <source>About...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2499"/>
+        <location filename="../ui/xcalcs.ui" line="2514"/>
         <source>XcalcS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2509"/>
+        <location filename="../ui/xcalcs.ui" line="2524"/>
         <source>&lt;a href=&quot;https://github.com/xgvargas/xcalcs&quot;&gt;https://github.com/xgvargas/xcalcs&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -754,13 +754,38 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2245"/>
+        <location filename="../ui/xcalcs.ui" line="2260"/>
         <source>Flux</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2332"/>
+        <location filename="../ui/xcalcs.ui" line="2347"/>
         <source>Copy this value to stack</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/xcalcs.ui" line="1361"/>
+        <source>Quadratic root</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/xcalcs.ui" line="2024"/>
+        <source>Constant Pi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/xcalcs.ui" line="2062"/>
+        <source>Constant E</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/xcalcs.ui" line="2100"/>
+        <source>Constant c (light speed) [m.s-1]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="../ui/xcalcs.ui" line="2138"/>
+        <source>Constant G (gravitation) [m3.kg−1.s−2]</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
