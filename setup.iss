@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "XcalcS"
-#define MyAppVersion "0.1.0"
+#define MyAppVersion "0.2.0"
 #define MyAppPublisher "gvTech"
 #define MyAppURL "http://www.gvtech.xyz/"
 #define MyAppExeName "xcalcs.exe"
@@ -63,7 +63,7 @@ Filename: "{app}\xcalcs.cfg"; Section: "Config"; Key: "language"; String: "{lang
 Filename: "{app}\xcalcs.cfg"; Section: "Config"; Key: "geometry"; String: ""
 
 [InstallDelete]
-Type: files; Name: "stack.dat"
+Type: files; Name: "{app}\stack.dat"
 
 [CustomMessages]
 InstallVCR=Installing VC++ 2010 Redistributables...

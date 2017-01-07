@@ -600,7 +600,7 @@ p, li { white-space: pre-wrap; }
           <enum>Qt::NoFocus</enum>
          </property>
          <property name="toolTip">
-          <string>Arc-tangent of X</string>
+          <string>Arc-Tangent of X</string>
          </property>
          <property name="text">
           <string/>

@@ -209,7 +209,14 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
                 i = self.formatNumber(val.imag)
                 v = '{} j{}'.format(r, i)
             else:
-                pass
+                m = math.sqrt(val.real**2 + val.imag**2)
+                a = math.atan2(val.imag, val.real)
+
+                # a varia de -pi a +pi.... TODO normalizar
+
+                # FIXME a pode ser rad ou deg
+
+                v = '{} \u03d5{}'.format(self.formatNumber(m), self.formatNumber(a))
 
             return v
 
@@ -292,8 +299,8 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.updateBases()
 
     def moveStackToBottom(self):
-            b = self.scr_stack.verticalScrollBar()
-            b.setValue(b.maximum())
+        b = self.scr_stack.verticalScrollBar()
+        b.setValue(b.maximum())
 
     def _on_cmb_quantity__currentIndexChanged(self):
         names = self.converter.getNames(self.cmb_quantity.currentIndex())
@@ -318,6 +325,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.angle = 'deg' if self.angle == 'rad' else 'rad'
 
         self.btn_angle.setText(self.angle.title())
+        self.updateAll()
 
     def _on_btn_format__clicked(self):
         if self.format == 'def':
@@ -339,6 +347,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.coordinate = 'cart' if self.coordinate == 'pol' else 'pol'
 
         self.btn_coord.setText(self.coordinate.title())
+        self.updateAll()
 
     def _on_btn_solver__clicked(self):
         if not self.console:
@@ -453,8 +462,8 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
             elif op == 'swap':
                 x, y = self.pop(2)
-                self.stack.append(x)
                 self.stack.append(y)
+                self.stack.append(x)
 
             elif op == 'tg':
                 x = self.popAngle()
@@ -488,10 +497,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
                 d = b*b - 4 * a * c
 
-                if d >= 0:
-                    rd = math.sqrt(d)
-                else:
-                    rd = complex(0, math.sqrt(-d))
+                rd = math.sqrt(d) if d >= 0 else complex(0, math.sqrt(-d))
 
                 self.stack.append((-b - rd) / (2*a))
                 self.stack.append((-b + rd) / (2*a))
