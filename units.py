@@ -115,7 +115,7 @@ class Converter(QtCore.QObject):
                 (self.tr('watt-second'), 'Ws', 1),
                 (self.tr('watt-hour'), 'Wh', 3600),
                 (self.tr('kWatt-hour'), 'kWh', 3600000),
-                (self.tr('calory'), 'cal', 4.1868),
+                (self.tr('calorie'), 'cal', 4.1868),
                 (self.tr('BTU'), '', 1055.056),
                 (self.tr('Nm'), '', 1),
 # British thermal unit [IT]   BTUIT   joule   1055.056
@@ -158,7 +158,7 @@ class Converter(QtCore.QObject):
                 (self.tr('kilopond'), 'kp', 9.80665),
                 (self.tr('kip'), 'kip', 4448.222),
                 (self.tr('newton'), 'N', 1),
-                (self.tr('kilonewton'), 'kN', 1000),
+                (self.tr('kilo-newton'), 'kN', 1000),
                 (self.tr('ounce-force'), 'ozf', 0.2780139),
                 (self.tr('poundal'), 'pdl', 0.138255),
                 (self.tr('pound-force'), 'lbf', 4.448222),
@@ -238,30 +238,26 @@ class Converter(QtCore.QObject):
 
                 ],
             8: [ # speed
-                (self.tr('km/h'), '', .277777777777),
-                (self.tr('m/s'), '', 1),
-                (self.tr('mi/h'), '', .44704),
-# centimeter per minute   cm/min  meter per second    0.0001667
-# centimeter per second   cm/s    meter per second    0.01
-# foot per hour   ft/h    meter per second    8.46667E-05
-# foot per minute ft/min  meter per second    0.00508
-# foot per second ft/s    meter per second    0.3048
-# inch per minute in/min  meter per second    0.000423333
-# inch per second in/s    meter per second    0.0254
-# kilometer per hour  km/h (kph)  meter per second    0.2777778
-# kilometer per second    km/s    meter per second    1000
-# knot (nautical mi/h)    kn  meter per second    0.5144444
-# knot (UK)   kn  meter per second    0.5148
-# meter per hour  m/h meter per second    0.0002777778
-# meter per minute    m/min   meter per second    0.01667
-# meter per second    m/s meter per second    1
-# mile per hour   mi/h (mph)  meter per second    0.44704
-# mile per minute mi/min  meter per second    26.8224
-# mile per second mi/s    meter per second    1609.344
-# speed-of-light (vacuum) c   meter per second    299792458
-# yard per hour   yd/h    meter per second    0.000254
-# yard per minute yd/min  meter per second    0.01524
-# yard per second yd/s    meter per second    0.9144
+                (self.tr('km/h'), 'km/h', .277777777777),
+                (self.tr('m/s'), 'm/s', 1),
+                (self.tr('mi/h'), 'mi/h', .44704),
+                (self.tr('ft/h'), 'ft/h', 8.46667E-05),     # foot per hour           ft/h    meter per second    8.46667E-05
+                (self.tr('ft/min'), 'ft/min', 0.00508),     # foot per minute         ft/min  meter per second    0.00508
+                (self.tr('ft/s'), 'ft/s', 0.3048),          # foot per second         ft/s    meter per second    0.3048
+                (self.tr('in/min'), 'in/min', 0.000423333), # inch per minute         in/min  meter per second    0.000423333
+                (self.tr('in/s'), 'in/s', 0.0254),          # inch per second         in/s    meter per second    0.0254
+                (self.tr('km/s'), 'km/s', 1000),            # kilometer per second    km/s    meter per second    1000
+                (self.tr('kn'), 'kn', 0.5144444),           # knot (nautical mi/h)    kn      meter per second    0.5144444
+                (self.tr('kn'), 'kn', 0.5148),              # knot (UK)               kn      meter per second    0.5148
+                (self.tr('m/h'), 'm/h', 0.0002777778),      # meter per hour          m/h     meter per second    0.0002777778
+                (self.tr('m/min'), 'm/min', 0.01667),       # meter per minute        m/min   meter per second    0.01667
+                (self.tr('mi/min'), 'mi/min', 26.8224),     # mile per minute         mi/min  meter per second    26.8224
+                (self.tr('mi/s'), 'mi/s', 1609.344),        # mile per second         mi/s    meter per second    1609.344
+                (self.tr('c'), 'c', 299792458),             # speed-of-light (vacuum) c       meter per second    299792458
+                (self.tr('yd/h'), 'yd/h', 0.000254),        # yard per hour           yd/h    meter per second    0.000254
+                (self.tr('yd/min'), 'yd/min', 0.01524),     # yard per minute         yd/min  meter per second    0.01524
+                (self.tr('yd/s'), 'yd/s', 0.9144),          # yard per second         yd/s    meter per second    0.9144
+
                 ],
             9: [ # pressure
                 (self.tr('bar'), '', 100000),

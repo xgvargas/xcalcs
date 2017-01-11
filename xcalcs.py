@@ -187,7 +187,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         else:
             raise IndexError
 
-        return tuple(r[::-1])
+        return tuple(r)
 
     def popAngle(self):
         v = self.stack.pop()
@@ -201,7 +201,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
         self.stack.append(a)
 
-    def formatNumber(self, val):
+    def formatNumber(self, val, sep='\u00a0'):
 
         if isinstance(val, complex):
             if self.coordinate == 'cart':
@@ -229,7 +229,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
             t = '{0:.{pre}E}'.format(abs(val), pre=self.precision+2)
             n = t.split('E')[0].replace('.', '')
             e = int(t.split('E')[1])
-            multiplier = ['a', 'p', 'n', 'µ', 'm', '&nbsp;', 'k', 'M', 'G', 'T', 'E']
+            multiplier = ['a', 'p', 'n', 'µ', 'm', sep, 'k', 'M', 'G', 'T', 'E']
             d = e%3
             e = 3*(e//3)
             if e >= -15 and e <= 15:
@@ -237,7 +237,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
             else:
                 m = str(e)
             # FIXME o arredondamento nao esta funcionando....
-            v = '{:d}.{} {}'.format(s*int(n[:1+d]), n[1+d:1+d+self.precision], m)
+            v = '{:d}.{}{}{}'.format(s*int(n[:1+d]), n[1+d:1+d+self.precision], sep, m)
 
         else:
             v = '{0:.{pre}f}'.format(val, pre=self.precision)
@@ -258,12 +258,12 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
                                       self.cmb_quantity.currentIndex(),
                                       self.list_conv_left.currentRow(),
                                       self.list_conv_right.currentRow())
-        self.btn_conv_right.setText('{} {}'.format(self.formatNumber(c), u))
+        self.btn_conv_right.setText('{} {}'.format(self.formatNumber(c, ''), u))
         c, u = self.converter.convert(v,
                                       self.cmb_quantity.currentIndex(),
                                       self.list_conv_right.currentRow(),
                                       self.list_conv_left.currentRow())
-        self.btn_conv_left.setText('{} {}'.format(self.formatNumber(c), u))
+        self.btn_conv_left.setText('{} {}'.format(self.formatNumber(c, ''), u))
 
     def updateStack(self):
         txt = '''<html><head>
@@ -325,7 +325,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.angle = 'deg' if self.angle == 'rad' else 'rad'
 
         self.btn_angle.setText(self.angle.title())
-        self.updateAll()
+        self.updateStack()
 
     def _on_btn_format__clicked(self):
         if self.format == 'def':
@@ -347,7 +347,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.coordinate = 'cart' if self.coordinate == 'pol' else 'pol'
 
         self.btn_coord.setText(self.coordinate.title())
-        self.updateAll()
+        self.updateStack()
 
     def _on_btn_solver__clicked(self):
         if not self.console:
@@ -493,7 +493,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
         try:
             if op == 'root2':
-                a, b, c = self.pop(3)
+                c, b, a = self.pop(3)
 
                 d = b*b - 4 * a * c
 
@@ -531,9 +531,9 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
             elif op == 'e':
                 self.stack.append(2.71828182845904523536028747135266249)
             elif op == 'c':
-                self.stack.append(299792458)
+                self.stack.append(299792458) # [m.s-1]
             elif op == 'G':
-                self.stack.append(6.67408313131e-11)
+                self.stack.append(6.67408313131e-11) # [m3.kg−1.s−2]
 
         except IndexError:
             pass
