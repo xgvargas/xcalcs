@@ -26,7 +26,7 @@ __version__ = '.'.join(__version_info__)
 settings = configparser.ConfigParser()
 appPath = os.path.dirname(os.path.realpath(__file__))
 settingFile = os.path.join(appPath, 'xcalcs.cfg')
-stackFile = os.path.join(appPath, 'stack.data')
+stackFile = os.path.join(appPath, 'stack.dat')
 settings.read(settingFile)
 cfg = settings['Config']
 
