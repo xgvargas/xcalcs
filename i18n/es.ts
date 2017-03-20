@@ -213,11 +213,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="118"/>
-        <source>calory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../units.py" line="119"/>
         <source>BTU</source>
         <translation type="unfinished"></translation>
@@ -250,11 +245,6 @@
     <message>
         <location filename="../units.py" line="160"/>
         <source>newton</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../units.py" line="161"/>
-        <source>kilonewton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -328,78 +318,163 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="267"/>
+        <location filename="../units.py" line="263"/>
         <source>bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="268"/>
+        <location filename="../units.py" line="264"/>
         <source>atm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="269"/>
+        <location filename="../units.py" line="265"/>
         <source>psi</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="270"/>
+        <location filename="../units.py" line="266"/>
         <source>torr</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="271"/>
+        <location filename="../units.py" line="267"/>
         <source>pascal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="272"/>
+        <location filename="../units.py" line="268"/>
         <source>cmHg</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="273"/>
+        <location filename="../units.py" line="269"/>
         <source>cmH2O</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="300"/>
+        <location filename="../units.py" line="296"/>
         <source>celsius</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="301"/>
+        <location filename="../units.py" line="297"/>
         <source>kelvin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="302"/>
+        <location filename="../units.py" line="298"/>
         <source>fahrenheit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="303"/>
+        <location filename="../units.py" line="299"/>
         <source>r&#xc3;&#xa9;aumur</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="304"/>
+        <location filename="../units.py" line="300"/>
         <source>rankine</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="307"/>
+        <location filename="../units.py" line="303"/>
         <source>l</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="308"/>
+        <location filename="../units.py" line="304"/>
         <source>gal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../units.py" line="309"/>
+        <location filename="../units.py" line="305"/>
         <source>m^3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="118"/>
+        <source>calorie</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="161"/>
+        <source>kilo-newton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="244"/>
+        <source>ft/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="245"/>
+        <source>ft/min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="246"/>
+        <source>ft/s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="247"/>
+        <source>in/min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="248"/>
+        <source>in/s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="249"/>
+        <source>km/s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="251"/>
+        <source>kn</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="252"/>
+        <source>m/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="253"/>
+        <source>m/min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="254"/>
+        <source>mi/min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="255"/>
+        <source>mi/s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="256"/>
+        <source>c</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="257"/>
+        <source>yd/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="258"/>
+        <source>yd/min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../units.py" line="259"/>
+        <source>yd/s</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -434,7 +509,7 @@
 <context>
     <name>XCalcsApp</name>
     <message>
-        <location filename="../xcalcs.py" line="46"/>
+        <location filename="../xcalcs.py" line="48"/>
         <source>(Shortcut: {})</source>
         <translation type="unfinished"></translation>
     </message>
@@ -485,252 +560,222 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="280"/>
+        <location filename="../ui/xcalcs.ui" line="277"/>
         <source>Basic Operations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="316"/>
+        <location filename="../ui/xcalcs.ui" line="313"/>
         <source>Root square of X in Y base</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="357"/>
+        <location filename="../ui/xcalcs.ui" line="354"/>
         <source>X times Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="398"/>
+        <location filename="../ui/xcalcs.ui" line="395"/>
         <source>Tangent of X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="439"/>
+        <location filename="../ui/xcalcs.ui" line="436"/>
         <source>Negate X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="480"/>
+        <location filename="../ui/xcalcs.ui" line="477"/>
         <source>Rise 10 to X power</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="521"/>
+        <location filename="../ui/xcalcs.ui" line="518"/>
         <source>Arc-Sine of X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="562"/>
+        <location filename="../ui/xcalcs.ui" line="559"/>
         <source>Logarithyn of X in base &apos;e&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="644"/>
+        <location filename="../ui/xcalcs.ui" line="641"/>
         <source>Cossene of X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="685"/>
+        <location filename="../ui/xcalcs.ui" line="682"/>
         <source>Cunjugate of X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="726"/>
+        <location filename="../ui/xcalcs.ui" line="723"/>
         <source>Root square of X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="767"/>
+        <location filename="../ui/xcalcs.ui" line="764"/>
         <source>Logarithyn of X in base 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="808"/>
+        <location filename="../ui/xcalcs.ui" line="805"/>
         <source>Invert X (1/X)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="890"/>
+        <location filename="../ui/xcalcs.ui" line="887"/>
         <source>Rise X to power 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="931"/>
+        <location filename="../ui/xcalcs.ui" line="928"/>
         <source>Divide Y by X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="1013"/>
+        <location filename="../ui/xcalcs.ui" line="1010"/>
         <source>Subtract X from Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="1054"/>
+        <location filename="../ui/xcalcs.ui" line="1051"/>
         <source>Swap X and Y values</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="1095"/>
+        <location filename="../ui/xcalcs.ui" line="1092"/>
         <source>Rise Y to power X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="1136"/>
+        <location filename="../ui/xcalcs.ui" line="1133"/>
         <source>Sine of X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="1177"/>
+        <location filename="../ui/xcalcs.ui" line="1174"/>
         <source>Logarithyn of X in base 10</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="1218"/>
+        <location filename="../ui/xcalcs.ui" line="1215"/>
         <source>Rise &apos;e&apos; to X power</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="1259"/>
+        <location filename="../ui/xcalcs.ui" line="1256"/>
         <source>Arc-Cossene of X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="1303"/>
+        <location filename="../ui/xcalcs.ui" line="1300"/>
         <source>Add X to Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="1331"/>
+        <location filename="../ui/xcalcs.ui" line="1328"/>
         <source>Advanced operations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2201"/>
+        <location filename="../ui/xcalcs.ui" line="2198"/>
         <source>Unit converter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2224"/>
+        <location filename="../ui/xcalcs.ui" line="2221"/>
         <source>Quantity:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2244"/>
+        <location filename="../ui/xcalcs.ui" line="2241"/>
         <source>Angle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2249"/>
+        <location filename="../ui/xcalcs.ui" line="2246"/>
         <source>Area</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2254"/>
+        <location filename="../ui/xcalcs.ui" line="2251"/>
         <source>Dimension</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2259"/>
+        <location filename="../ui/xcalcs.ui" line="2256"/>
         <source>Energy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2269"/>
+        <location filename="../ui/xcalcs.ui" line="2266"/>
         <source>Force</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2274"/>
+        <location filename="../ui/xcalcs.ui" line="2271"/>
         <source>Mass</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2279"/>
+        <location filename="../ui/xcalcs.ui" line="2276"/>
         <source>Power</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2284"/>
+        <location filename="../ui/xcalcs.ui" line="2281"/>
         <source>Speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2289"/>
+        <location filename="../ui/xcalcs.ui" line="2286"/>
         <source>Pressure</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2294"/>
+        <location filename="../ui/xcalcs.ui" line="2291"/>
         <source>Temperature</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2299"/>
+        <location filename="../ui/xcalcs.ui" line="2296"/>
         <source>Volume</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2317"/>
+        <location filename="../ui/xcalcs.ui" line="2314"/>
         <source>From unit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2327"/>
+        <location filename="../ui/xcalcs.ui" line="2324"/>
         <source>To unit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2374"/>
+        <location filename="../ui/xcalcs.ui" line="2371"/>
         <source>Base converter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2397"/>
-        <source>BIN</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/xcalcs.ui" line="2414"/>
-        <source>OCT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/xcalcs.ui" line="2431"/>
-        <source>HEX</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/xcalcs.ui" line="2448"/>
-        <source>FLOAT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/xcalcs.ui" line="2458"/>
-        <source>DOUBLE</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/xcalcs.ui" line="2505"/>
+        <location filename="../ui/xcalcs.ui" line="2502"/>
         <source>About...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2518"/>
+        <location filename="../ui/xcalcs.ui" line="2515"/>
         <source>XcalcS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2528"/>
-        <source>&lt;a href=&quot;https://github.com/xgvargas/xcalcs&quot;&gt;https://github.com/xgvargas/xcalcs&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/xcalcs.ui" line="849"/>
+        <location filename="../ui/xcalcs.ui" line="846"/>
         <source>Break complex into real (Y) and imaginary (X) parts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="972"/>
+        <location filename="../ui/xcalcs.ui" line="969"/>
         <source>Merge X and Y into complex number. (Y+iX)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -749,43 +794,73 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2264"/>
+        <location filename="../ui/xcalcs.ui" line="2261"/>
         <source>Flux</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2351"/>
+        <location filename="../ui/xcalcs.ui" line="2348"/>
         <source>Copy this value to stack</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="1361"/>
+        <location filename="../ui/xcalcs.ui" line="1358"/>
         <source>Quadratic root</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2028"/>
+        <location filename="../ui/xcalcs.ui" line="2025"/>
         <source>Constant Pi</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2066"/>
+        <location filename="../ui/xcalcs.ui" line="2063"/>
         <source>Constant E</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="2104"/>
+        <location filename="../ui/xcalcs.ui" line="2101"/>
         <source>Constant c (light speed) [m.s-1]</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../ui/xcalcs.ui" line="2142"/>
+        <location filename="../ui/xcalcs.ui" line="2139"/>
         <source>Constant G (gravitation) [m3.kg−1.s−2]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/xcalcs.ui" line="603"/>
+        <location filename="../ui/xcalcs.ui" line="600"/>
         <source>Arc-Tangent of X</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/xcalcs.ui" line="2394"/>
+        <source>B</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/xcalcs.ui" line="2411"/>
+        <source>O</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/xcalcs.ui" line="2428"/>
+        <source>H</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/xcalcs.ui" line="2445"/>
+        <source>F</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/xcalcs.ui" line="2455"/>
+        <source>D</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/xcalcs.ui" line="2525"/>
+        <source>&lt;a href=&quot;https://github.com/xgvargas/xcalcs&quot;&gt;github.com&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

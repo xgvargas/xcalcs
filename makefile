@@ -16,11 +16,11 @@ RESOURCE_FILES    = $(patsubst ui/%.qrc,  %_rc.py,        $(wildcard ui/*.qrc))
 IMAGE_FILES       = $(patsubst ui/%.svg,  ui/%.extracted, $(wildcard ui/*.svg))
 TRANSLATION_FILES = $(patsubst i18n/%.ts, i18n/%.qm,      $(wildcard i18n/*.ts))
 
-ifneq ("$(wildcard ui/icon.svg)","")
-  EXTRA_TARGET = ui/exeicon.ico
-else
-  EXTRA_TARGET =
-endif
+#ifneq ("$(wildcard ui/icon.svg)","")
+#  EXTRA_TARGET = ui/exeicon.ico
+#else
+#  EXTRA_TARGET =
+#endif
 
 default: $(UI_FILES) $(RESOURCE_FILES) $(TRANSLATION_FILES) $(EXTRA_TARGET)
 
@@ -38,9 +38,9 @@ default: $(UI_FILES) $(RESOURCE_FILES) $(TRANSLATION_FILES) $(EXTRA_TARGET)
 %.qm : %.ts
 	$(LRL) $< -qm $@
 
-ui/exeicon.ico : ui/icon.extracted
-#	echo "from PIL import Image\nImage.open('ui/icon256.png').save('ui/exeicon.ico', sizes=[(16,16), (32, 32), (48, 48)])" | python2
-	echo "from PIL import Image\nImage.open('ui/icon256.png').save('ui/exeicon.ico')" | python2
+#ui/exeicon.ico : ui/icon.extracted
+##	echo "from PIL import Image\nImage.open('ui/icon256.png').save('ui/exeicon.ico', sizes=[(16,16), (32, 32), (48, 48)])" | python2
+#	echo "from PIL import Image\nImage.open('ui/icon256.png').save('ui/exeicon.ico')" | python2
 
 #%.lnk : %.ico
 #	set TARGET='d:/projetos/xcalcs/venv/scripts/pythonw.exe'
@@ -57,7 +57,8 @@ clean:
 	-rm -f i18n/*.qm
 	-rm -fr __pycache__
 	-cat ui/*.extracted | xargs rm
-	-rm -f ui/*.extracted ui/exeicon.ico
+	-rm -f ui/*.extracted 
+	#-rm -f ui/exeicon.ico
 
 .PHONY: images dist update
 
@@ -65,10 +66,10 @@ images: $(IMAGE_FILES)
 
 dist:
 # versao usando o Esky
-	-rm -r dist
+	-rm -fr dist
 	python setup-esky.py bdist_esky
-	"c:/Program Files/7-Zip/7z.exe" x -odist/pack dist/*.zip
-	"$(ProgramFilesX86)/Inno Setup 5/ISCC.exe" setup.iss
+	#"c:/Program Files/7-Zip/7z.exe" x -odist/pack dist/*.zip
+	#"$(ProgramFilesX86)/Inno Setup 5/ISCC.exe" setup.iss
 
 # versao do cx-freeze
 # .............
