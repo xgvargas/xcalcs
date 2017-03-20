@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>228</width>
-    <height>318</height>
+    <width>241</width>
+    <height>320</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>228</width>
+    <width>241</width>
     <height>0</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>228</width>
+    <width>241</width>
     <height>16777215</height>
    </size>
   </property>
@@ -50,7 +50,7 @@
      <widget class="QWidget" name="layout_stack">
       <property name="geometry">
        <rect>
-        <x>0</x>
+        <x>16</x>
         <y>0</y>
         <width>209</width>
         <height>192</height>
@@ -120,7 +120,7 @@ p, li { white-space: pre-wrap; }
     <widget class="QFrame" name="frame">
      <property name="maximumSize">
       <size>
-       <width>228</width>
+       <width>240</width>
        <height>16777215</height>
       </size>
      </property>
@@ -240,13 +240,13 @@ p, li { white-space: pre-wrap; }
      </property>
      <property name="minimumSize">
       <size>
-       <width>228</width>
+       <width>241</width>
        <height>205</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>228</width>
+       <width>241</width>
        <height>205</height>
       </size>
      </property>
@@ -264,9 +264,6 @@ p, li { white-space: pre-wrap; }
        <width>12</width>
        <height>18</height>
       </size>
-     </property>
-     <property name="usesScrollButtons">
-      <bool>false</bool>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="icon">
@@ -2394,7 +2391,7 @@ p, li { white-space: pre-wrap; }
          <item row="0" column="0">
           <widget class="QLabel" name="label_3">
            <property name="text">
-            <string>BIN</string>
+            <string>B</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2411,7 +2408,7 @@ p, li { white-space: pre-wrap; }
          <item row="1" column="0">
           <widget class="QLabel" name="label_4">
            <property name="text">
-            <string>OCT</string>
+            <string>O</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2428,7 +2425,7 @@ p, li { white-space: pre-wrap; }
          <item row="2" column="0">
           <widget class="QLabel" name="label_5">
            <property name="text">
-            <string>HEX</string>
+            <string>H</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2445,7 +2442,7 @@ p, li { white-space: pre-wrap; }
          <item row="3" column="0">
           <widget class="QLabel" name="label_6">
            <property name="text">
-            <string>FLOAT</string>
+            <string>F</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2455,7 +2452,7 @@ p, li { white-space: pre-wrap; }
          <item row="4" column="0">
           <widget class="QLabel" name="label_7">
            <property name="text">
-            <string>DOUBLE</string>
+            <string>D</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2525,7 +2522,7 @@ p, li { white-space: pre-wrap; }
        <item>
         <widget class="QLabel" name="label_8">
          <property name="text">
-          <string>&lt;a href=&quot;https://github.com/xgvargas/xcalcs&quot;&gt;https://github.com/xgvargas/xcalcs&lt;/a&gt;</string>
+          <string>&lt;a href=&quot;https://github.com/xgvargas/xcalcs&quot;&gt;github.com&lt;/a&gt;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>

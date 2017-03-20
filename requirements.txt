@@ -1,6 +1,5 @@
 cx-Freeze
 esky
 ply
-PySide
+#PySide
 smartside
-nuitka

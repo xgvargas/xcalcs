@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/home/gustavo/p/xcalcs/venv/bin/python
+# !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """
@@ -23,7 +24,8 @@ __version__ = '.'.join(__version_info__)
 
 
 settings = configparser.ConfigParser()
-settings.read('xcalcs.cfg')
+settingFile = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'xcalcs.cfg')
+settings.read(settingFile)
 cfg = settings['Config']
 
 
@@ -78,7 +80,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         cfg['angle'] = self.angle
         cfg['coordinate'] = self.coordinate
         cfg['precision'] = str(self.precision)
-        with open('xcalcs.cfg', 'w') as configfile:
+        with open(settingFile, 'w') as configfile:
             settings.write(configfile)
         if cfg.getboolean('savestack', False):
             pickle.dump(self.stack, open('stack.dat', 'wb'))
