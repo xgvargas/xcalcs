@@ -24,7 +24,9 @@ __version__ = '.'.join(__version_info__)
 
 
 settings = configparser.ConfigParser()
-settingFile = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'xcalcs.cfg')
+appPath = os.path.dirname(os.path.realpath(__file__))
+settingFile = os.path.join(appPath, 'xcalcs.cfg')
+stackFile = os.path.join(appPath, 'stack.data')
 settings.read(settingFile)
 cfg = settings['Config']
 
@@ -63,8 +65,8 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.entry_val = 0
         self.entry_str = ''
 
-        if cfg.getboolean('savestack', False) and os.path.isfile('stack.dat'):
-            self.stack = pickle.load(open('stack.dat', 'rb'))
+        if cfg.getboolean('savestack', False) and os.path.isfile(stackFile):
+            self.stack = pickle.load(open(stackFile, 'rb'))
         else:
             self.stack = []
 
@@ -83,9 +85,9 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         with open(settingFile, 'w') as configfile:
             settings.write(configfile)
         if cfg.getboolean('savestack', False):
-            pickle.dump(self.stack, open('stack.dat', 'wb'))
-        elif os.path.isfile('stack.dat'):
-            os.remove('stack.dat')
+            pickle.dump(self.stack, open(stackFile, 'wb'))
+        elif os.path.isfile(stackFile):
+            os.remove(stackFile)
         e.accept()
 
     def installShortcuts(self, section, shortcut_text):
