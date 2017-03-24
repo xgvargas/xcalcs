@@ -687,16 +687,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.6051324"
-     inkscape:cx="302.24723"
-     inkscape:cy="508.78808"
+     inkscape:zoom="4.54"
+     inkscape:cx="429.89106"
+     inkscape:cy="462.71633"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1366"
-     inkscape:window-height="705"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-height="714"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:snap-global="false" />
   <metadata
@@ -1748,93 +1748,85 @@
     </g>
     <g
        id="xxcstc"
-       inkscape:label="#g5254">
+       inkscape:label="#g3646">
       <rect
          y="599.21521"
          x="449.32797"
          height="32"
          width="32"
          id="rect3451"
-         style="fill:url(#radialGradient5161);stroke:none;fill-opacity:1.0" />
+         style="fill:url(#radialGradient5161);fill-opacity:1;stroke:none" />
       <text
+         transform="scale(1.0458486,0.95616135)"
          sodipodi:linespacing="1000%"
          id="text5071"
-         y="624.59021"
-         x="455.4061"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1000%;font-family:SimSun;-inkscape-font-specification:SimSun;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         y="651.11133"
+         x="436.57376"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.62901306px;line-height:1000%;font-family:SimSun;-inkscape-font-specification:SimSun;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           y="624.59021"
-           x="455.4061"
+           y="651.11133"
+           x="436.57376"
            id="tspan5073"
            sodipodi:role="line">c</tspan></text>
     </g>
     <g
        id="xxcste"
-       inkscape:label="#g5249">
+       inkscape:label="#g3651">
       <rect
-         style="fill:url(#radialGradient5105);stroke:none;fill-opacity:1"
+         style="fill:url(#radialGradient5105);fill-opacity:1;stroke:none"
          id="rect3453"
          width="32"
          height="32"
          x="400.46185"
          y="599.21521" />
       <text
+         transform="scale(0.98298126,1.0173134)"
          sodipodi:linespacing="1000%"
          id="text5079"
-         y="624.59021"
-         x="406.38373"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1000%;font-family:SimSun;-inkscape-font-specification:SimSun;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         y="612.58813"
+         x="414.72977"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30.22134209px;line-height:1000%;font-family:SimSun;-inkscape-font-specification:SimSun;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           y="624.59021"
-           x="406.38373"
+           y="612.58813"
+           x="414.72977"
            id="tspan5081"
            sodipodi:role="line">e</tspan></text>
     </g>
     <g
        id="xxcstG"
-       inkscape:label="#g5259">
+       inkscape:label="#g3676">
       <rect
-         style="fill:url(#radialGradient5169);stroke:none;fill-opacity:1.0"
-         id="rect3447"
+         inkscape:label="#rect3447"
+         style="fill:url(#radialGradient5169);fill-opacity:1;stroke:none"
+         id="blabla"
          width="32"
          height="32"
          x="498.19412"
          y="599.21521" />
       <text
-         transform="scale(1.1465,0.8722198)"
+         transform="scale(1.0996383,0.90938994)"
          sodipodi:linespacing="1000%"
          id="text5083"
-         y="717.54169"
-         x="439.63181"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:34.88879395px;line-height:1000%;font-family:SimSun;-inkscape-font-specification:SimSun;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         y="684.26544"
+         x="459.3371"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.29372406px;line-height:1000%;font-family:SimSun;-inkscape-font-specification:SimSun;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           y="717.54169"
-           x="439.63181"
+           y="684.26544"
+           x="459.3371"
            id="tspan5085"
            sodipodi:role="line">G</tspan></text>
     </g>
-    <g
-       id="xxcstpi"
-       inkscape:label="#g5244">
-      <rect
-         y="599.21521"
-         x="351.59573"
-         height="32"
-         width="32"
-         id="rect3455"
-         style="fill:url(#radialGradient5177);stroke:none;fill-opacity:1.0" />
-      <text
-         sodipodi:linespacing="1000%"
-         id="text5087"
-         y="627.7016"
-         x="347.80408"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1000%;font-family:SimSun;-inkscape-font-specification:SimSun;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           y="627.7016"
-           x="347.80408"
-           id="tspan5089"
-           sodipodi:role="line">π</tspan></text>
-    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3622"
+       y="583.85999"
+       x="323.12775"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="583.85999"
+         x="323.12775"
+         id="tspan3624"
+         sodipodi:role="line" /></text>
     <g
        id="xxquadratic"
        inkscape:label="#g5239">
@@ -1856,6 +1848,29 @@
          id="path5237"
          d="m 353.54927,407.62405 c 5.34655,17.02118 10.40836,37.15871 20.76668,-0.66937"
          style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+    </g>
+    <g
+       id="xxcstpi"
+       inkscape:label="#g3660">
+      <rect
+         y="599.21521"
+         x="351.59573"
+         height="32"
+         width="32"
+         id="rect3455"
+         style="fill:url(#radialGradient5177);fill-opacity:1;stroke:none" />
+      <text
+         transform="scale(0.96061065,1.0410045)"
+         sodipodi:linespacing="125%"
+         id="text3656"
+         y="598.32996"
+         x="374.52145"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30.17537117px;line-height:125%;font-family:'Standard Symbols L';-inkscape-font-specification:'Standard Symbols L';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="598.32996"
+           x="374.52145"
+           id="tspan3658"
+           sodipodi:role="line">π</tspan></text>
     </g>
   </g>
 </svg>
