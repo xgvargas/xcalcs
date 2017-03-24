@@ -17,16 +17,23 @@ import pickle
 import units
 import math
 from struct import pack
+import appdirs
 
 __author__ = 'Gustavo Vargas <xgvargas@gmail.com>'
 __version_info__ = ('0', '1', '0')
 __version__ = '.'.join(__version_info__)
 
 
+#if getattr(sys, 'frozen', False):
+#    appPath = os.path.dirname(sys.executable)
+#else:
+#    appPath = os.path.dirname(os.path.realpath(__file__))
+#settingFile = os.path.join(appPath, 'xcalcs.cfg')
+#stackFile = os.path.join(appPath, 'stack.dat')
+settingFile = os.path.join(appdirs.user_config_dir(), 'xcalcs.cfg')
+stackFile = os.path.join(appdirs.user_data_dir(), 'xcalcs-stack.dat')
+
 settings = configparser.ConfigParser()
-appPath = os.path.dirname(os.path.realpath(__file__))
-settingFile = os.path.join(appPath, 'xcalcs.cfg')
-stackFile = os.path.join(appPath, 'stack.dat')
 settings.read(settingFile)
 cfg = settings['Config']
 

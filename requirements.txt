@@ -3,3 +3,5 @@ esky
 ply
 #PySide
 smartside
+appdirs
+
