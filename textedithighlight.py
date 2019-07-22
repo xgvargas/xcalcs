@@ -11,12 +11,12 @@ class TextEditHighlight(QtGui.QTextEdit):
         super().__init__(*args, **kwargs)
         self.textChanged.connect(self._doHighlight)
         self.elements = (
-            ("[()]", "black")                 # grupos
-            ,("[,.\d]+", "blue")              # numeros
-            ,("[+*/^-]", "red")               # operadores
-            ,("PI|C|E", "orange")             # contantes
-            ,("[a-z][a-z0-9]*", "magenta")    # instancias
-            ,("[a-z][a-z0-9]*\s*=", "green")  # declaracoes
+            (r'[()]', r'black')                 # grupos
+            ,(r'[+*/^-]', r'red')               # operadores
+            ,(r'PI|C|E', r'orange')             # contantes
+            ,(r'[a-z][a-z0-9]*', r'magenta')    # instancias
+            ,(r'[a-z][a-z0-9]*\s*=', r'green')  # declaracoes
+            ,(r'(?:(?:\d+(?:[.,]\d+)?)|(?:[.,]\d+))(?:(?:[Ee][+-]?\d+)|T|G|M|k|m|u|n|p|f)?', r'blue')                # numeros
             )
 
     def setElements(self, elements):
