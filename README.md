@@ -4,29 +4,41 @@ RPN calculator in Python3 and PySide
 
 ## Instalando o Pyside no linux
 
-Instalar via `pip` falha miseravelmente. Alem disso ele não instala no python3.5 somente no 3.4
+Instalar via `pip` falha miseravelmente. Ele só no 3.4.
 
-O jeito mais facil de fazer isso funcionar e´ instalar o pyside no python3 global com o apt-get, e quando criar o virtualenv do porjeto usar a chave `--system-site-packages`.
+O jeito mais facil de fazer isso funcionar e´ instalar o pyside no python3 global com o `apt`, e quando criar o virtualenv do projeto usar a chave `--system-site-packages`.
 
 ```bash
 
 # basicao para compilar coisas....
-sudo apt-get install build-essential
+sudo apt install build-essential
 
 # instala o pip caso nao exista
-sudo apt-get install python-pip  python-virtualenv
+sudo apt install python-pip  python-virtualenv
 
 # se resolver compilar o python do zero instale isso
-sudo apt-get install zlib1g-dev
-sudo apt-get install libssl-dev
-sudo apt-get install cmake
+sudo apt install zlib1g-dev
+sudo apt install libssl-dev
+sudo apt install cmake
 
 # instala o pyside pre compilado
-sudo apt-get install python3-pyside
+sudo apt install python3-pyside
 
-# instalar compilador de ui, de recursos e linguage do pyside
-sudo apt-get install pyside-tools
+# instalar compilador de ui, de recursos e linguagem do pyside
+sudo apt install pyside-tools qt4-linguist-tools qt4-dev-tools qt4-designer
 
-# instala uma versao do designer, mas no mint ele ja estava la com o nome: designer
-sudo apt-get install qt4-designer
-``` 
+# criar o virtual env e instalar coisas nele
+virtualenv --system-site-packages -p python3 venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+#  precisa instalar o helper para gerar os graficos
+yarn global add svg-mask2png
+
+# preparar para executar
+make images
+make
+
+# o comando abaixo atualiza a base de traducao caso edite os textos no fonte
+make update
+```

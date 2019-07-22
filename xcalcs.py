@@ -473,8 +473,8 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
             elif op == 'swap':
                 x, y = self.pop(2)
-                self.stack.append(y)
                 self.stack.append(x)
+                self.stack.append(y)
 
             elif op == 'tg':
                 x = self.popAngle()

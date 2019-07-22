@@ -108,7 +108,7 @@ p, li { white-space: pre-wrap; }
        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
       </property>
      </widget>
-     <widget class="QTextEdit" name="edt_equations">
+     <widget class="TextEditHighlight" name="edt_equations">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>5</horstretch>
@@ -133,6 +133,13 @@ p, li { white-space: pre-wrap; }
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TextEditHighlight</class>
+   <extends>QTextEdit</extends>
+   <header>textedithighlight</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="xcalcs.qrc"/>
  </resources>

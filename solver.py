@@ -14,7 +14,7 @@ variables = {}
 #     \_____/\___/_/\_\___|_|
 #
 multiplier = {'T': 1e12, 'G': 1e9, 'M': 1e6, 'k': 1e3, 'm': 1e-3, 'u': 1e-6, 'n': 1e-9, 'p': 1e-12, 'f': 1e-15}
-constants = {'PI': math.pi, 'E': math.e, 'C': 300e8}
+constants = {'PI': math.pi, 'E': math.e, 'C': 299792458}
 
 class VariableError(Exception): pass
 class LexError(Exception): pass

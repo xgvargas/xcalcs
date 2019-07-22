@@ -509,7 +509,7 @@
 <context>
     <name>XCalcsApp</name>
     <message>
-        <location filename="../xcalcs.py" line="48"/>
+        <location filename="../xcalcs.py" line="57"/>
         <source>(Shortcut: {})</source>
         <translation>(Atalho: {})</translation>
     </message>
