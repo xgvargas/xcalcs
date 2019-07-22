@@ -21,6 +21,12 @@ class ConsoleForm(QtGui.QWidget, Ui_form_console, smartsignal.SmartSignal):
         self.setupUi(self)
 
         self.eq_scroll = self.edt_equations.verticalScrollBar()
+        # self.edt_equations.setElements( (
+        #     ()  #
+        #     ()  #
+        #     ()  #
+        #     ()  #
+        #     ) )
 
         self.auto_connect()
 
