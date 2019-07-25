@@ -11,13 +11,15 @@ import sys, os
 from xcalcs_ui import *
 import smartside.signal as smartsignal
 from smartside import setAsApplication, getBestTranslation
-from console import ConsoleForm
+# from console import ConsoleForm
 import configparser
 import pickle
 import units
 import math
 from struct import pack
 import appdirs
+import solver
+import rpnsolver
 
 __author__ = 'Gustavo Vargas <xgvargas@gmail.com>'
 __version_info__ = ('0', '1', '0')
@@ -32,6 +34,7 @@ __version__ = '.'.join(__version_info__)
 #stackFile = os.path.join(appPath, 'stack.dat')
 settingFile = os.path.join(appdirs.user_config_dir(), 'xcalcs.cfg')
 stackFile = os.path.join(appdirs.user_data_dir(), 'xcalcs-stack.dat')
+eqFile = os.path.join(appdirs.user_data_dir(), 'xcalcs-equation.dat')
 
 settings = configparser.ConfigParser()
 settings.read(settingFile)
@@ -45,6 +48,8 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
     def __init__(self, parent=None):
         super(XCalcsApp, self).__init__(parent)
         self.setupUi(self)
+        self.eq_scroll = self.edt_equations.verticalScrollBar()
+        self.result_scroll = self.edt_results.verticalScrollBar()
         self.auto_connect()
 
         self.restoreGeometry(QtCore.QByteArray.fromBase64(cfg['geometry']))
@@ -60,6 +65,13 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.angle = cfg['angle']
         self.coordinate = cfg['coordinate']
 
+        self.boxRPN.setVisible(cfg.getboolean('showrpn', True))
+        self.btn_show_rpn.setChecked(cfg.getboolean('showrpn', True))
+        self.boxSolver.setVisible(cfg.getboolean('showsolver', False))
+        self.btn_show_solver.setChecked(cfg.getboolean('showsolver', False))
+        self.boxHelpers.setVisible(cfg.getboolean('showhelpers', False))
+        self.btn_show_helpers.setChecked(cfg.getboolean('showhelpers', False))
+
         self.precision = int(cfg['precision'])
         self.btn_format.setValue(self.precision, 1, 12)
 
@@ -67,21 +79,42 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.btn_angle.setText(self.angle.title())
         self.btn_coord.setText(self.coordinate.title())
 
-        self.console = None
+        # self.console = None
         self.editing = None
         self.entry_val = 0
         self.entry_str = ''
 
         if cfg.getboolean('savestack', False) and os.path.isfile(stackFile):
             self.stack = pickle.load(open(stackFile, 'rb'))
+            self.edt_equations.setText(pickle.load(open(eqFile, 'rb')))
         else:
             self.stack = []
 
         self.converter = units.Converter()
         self.cmb_quantity.setCurrentIndex(2)
 
+        self.posfixMode = cfg.getboolean('posfix', False)
+        if self.posfixMode:
+            self.btn_posfix.setText('Posfix')
+        else:
+            self.btn_posfix.setText('Infix')
+
+        # self.eq_scroll = self.edt_equations.verticalScrollBar()
+        # self.edt_equations.setElements( (
+        #     ()  #
+        #     ()  #
+        #     ()  #
+        #     ()  #
+        #     ) )
+
+        # self.auto_connect()
+
+        self.lbl_error.setText('')
+
         self.moveStackToBottom()
         self.updateAll()
+
+        self.populateConstants()
 
     def closeEvent(self, e):
         cfg['geometry'] = str(self.saveGeometry().toBase64())
@@ -89,12 +122,19 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         cfg['angle'] = self.angle
         cfg['coordinate'] = self.coordinate
         cfg['precision'] = str(self.precision)
+        cfg['showrpn'] = str(self.boxRPN.isVisible())
+        cfg['showsolver'] = str(self.boxSolver.isVisible())
+        cfg['showhelpers'] = str(self.boxHelpers.isVisible())
+        cfg['posfix'] = str(self.posfixMode)
+
         with open(settingFile, 'w') as configfile:
             settings.write(configfile)
         if cfg.getboolean('savestack', False):
             pickle.dump(self.stack, open(stackFile, 'wb'))
+            pickle.dump(self.edt_equations.toPlainText(), open(eqFile, 'wb'))
         elif os.path.isfile(stackFile):
             os.remove(stackFile)
+            os.remove(eqFile)
         e.accept()
 
     def installShortcuts(self, section, shortcut_text):
@@ -114,7 +154,8 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
     def keyPressEvent(self, e):
         # print(e.key(), e.nativeModifiers(), e.nativeScanCode(), e.nativeVirtualKey())
         c = chr(e.key()) if e.key() < 255 else ''
-
+        # print(c)
+        # print(e.key())
         if not self.editing:
             if e.key() == QtCore.Qt.Key_Escape:
                 self.stack.clear()
@@ -149,7 +190,16 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
             elif c == 'E':
                 pass
 
-            elif c == 'G':
+            elif c == 'g':
+                # print('cheguei')
+                # if self.entry_str[0] == '-':
+                #     print('1')
+                #     print(self.entry_str)
+                #     self.entry_str = self.entry_str[1:]
+                # else:
+                #     print('2')
+                #     print(self.entry_str)
+                #     self.entry_str = '-' + self.entry_str
                 pass
 
             else:
@@ -308,6 +358,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.updateStack()
         self.updateConverter()
         self.updateBases()
+        self._on_edt_equations__textChanged()
 
     def moveStackToBottom(self):
         b = self.scr_stack.verticalScrollBar()
@@ -348,11 +399,13 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
         self.btn_format.setText('{} ({:d})'.format(self.format.title(), self.precision))
         self.updateAll()
+        self.populateConstants()
 
     def _on_btn_format__value_changed(self, val):
         self.precision = val
         self.btn_format.setText('{} ({:d})'.format(self.format.title(), self.precision))
         self.updateAll()
+        self.populateConstants()
 
     def _on_btn_coord__clicked(self):
         self.coordinate = 'cart' if self.coordinate == 'pol' else 'pol'
@@ -360,20 +413,28 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         self.btn_coord.setText(self.coordinate.title())
         self.updateStack()
 
-    def _on_btn_solver__clicked(self):
-        if not self.console:
-            self.console = ConsoleForm()
-        self.console.show()
+    # def _on_btn_solver__clicked(self):
+    #     if not self.console:
+    #         self.console = ConsoleForm()
+    #     self.console.show()
 
     _funcoes = '`btn_f_.+`'
     def _when_funcoes__clicked(self):
         # print(self.sender().objectName())
 
+        op = self.sender().objectName().split('_')[2]
+
         if self.editing:
+            if op == 'minus':
+                if self.entry_str[0] == '-':
+                    self.entry_str = self.entry_str[1:]
+                else:
+                    self.entry_str = '-' + self.entry_str
+                self.updateAll()
+                return
+
             self.stack.append(self.entry_val)
             self.editing = False
-
-        op = self.sender().objectName().split('_')[2]
 
         try:
             if op == '10powerx':
@@ -482,11 +543,15 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
             elif op == 'tocomplex':
                 x, y = self.pop(2)
-                self.stack.append(complex(y, x))
+
+                if not (isinstance(x, complex) or isinstance(y, complex)):
+                    self.stack.append(complex(y, x))
+                else:
+                    self.stack.append(y)
+                    self.stack.append(x)
 
         except IndexError:
-            pass
-            print('nhaca')
+            print('Index Error')
         except:
             raise
 
@@ -553,6 +618,115 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
             raise
 
         self.updateAll()
+
+    def _on_eq_scroll__valueChanged(self):
+        self.edt_results.verticalScrollBar().setValue(self.eq_scroll.value())
+
+    def _on_result_scroll__valueChanged(self):
+        self.edt_equations.verticalScrollBar().setValue(self.result_scroll.value())
+
+    def showError(self, text):
+        self.lbl_error.setText(text)
+        self.edt_results.clear()
+
+    def _on_btn_posfix__clicked(self):
+        if self.posfixMode:
+            self.posfixMode = False
+            self.btn_posfix.setText('Infix')
+        else:
+            self.posfixMode = True
+            self.btn_posfix.setText('Posfix')
+
+    def _on_edt_equations__textChanged(self):
+        try:
+            if self.posfixMode:
+                r = rpnsolver.solve(self.edt_equations.toPlainText())
+            else:
+                r = solver.solve(self.edt_equations.toPlainText())
+
+            txt = '''<html><head><style type="text/css">
+ p {margin: 0px 0px; -qt-block-indent:0; text-indent:0px; white-space: pre-wrap; text-align: right;}
+ body {font-family:'Courier New'; font-size:14pt; font-weight:400; font-style:normal;}
+ </style></head><body>'''
+
+            for v in r:
+                if v[1] is not None:
+                    # txt += '<p align="right">{:.5f}</p>'.format(v[1])
+                    txt += '<p align="right">{}</p>'.format(self.formatNumber(v[1]))
+                else:
+                    txt += '<p align="right"> </p>'
+
+            self.edt_results.setHtml(txt+'</body></html>')
+            self.edt_results.verticalScrollBar().setValue(self.eq_scroll.value())
+            self.lbl_error.setText('')
+
+        except solver.VariableError as e:
+            self.showError(self.tr('Undefined variable {}').format('AINDA NAO DEFINIDO!!'))
+            print(e)
+
+        except solver.LexError as e:
+            self.showError(self.tr('Unknown character "{}" at line {:d}').format(e.args[0].value[0], e.args[0].lineno+1))
+
+        except solver.ConstantError as e:
+            self.showError(self.tr('Undefined constant {} in line {:d}').format(e.args[0][0], e.args[0][1]))
+
+        except solver.GrammarError as e:
+            self.showError(self.tr('Syntax error at line {:d}').format(e.args[0].lineno+1))
+
+        except:
+            self.lbl_error.setText(self.tr('Unknown error!!'))
+
+    def _on_btn_clear__clicked(self):
+        self.edt_equations.setHtml('')
+
+    def _on_btn_copy__clicked(self):
+        r = self.edt_results.toPlainText().split('\n')
+        e = self.edt_equations.toPlainText().split('\n')
+        t = ''
+        for i, l in enumerate(e):
+            rr = r[i] if i < len(r) else ''
+            t+= '{: >16s} =: {}\n'.format(rr, l)
+
+        cb = QtGui.QApplication.clipboard()
+        cb.setText(t)
+
+    # _selectors = '`btn_show_.+`'
+    # def _when_selectors__clicked(self):
+    #     op = self.sender().objectName().split('_')[2]
+
+    #     if op == 'rpn':
+    #         self.boxRPN.setVisible(not self.boxRPN.isVisible())
+    #     elif op == 'solver':
+    #         self.boxSolver.setVisible(not self.boxSolver.isVisible())
+    #     elif op == 'helpers':
+    #         self.boxHelpers.setVisible(not self.boxHelpers.isVisible())
+
+    #     # TODO quando ficar somente a stack deve travar a largura!
+
+        # rpn = self.boxRPN.isVisible()
+        # solver = self.boxSolver.isVisible()
+        # helper = self.boxHelpers.isVisible()
+        # if rpn and not (solver or helper):
+        #     print(self.size())
+        #     self.resize(100, self.size().height())
+
+        # print(self.size())
+
+    def populateConstants(self):
+        constants = (
+            ('Arquimeds (𝛑)', 3.14159265358979323846264338327950288, ''),
+            ('Euler (e)', 2.71828182845904523536028747135266249, ''),
+            ('c', 299792458, 'm/s'),
+            ('G', 6.67408313131e-11, 'm³/(kg . s²)'),
+            ('golden ratio (𝛗)', 1.6180339887498948, '')
+        )
+        self.tbl_constants.setRowCount(len(constants))
+        # self.tbl_constants.setColumnCount(3)
+        for line, cc in enumerate(constants):
+            print(line, cc)
+            self.tbl_constants.setItem(line, 0, QtGui.QTableWidgetItem(cc[0]))
+            self.tbl_constants.setItem(line, 1, QtGui.QTableWidgetItem(self.formatNumber(cc[1])))
+            self.tbl_constants.setItem(line, 2, QtGui.QTableWidgetItem(cc[2]))
 
 
 if __name__ == "__main__":

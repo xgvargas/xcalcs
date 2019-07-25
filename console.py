@@ -8,6 +8,7 @@ import sys
 from console_ui import *
 import smartside.signal as smartsignal
 import solver
+import rpnsolver
 
 
 __author__ = 'Gustavo Vargas <xgvargas@gmail.com>'
@@ -19,6 +20,8 @@ class ConsoleForm(QtGui.QWidget, Ui_form_console, smartsignal.SmartSignal):
     def __init__(self, parent=None):
         super(ConsoleForm, self).__init__(parent)
         self.setupUi(self)
+        self.rpnMode = False
+        self.btn_rpn.setText('Infix')
 
         self.eq_scroll = self.edt_equations.verticalScrollBar()
         # self.edt_equations.setElements( (
@@ -39,9 +42,20 @@ class ConsoleForm(QtGui.QWidget, Ui_form_console, smartsignal.SmartSignal):
         self.lbl_error.setText(text)
         self.edt_results.clear()
 
+    def _on_btn_rpn__clicked(self):
+        if self.rpnMode:
+            self.rpnMode = False
+            self.btn_rpn.setText('Infix')
+        else:
+            self.rpnMode = True
+            self.btn_rpn.setText('Posfix')
+
     def _on_edt_equations__textChanged(self):
         try:
-            r = solver.solve(self.edt_equations.toPlainText())
+            if self.rpnMode:
+                r = rpnsolver.solve(self.edt_equations.toPlainText())
+            else:
+                r = solver.solve(self.edt_equations.toPlainText())
             txt = '''<html><head><style type="text/css">
  p {margin: 0px 0px; -qt-block-indent:0; text-indent:0px; white-space: pre-wrap; text-align: right;}
  body {font-family:'Courier New'; font-size:14pt; font-weight:400; font-style:normal;}

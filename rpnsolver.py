@@ -21,20 +21,25 @@ class LexError(Exception): pass
 class ConstantError(Exception): pass
 class GrammarError(Exception): pass
 
+# literals = ['\n']
+
 reserved = {
+    'dup': 'DUP',
+    # 'swap': 'SWAP',
     'sin': 'SIN', 'cos': 'COS', 'tan': 'TAN',
     'asin': 'ASIN', 'acos': 'ACOS', 'atan': 'ATAN',
     'sqr': 'SQR',
+    'sqrn': 'SQRN',
     'rad': 'RAD', 'deg': 'DEG',
-    'log': 'LOG', 'ln': 'LN',
+    # 'log': 'LOG', 'ln': 'LN',
     }
-tokens = ['ASSIGN', 'NUMBER',
+tokens = ['ASSIGN', 'NUMBER', #'MULTIPLIER',
     'PLUS', 'MINUS', 'TIMES', 'DIVIDE',
-    'LPAREN', 'RPAREN',
+    # 'LPAREN', 'RPAREN',
     'POWER',
-    # 'ESCAPE',
-    'FILTER', 'EOL',
-    'ID', 'CONST',
+    'ESCAPE', #'FILTER',
+    'EOL',
+    'ID'
     ]+list(reserved.values())
 
 t_ignore     = " \t"
@@ -42,13 +47,13 @@ t_PLUS       = r'\+'
 t_MINUS      = r'-'
 t_TIMES      = r'\*'
 t_DIVIDE     = r'/'
-t_LPAREN     = r'\('
-t_RPAREN     = r'\)'
+# t_LPAREN     = r'\('
+# t_RPAREN     = r'\)'
 t_POWER      = r'\^'
 t_ASSIGN     = r'='
-# t_ESCAPE     = r'!'
-t_FILTER     = r'\|'
-t_CONST      = r'[A-Z]+'
+t_ESCAPE     = r'!'
+# t_FILTER     = r'\|'
+# t_MULTIPLIER = r'T|G|M|k|m|u|n|p'
 
 def t_comment(t):
     r'\#[^\n]*'
@@ -91,18 +96,18 @@ def t_error(t):
 #     | | | (_| | |  \__ \  __/ |
 #     \_|  \__,_|_|  |___/\___|_|
 #
-precedence = (
-    ('right', 'ASSIGN'),
-    # ('right', 'ID'),
-    ('left', 'PLUS', 'MINUS'),
-    ('right', 'SIN', 'COS', 'TAN', 'ASIN', 'ACOS', 'ATAN'),
-    ('right', 'DEG', 'RAD'),
-    ('left', 'TIMES', 'DIVIDE'),
-    # ('left', 'SQR'),
-    ('left', 'POWER'),
-    ('right', 'UMINUS', 'FILTER'),
-    # ('nonassoc', 'ESCAPE'),
-    )
+# precedence = (
+#     ('right', 'ASSIGN'),
+#     # ('right', 'ID'),
+#     ('left', 'PLUS', 'MINUS'),
+#     ('right', 'SIN', 'COS', 'TAN', 'ASIN', 'ACOS', 'ATAN'),
+#     ('right', 'DEG', 'RAD'),
+#     ('left', 'TIMES', 'DIVIDE'),
+#     ('left', 'SQR'),
+#     ('left', 'POWER'),
+#     ('right', 'UMINUS', 'FILTER'),
+#     ('nonassoc', 'ESCAPE'),
+#     )
 
 def p_result(p):
     'result : list'
@@ -137,68 +142,91 @@ def p_assign(p):
     variables[p[1]] = p[3]
 
 def p_val_binop(p):
-    '''value : value PLUS value
-             | value MINUS value
-             | value TIMES value
-             | value DIVIDE value'''
-    if   p[2] == '+': p[0] = p[1] + p[3]
-    elif p[2] == '-': p[0] = p[1] - p[3]
-    elif p[2] == '*': p[0] = p[1] * p[3]
-    elif p[2] == '/': p[0] = p[1] / p[3]
+    '''value : value value PLUS
+             | value value MINUS
+             | value value TIMES
+             | value value DIVIDE'''
+    if   p[3] == '+': p[0] = p[1] + p[2]
+    elif p[3] == '-': p[0] = p[1] - p[2]
+    elif p[3] == '*': p[0] = p[1] * p[2]
+    elif p[3] == '/': p[0] = p[1] / p[2]
 
-def p_val_uminus(p):
-    'value : MINUS value %prec UMINUS'
-    p[0] = -p[2]
+# def p_val_uminus(p):
+#     'value : value MINUS'
+#     p[0] = -p[1]
 
 def p_val_angle(p):
-    '''value : RAD value
-             | DEG value'''
-    if p[1] == 'rad': p[0] = p[2]*math.pi/180.0
-    else: p[0] = p[2]*180.0/math.pi
+    '''value : value RAD
+             | value DEG'''
+    if p[2] == 'rad': p[0] = p[1]*math.pi/180.0
+    else: p[0] = p[1]*180.0/math.pi
 
 def p_val_trig(p):
-    '''value : SIN value
-             | COS value
-             | TAN value'''
-    if   p[1] == 'sin': p[0] = math.sin(p[2])
-    elif p[1] == 'cos': p[0] = math.cos(p[2])
-    elif p[1] == 'tan' : p[0] = math.tan(p[2])
+    '''value : value SIN
+             | value COS
+             | value TAN'''
+    if   p[2] == 'sin': p[0] = math.sin(p[1])
+    elif p[2] == 'cos': p[0] = math.cos(p[1])
+    elif p[2] == 'tan' : p[0] = math.tan(p[1])
 
 def p_val_atrig(p):
-    '''value : ASIN value
-             | ACOS value
-             | ATAN value'''
-    if   p[1] == 'asin': p[0] = math.asin(p[2])
-    elif p[1] == 'acos': p[0] = math.acos(p[2])
-    elif p[1] == 'atan' : p[0] = math.atan(p[2])
+    '''value : value ASIN
+             | value ACOS
+             | value ATAN'''
+    if   p[2] == 'asin': p[0] = math.asin(p[1])
+    elif p[2] == 'acos': p[0] = math.acos(p[1])
+    elif p[2] == 'atan' : p[0] = math.atan(p[1])
 
 def p_val_power(p):
-    '''value : value POWER value'''
-    p[0] = math.pow(p[1], p[3])
+    '''value : value value POWER'''
+    p[0] = math.pow(p[1], p[2])
 
 def p_val_square(p):
-    '''value : SQR value'''
-    p[0] = math.sqrt(p[2])
+    '''value : value SQR'''
+    p[0] = math.sqrt(p[1])
 
 def p_val_square_ex(p):
-    '''value : SQR value value'''
-    p[0] = math.pow(p[3], 1./p[2])
+    '''value : value value SQRN'''
+    p[0] = math.pow(p[1], 1./p[2])
 
-def p_val_ln(p):
-    'value : LN value'
-    p[0] = math.log(p[2])
+# def p_val_group(p):
+#     'value : LPAREN value RPAREN'
+#     p[0] = p[2]
 
-def p_val_log(p):
-    'value : LOG value'
-    p[0] = math.log10(p[2])
+# def p_val_number_multi(p):
+#     'value : NUMBER ID'
+#     p[0] = p[1]*multiplier[p[2]]
 
-def p_val_log_ex(p):
-    'value : LOG value value'
-    p[0] = math.log(p[3], p[2])
+def p_dup(p):
+    'value : DUP'
+    p[0] = p[-1]
+# def p_dup(p):
+#     'value : value DUP'
+#     p[0] = p[1]
 
-def p_val_group(p):
-    'value : LPAREN value RPAREN'
-    p[0] = p[2]
+# def p_empty(p):
+#     'empty :'
+#     pass
+
+# def p_swap(p):
+#     'empty : SWAP'
+#     p[-1], p[-2] = p[-2], p[-1]
+#     # p[0] = None
+# def p_swap(p):
+#     'value : value value SWAP'
+#     p[-1], p[-2] = p[-2], p[-1]
+#     # p[0] = None
+# def p_swap(p):
+#     'value  : value value SWAP'
+#     # 'value value : value value SWAP'
+#     print(p[-1], p[0], p[1])
+#     p[0] = p[1]
+#     # p[1] = p[2]
+#     # print(type(p))
+#     # p[-1] = p[1]
+#     print(p[-1], p[0], p[1])
+#     # p[-1], p[-2] = p[-2], p[-1]
+#     # p[0] = None
 
 def p_val_number(p):
     'value : NUMBER'
@@ -209,12 +237,11 @@ def p_variable(p):
     p[0] = variables.get(p[1], 0)
     # TODO avisar se nao existir
 
-def p_constant(p):
-    'value : CONST'
-    if p[1] in constants:
-        p[0] = constants[p[1]]
-    else:
-        raise ConstantError( (p[1], p.lexer.lineno) )
+def p_scaped(p):
+    'value : ESCAPE ID'
+    p[0] = 0
+    if p[2] == 'pi': p[0] = math.pi
+    if p[2] == 'e': p[0] = math.e
 
 def p_error(p):
     # print("Syntax line %d, at '%s'" % (p.lineno, p.value))
@@ -242,9 +269,9 @@ def p_error(p):
 
 dev = False
 
-lexer = lex.lex(lextab='solver_lex', optimize=not dev, debug=dev)
-parser = yacc.yacc(tabmodule='solver_tab', optimize=not dev, debug=dev)
 
+lexer = lex.lex(lextab='rpnsolver_lex', optimize=not dev, debug=dev)
+parser = yacc.yacc(tabmodule='rpnsolver_tab', optimize=not dev, debug=dev)
 
 def solve(text):
     global variables
