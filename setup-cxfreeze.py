@@ -8,8 +8,8 @@ if sys.platform == "win32":
     base = "Win32GUI"
 
 setup(
-    name="XcalxS",
-    version="0.1.0",
+    name="Xcalc",
+    version="0.2.0",
     description="RPN Calculator",
     options={
         "build_exe": {
@@ -27,6 +27,6 @@ setup(
         },
     executables=[
         Executable("xcalcs.py", base=base),
-        Executable("console.py", base=base)
+        # Executable("console.py", base=base)
         ],
     )

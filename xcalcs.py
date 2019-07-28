@@ -685,7 +685,7 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         t = ''
         for i, l in enumerate(e):
             rr = r[i] if i < len(r) else ''
-            t+= '{: >16s} =: {}\n'.format(rr, l)
+            t+= '{: >16s} <-- {}\n'.format(rr, l)
 
         cb = QtGui.QApplication.clipboard()
         cb.setText(t)

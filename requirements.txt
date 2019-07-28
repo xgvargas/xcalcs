@@ -1,5 +1,8 @@
-# cx-Freeze
-esky
+cx-Freeze
+# o esky somente funfa com essa versao velha do cxfreeze
+# o problema eh que essa versao velha nao quer instalar
+# cx-Freeze==4.3.4
+# esky
 ply
 # PySide
 smartside

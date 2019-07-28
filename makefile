@@ -56,7 +56,7 @@ clean:
 	-rm -f *_ui.py *_rc.py *.pyc *_lex.py *_tab.py stack.dat
 	-rm -f i18n/*.qm
 	-rm -fr __pycache__
-	-cat ui/*.extracted | xargs -L1 rm
+	-cat ui/*.extracted | xargs rm
 	-rm -f ui/*.extracted
 	#-rm -f ui/exeicon.ico
 

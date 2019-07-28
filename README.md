@@ -41,4 +41,7 @@ make
 
 # o comando abaixo atualiza a base de traducao caso edite os textos no fonte
 make update
+
+# se for usar o cx_freeze precisa do python.h
+sudo apt install python3-dev
 ```
