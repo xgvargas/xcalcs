@@ -139,6 +139,9 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
     def installShortcuts(self, section, shortcut_text):
         shortcuts = []
+
+        # TODO avisar que 'E' e 'G' eh reservado
+
         for k in settings[section]:
             v = settings[section][k]
             if hasattr(self, k) and v:
