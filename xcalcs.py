@@ -40,6 +40,14 @@ settings = configparser.ConfigParser()
 settings.read(settingFile)
 cfg = settings['Config']
 
+constants = (
+    ('Arquimeds (𝛑)', 3.14159265358979323846264338327950288, ''),
+    ('Euler (e)', 2.71828182845904523536028747135266249, ''),
+    ('c', 299792458, 'm/s'),
+    ('G', 6.67408313131e-11, 'm³/(kg . s²)'),
+    ('golden ratio (𝛗)', 1.6180339887498948, '')
+)
+
 
 class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
@@ -140,18 +148,19 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
     def installShortcuts(self, section, shortcut_text):
         shortcuts = []
 
-        # TODO avisar que 'E' e 'G' eh reservado
-
         for k in settings[section]:
             v = settings[section][k]
             if hasattr(self, k) and v:
-                ks = QtGui.QKeySequence(v)
-                s = QtGui.QShortcut(ks, self)
-                obj = getattr(self, k)
-                if shortcut_text:
-                    obj.setToolTip('{} {}'.format(obj.toolTip(), shortcut_text.format(ks.toString())))
-                s.activated.connect(obj.click)
-                shortcuts.append(s)
+                if v == 'E' or v == 'G':
+                    print('OOPS! E e G sao atalhos reservados!')
+                else:
+                    ks = QtGui.QKeySequence(v)
+                    s = QtGui.QShortcut(ks, self)
+                    obj = getattr(self, k)
+                    if shortcut_text:
+                        obj.setToolTip('{} {}'.format(obj.toolTip(), shortcut_text.format(ks.toString())))
+                    s.activated.connect(obj.click)
+                    shortcuts.append(s)
         return shortcuts
 
     def keyPressEvent(self, e):
@@ -594,33 +603,33 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
 
         self.updateAll()
 
-    _constantes = '`btn_c_.+`'
-    def _when_constantes__clicked(self):
-        # print(self.sender().objectName())
+    # _constantes = '`btn_c_.+`'
+    # def _when_constantes__clicked(self):
+    #     # print(self.sender().objectName())
 
-        if self.editing:
-            self.stack.append(self.entry_val)
-            self.editing = False
+    #     if self.editing:
+    #         self.stack.append(self.entry_val)
+    #         self.editing = False
 
-        op = self.sender().objectName().split('_')[2]
+    #     op = self.sender().objectName().split('_')[2]
 
-        try:
-            if op == 'pi':
-                self.stack.append(3.14159265358979323846264338327950288)
-            elif op == 'e':
-                self.stack.append(2.71828182845904523536028747135266249)
-            elif op == 'c':
-                self.stack.append(299792458) # [m.s-1]
-            elif op == 'G':
-                self.stack.append(6.67408313131e-11) # [m3.kg−1.s−2]
+    #     try:
+    #         if op == 'pi':
+    #             self.stack.append(3.14159265358979323846264338327950288)
+    #         elif op == 'e':
+    #             self.stack.append(2.71828182845904523536028747135266249)
+    #         elif op == 'c':
+    #             self.stack.append(299792458) # [m.s-1]
+    #         elif op == 'G':
+    #             self.stack.append(6.67408313131e-11) # [m3.kg−1.s−2]
 
-        except IndexError:
-            pass
-            print('nhaca')
-        except:
-            raise
+    #     except IndexError:
+    #         pass
+    #         print('nhaca')
+    #     except:
+    #         raise
 
-        self.updateAll()
+    #     self.updateAll()
 
     def _on_eq_scroll__valueChanged(self):
         self.edt_results.verticalScrollBar().setValue(self.eq_scroll.value())
@@ -716,21 +725,25 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
         # print(self.size())
 
     def populateConstants(self):
-        constants = (
-            ('Arquimeds (𝛑)', 3.14159265358979323846264338327950288, ''),
-            ('Euler (e)', 2.71828182845904523536028747135266249, ''),
-            ('c', 299792458, 'm/s'),
-            ('G', 6.67408313131e-11, 'm³/(kg . s²)'),
-            ('golden ratio (𝛗)', 1.6180339887498948, '')
-        )
         self.tbl_constants.setRowCount(len(constants))
         # self.tbl_constants.setColumnCount(3)
         for line, cc in enumerate(constants):
-            print(line, cc)
+            # print(line, cc)
             self.tbl_constants.setItem(line, 0, QtGui.QTableWidgetItem(cc[0]))
             self.tbl_constants.setItem(line, 1, QtGui.QTableWidgetItem(self.formatNumber(cc[1])))
             self.tbl_constants.setItem(line, 2, QtGui.QTableWidgetItem(cc[2]))
 
+    def _on_tbl_constants__itemDoubleClicked(self, cell):
+        # val = self.tbl_constants.item(cell.row(), 1).text()
+        val = constants[cell.row()][1]
+
+        if not self.boxRPN.isHidden():
+            self.stack.append(float(val))
+        else:
+            cb = QtGui.QApplication.clipboard()
+            cb.setText(self.formatNumber(val, ''))
+
+        self.updateAll()
 
 if __name__ == "__main__":
 
