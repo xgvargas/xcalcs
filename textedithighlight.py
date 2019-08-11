@@ -17,7 +17,7 @@ class TextEditHighlight(QtGui.QTextEdit):
             ,(r'PI|C|E', r'orange')  # contantes
             ,(r'[a-z][a-z0-9]*', r'magenta')  # instancias
             ,(r'[a-z][a-z0-9]*\s*=', r'green')  # declaracoes
-            ,(r'(?:(?:\d+(?:[.,]\d+)?)|(?:[.,]\d+))(?:(?:[Ee][+-]?\d+)|T|G|M|k|m|u|n|p|f)?', r'blue')  # numeros
+            ,(r'\b(?:(?:\d+(?:[.,]\d+)?)|(?:[.,]\d+))(?:(?:[Ee][+-]?\d+)|[TGMkmunpf])?', r'blue')  # numeros
             ,(r'[#].*?\n', r'gray')  # comentarios
             )
 
