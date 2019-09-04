@@ -302,11 +302,11 @@ class XCalcsApp(QtGui.QWidget, Ui_form_main, smartsignal.SmartSignal):
             t = '{0:.{pre}E}'.format(abs(val), pre=self.precision+2)
             n = t.split('E')[0].replace('.', '')
             e = int(t.split('E')[1])
-            multiplier = ['a', 'p', 'n', 'µ', 'm', sep, 'k', 'M', 'G', 'T', 'E']
+            multiplier = ('y','z','a','f','p','n','µ','m',sep,'k','M','G','T','P','E','Z','Y')
             d = e%3
             e = 3*(e//3)
-            if e >= -15 and e <= 15:
-                m = multiplier[e//3+5]
+            if e >= -24 and e <= 24:
+                m = multiplier[e//3 + 8]
             else:
                 m = str(e)
             # FIXME o arredondamento nao esta funcionando....
